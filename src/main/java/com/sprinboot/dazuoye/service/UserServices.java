@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface UserServices {
 //    查询用户
-    List<User> getUser();
+    List<User> getAllUser(User user);
 
 //    删除用户
     void delectUser(Integer id);
 
 //    增加用户
-    void insertUser(String username,String password);
+    int insertUser(String username, String password);
 
 //    修改用户密码
-    void updatePassword(String username,String password);
+    int updatePassword(String username, String password);
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: linqiyuan
@@ -23,7 +24,16 @@
         </div>
         <button type="submit">提交</button>
     </form>
-    <a href="#"><button type="button">查看用户</button></a>
+    <a href="${pageContext.request.contextPath}/allUser"><button type="button">查看用户</button></a>
+    <div class="userinfo">
+        <c:forEach var="userinfo" items="#{userinfo}">
+            <div>
+            用户名:<p>${userinfo.username}</p>
+                <a href="#"><button>删除用户</button></a>
+                <br>
+            </div>
+        </c:forEach>
+    </div>
 </div>
 </body>
 </html>

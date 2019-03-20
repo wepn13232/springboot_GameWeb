@@ -18,21 +18,21 @@ public class UserServicesImpl implements UserServices {
 
     @Override
     public List<User> getUser() {
-        return null;
+        return userDao.getAllUser();
     }
 
     @Override
     public void delectUser(Integer id) {
-
+        userDao.delectUser(id);
     }
 
     @Override
-    public void insertUser(String username, String password) {
-
+    public int insertUser(String username, String password) {
+        return userDao.insertUser(username, password);
     }
 
     @Override
-    public void updatePassword(String username, String password) {
-
+    public int updatePassword(String username, String password) {
+        return userDao.updatePassword(username, password);
     }
 }
