@@ -16,9 +16,11 @@ public class UserServicesImpl implements UserServices {
     private UserDao userDao;
 
 
+
+
     @Override
-    public List<User> getUser() {
-        return userDao.getAllUser();
+    public List<User> getAllUser(User user) {
+        return userDao.getAllUser(user);
     }
 
     @Override
