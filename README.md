@@ -1,2 +1,2 @@
 #springboot
-Spring Boot模式下的JDBC（增删改查）
+Spring Boot模式下的CRUD（增删改查）
