@@ -23,7 +23,7 @@
                             <h6>欢迎</h6>
                             <h3>这里将是游戏爱好者的天堂</h3>
                             <div class="more">
-                                <a href="#" data-toggle="modal" data-target="#myModal"> 了解更多</a>
+                                <a href="${pageContext.request.contextPath}/profile"> 了解更多</a>
                             </div>
                         </div>
                     </li>
@@ -32,20 +32,6 @@
         </div>
     </div>
 </div>
-<!-- modal-sign -->
-<%--<div class="modal bnr-modal fade" id="myModal" tabindex="-1" role="dialog">--%>
-    <%--<div class="modal-dialog" role="document">--%>
-        <%--<div class="modal-content">--%>
-            <%--<div class="modal-header">--%>
-                <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--%>
-            <%--</div>--%>
-            <%--<div class="modal-body modal-spa">--%>
-                <%--<img class="img-responsive" src="${pageContext.request.contextPath}/statics/images/g1.jpg" alt="">--%>
-                <%--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis felis mattis at. Donec fringilla lacus eu pretium rutrum. Cras aliquet congue ullamcorper. Etiam mattis eros eu ullamcorper volutpat. Proin ut dui a urna efficitur varius. uisque molestie cursus mi et congue consectetur adipiscing elit cras rutrum iaculis enim, Lorem ipsum dolor sit amet, non convallis felis mattis at. Maecenas sodales tortor ac ligula ultrices dictum et quis urna. Etiam pulvinar metus neque, eget porttitor massa vulputate in. Fusce lacus purus, pulvinar ut lacinia id, sagittis eu mi. Vestibulum eleifend massa sem, eget dapibus turpis efficitur at. Aliquam viverra quis leo et efficitur. Nullam arcu risus, scelerisque quis interdum eget, fermentum viverra turpis. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut At vero eos </p>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-<%--</div>--%>
 <!-- //banner -->
 <!-- welcome -->
 <div class="welcome">
