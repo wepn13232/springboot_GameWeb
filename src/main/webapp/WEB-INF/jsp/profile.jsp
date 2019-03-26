@@ -31,60 +31,8 @@
 </head>
 <body>
 <!-- header -->
-<div class="header">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header navbar-left wthree">
-                <h1><a href="index.html">Edify<span>College Education</span></a></h1>
-            </div>
-            <!-- navigation -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="header-right wthree">
-                <div class="top-nav-text">
-                    <p>Call Us: <span>+00 111 2222 333</span></p>
-                    <div id="sb-search" class="sb-search">
-                        <form action="#" method="post">
-                            <input type="search" class="sb-search-input" name="Search" placeholder="Enter your search term..." id="search" required="">
-                            <input class="sb-search-submit" type="submit" value="">
-                            <span class="sb-icon-search"> </span>
-                        </form>
-                        <div class="clearfix"> </div>
-                        <!-- search-scripts -->
-                        <script src="${pageContext.request.contextPath}/statics/js/classie.js"></script>
-                        <script src="${pageContext.request.contextPath}/statics/js/uisearch.js"></script>
-                        <script>
-                            new UISearch( document.getElementById( 'sb-search' ) );
-                        </script>
-                        <!-- //search-scripts -->
-                    </div>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-left cl-effect-14">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="icons.html">Web Icons</a></li>
-                                <li><a href="codes.html">Short Codes</a></li>
-                            </ul>
-                        </li>
 
-                        <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                    <div class="clearfix"> </div>
-                </div><!-- //navigation -->
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </nav>
-</div>
+<%@include file="common/header.jsp"%>
 <!-- //header -->
 <!-- banner -->
 <div class="banner-1">
@@ -94,15 +42,9 @@
 <div class="portfolio">
     <div class="container">
         <div class="w3ls-title">
-            <h3 class="agileits-title w3title1">Portfolio</h3>
+            <h3 class="agileits-title w3title1">游戏分类</h3>
         </div>
         <div class="gallery_gds agileits-w3layouts">
-            <ul class="simplefilter">
-                <li class="active" data-filter="all">All</li>
-                <li data-filter="1">Category 1</li>
-                <li data-filter="2">Category 2</li>
-                <li data-filter="3">Category 3</li>
-            </ul>
             <div class="filtr-container">
                 <div class="col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Busy streets">
                     <div class="hover ehover14">
@@ -110,7 +52,7 @@
                             <img src="${pageContext.request.contextPath}/statics/images/g1.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
                                 <h4>Portfolio</h4>
-                                <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
+                                <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">查看</div>
                             </div>
                         </a>
                     </div>
@@ -188,14 +130,11 @@
 </div>
 <!-- //portfolio -->
 <!-- footer -->
-<div class="footer">
-    <div class="container">
 
-        <div class="clearfix"> </div>
-    </div>
-</div>
 <div class="footer-w3copy w3-agileits">
-    <p>Copyright &copy; 2017.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+<p>
+    2019.林启元
+</p>
 </div>
 <!-- //footer -->
 <!-- Include jQuery & Filterizr -->
