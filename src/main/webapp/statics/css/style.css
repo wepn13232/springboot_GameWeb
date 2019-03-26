@@ -201,7 +201,7 @@ nav.navbar.navbar-default {
 /*-- //search-ends --*/
 /*-- //header --*/
 .banner-1 {
-    background:url(../images/pic1.png)no-repeat center center;
+    background:url(../images/banner.jpg)no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
     background-size: cover; 
@@ -209,7 +209,7 @@ nav.navbar.navbar-default {
 }
 /*-- banner --*/
 .banner {
-    background:url(../images/pic1.png)no-repeat center center;
+    background:url(../images/banner.jpg)no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
     background-size: cover; 
@@ -839,7 +839,7 @@ h3.w3ls-title{
 /*-- //welcome --*/
 /*-- testimonials --*/
 .testimonials{
-   background: url(../images/pic2.jpg)no-repeat 0px 0px;
+   background: url(../images/mid-banner.jpg)no-repeat 0px 0px;
     background-size: cover;
     background-attachment: fixed;
     padding: 5em 0;
@@ -919,7 +919,7 @@ h3.w3ls-title{
 /*-- //features --*/
 /*-- work start here --*/
 .work {
-    background: url(../images/pic2.jpg)no-repeat 0px 0px;
+    background: url(../images/mid-banner.jpg)no-repeat 0px 0px;
     background-size: cover;
     background-attachment: fixed;
     padding: 5em 0;
