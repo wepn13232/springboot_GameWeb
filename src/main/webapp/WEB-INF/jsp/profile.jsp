@@ -10,8 +10,24 @@
 <html lang="en">
 <head>
     <title>Portfolio</title>
-    <%@include file="common/head.jsp"%>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="${pageContext.request.contextPath}/statics/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="${pageContext.request.contextPath}/statics/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="${pageContext.request.contextPath}/statics/css/font-awesome.css" rel="stylesheet">  <!-- font-awesome icons -->
+    <link href="${pageContext.request.contextPath}/statics/css/index.css" rel="stylesheet" type="text/css" media="all" /> <!-- filter css -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/swipebox.css"> <!-- filter css -->
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="${pageContext.request.contextPath}/statics/js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- //web-fonts -->
 </head>
 <body>
 <!-- header -->
@@ -39,8 +55,8 @@
                         </form>
                         <div class="clearfix"> </div>
                         <!-- search-scripts -->
-                        <script src="js/classie.js"></script>
-                        <script src="js/uisearch.js"></script>
+                        <script src="${pageContext.request.contextPath}/statics/js/classie.js"></script>
+                        <script src="${pageContext.request.contextPath}/statics/js/uisearch.js"></script>
                         <script>
                             new UISearch( document.getElementById( 'sb-search' ) );
                         </script>
@@ -90,8 +106,8 @@
             <div class="filtr-container">
                 <div class="col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Busy streets">
                     <div class="hover ehover14">
-                        <a href="images/g1.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g1.jpg" alt="" class="img-responsive" />
+                        <a href="${pageContext.request.contextPath}/statics/images/g1.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                            <img src="${pageContext.request.contextPath}/statics/images/g1.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
                                 <h4>Portfolio</h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
@@ -101,8 +117,8 @@
                 </div>
                 <div class="col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Luminous night">
                     <div class="hover ehover14">
-                        <a href="images/g2.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g2.jpg" alt="" class="img-responsive" />
+                        <a href="${pageContext.request.contextPath}/statics/images/g2.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                            <img src="${pageContext.request.contextPath}/statics/images/g2.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
                                 <h4>Portfolio</h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
@@ -112,8 +128,8 @@
                 </div>
                 <div class="col-sm-4 col-xs-6 filtr-item" data-category="3" data-sort="City wonders">
                     <div class="hover ehover14">
-                        <a href="images/g3.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g3.jpg" alt="" class="img-responsive" />
+                        <a href="${pageContext.request.contextPath}/statics/images/g3.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                            <img src="${pageContext.request.contextPath}/statics/images/g3.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
                                 <h4>Portfolio</h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
@@ -123,8 +139,8 @@
                 </div>
                 <div class="col-sm-4 col-xs-6 filtr-item" data-category="3" data-sort="Industrial site">
                     <div class="hover ehover14">
-                        <a href="images/g4.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g4.jpg" alt="" class="img-responsive" />
+                        <a href="${pageContext.request.contextPath}/statics/images/g4.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                            <img src="${pageContext.request.contextPath}/statics/images/g4.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
                                 <h4>Portfolio</h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
@@ -134,8 +150,8 @@
                 </div>
                 <div class="col-sm-4 col-xs-6 filtr-item" data-category="3" data-sort="In production">
                     <div class="hover ehover14">
-                        <a href="images/g5.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g5.jpg" alt="" class="img-responsive" />
+                        <a href="${pageContext.request.contextPath}/statics/images/g5.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                            <img src="${pageContext.request.contextPath}/statics/images/g5.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
                                 <h4>Portfolio</h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
@@ -145,8 +161,8 @@
                 </div>
                 <div class="col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Peaceful lake">
                     <div class="hover ehover14">
-                        <a href="images/g6.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g6.jpg" alt="" class="img-responsive" />
+                        <a href="${pageContext.request.contextPath}/statics/images/g6.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                            <img src="${pageContext.request.contextPath}/statics/images/g6.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
                                 <h4>Portfolio</h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
@@ -156,30 +172,8 @@
                 </div>
                 <div class="col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Industrial site">
                     <div class="hover ehover14">
-                        <a href="images/g7.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g7.jpg" alt="" class="img-responsive" />
-                            <div class="overlay">
-                                <h4>Portfolio</h4>
-                                <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="In production">
-                    <div class="hover ehover14">
-                        <a href="images/g8.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g8.jpg" alt="" class="img-responsive" />
-                            <div class="overlay">
-                                <h4>Portfolio</h4>
-                                <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-6 filtr-item" data-category="2, 4" data-sort="Peaceful lake">
-                    <div class="hover ehover14">
-                        <a href="images/g9.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                            <img src="images/g9.jpg" alt="" class="img-responsive" />
+                        <a href="${pageContext.request.contextPath}/statics/images/g7.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                            <img src="${pageContext.request.contextPath}/statics/images/g7.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
                                 <h4>Portfolio</h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
@@ -196,32 +190,7 @@
 <!-- footer -->
 <div class="footer">
     <div class="container">
-        <div class="col-md-4 w3layouts_footer_grid">
-            <div class="title">
-                <h2>Follow Us</h2>
-            </div>
-            <div class="social-icon social_agileinfo">
-                <a href="#" class="social-button twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="social-button facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="social-button google"><i class="fa fa-google-plus"></i></a>
-                <a href="#" class="social-button dribbble"><i class="fa fa-dribbble"></i></a>
-                <a href="#" class="social-button skype"><i class="fa fa-skype"></i></a>
-            </div>
-        </div>
-        <div class="col-md-8 w3layouts_footer_grid">
-            <form action="#" method="post">
-                <input type="email" name="Email" placeholder="Enter Your Email..." required="">
-                <input type="submit" value="Submit">
-                <div class="clearfix"> </div>
-            </form>
-            <ul class="w3l_footer_nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="icons.html">Icons</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
+
         <div class="clearfix"> </div>
     </div>
 </div>
@@ -230,8 +199,8 @@
 </div>
 <!-- //footer -->
 <!-- Include jQuery & Filterizr -->
-<script src="js/jquery.filterizr.js"></script>
-<script src="js/controls.js"></script>
+<script src="${pageContext.request.contextPath}/statics/js/jquery.filterizr.js"></script>
+<script src="${pageContext.request.contextPath}/statics/js/controls.js"></script>
 <!-- Kick off Filterizr -->
 <script type="text/javascript">
     $(function() {
@@ -241,13 +210,13 @@
 </script>
 <!--//gallery-->
 <!-- swipe box js -->
-<script src="js/jquery.swipebox.min.js"></script>
+<script src="${pageContext.request.contextPath}/statics/js/jquery.swipebox.min.js"></script>
 <script type="text/javascript">
     jQuery(function($) {
         $(".swipebox").swipebox();
     });
 </script>
 <!-- //swipe box js -->
-<script src="js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/statics/js/bootstrap.js"></script>
 </body>
 </html>
