@@ -165,7 +165,7 @@
             <h3>已经有喜欢的游戏?</h3>
             <p>那还等什么！赶紧来了解一蛤！掏出你的钱包！挑选你的游戏！</p>
             <div class="w3btns-agile">
-                <a href="${pageContext.request.contextPath}/profile">前往游戏分类</a>
+                <a href="${pageContext.request.contextPath}/profile">前往游戏商城</a>
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>游戏分类</title>
+    <title>游戏商城</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
@@ -42,7 +42,7 @@
 <div class="portfolio">
     <div class="container">
         <div class="w3ls-title">
-            <h3 class="agileits-title w3title1">游戏分类</h3>
+            <h3 class="agileits-title w3title1">游戏商城</h3>
         </div>
         <div class="gallery_gds agileits-w3layouts">
             <div class="filtr-container">
