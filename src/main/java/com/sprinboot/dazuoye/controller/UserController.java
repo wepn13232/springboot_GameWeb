@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -15,34 +16,21 @@ public class UserController {
     @Resource
     private UserServices userServices;
 
-//查询所有用户
-    @RequestMapping("/allUser")
-    public String allUser(Model model) {
-        User user = new User();
-        List<User> users= userServices.getAllUser(user);
-        model.addAttribute("userinfo",users);
-        return "index";
+    @RequestMapping("/login")
+    public String tologin(){
+        return "login";
     }
 
-//    删除用户
-    @RequestMapping("/delectUser")
-    public String delectUser(@RequestParam Integer id){
-        userServices.delectUser(id);
-        return "index";
+    @RequestMapping("/dologin")
+    public String dologin(@RequestParam String username, @RequestParam String password, Model model, HttpSession httpSession) throws Exception {
+     User user=userServices.getUser(username,password);
+     if (user!=null){
+         httpSession.setAttribute("usersession",user);
+         return "index";
+     }else {
+         model.addAttribute("error","账号或密码错误！");
+         return "login";
+     }
     }
 
-//    增加用户
-    @RequestMapping("/addUser")
-    public String addUser(@RequestParam String username,@RequestParam String password){
-        userServices.insertUser(username,password);
-        return "index";
-    }
-
-//    修改密码
-    @RequestMapping("/updatePwd")
-    public String updatePwd(@RequestParam String username,@RequestParam String password){
-        userServices.updatePassword(username,password);
-        return "index";
-
-    }
 }

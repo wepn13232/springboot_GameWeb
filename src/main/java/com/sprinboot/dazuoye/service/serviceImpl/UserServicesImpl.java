@@ -15,26 +15,24 @@ public class UserServicesImpl implements UserServices {
     @Resource
     private UserDao userDao;
 
-
-
-
+//用户登录
     @Override
-    public List<User> getAllUser(User user) {
-        return userDao.getAllUser(user);
+    public User getUser(String username, String password) throws Exception {
+        User user=null;
+        user=userDao.selectAllUser(username);
+        if(user!=null){
+            if(user.getPassword().equals(password)){
+                return user;
+            }
+        }
+        return null;
     }
 
+    //    用户注册
     @Override
-    public void delectUser(Integer id) {
-        userDao.delectUser(id);
-    }
-
-    @Override
-    public int insertUser(String username, String password) {
-        return userDao.insertUser(username, password);
-    }
-
-    @Override
-    public int updatePassword(String username, String password) {
-        return userDao.updatePassword(username, password);
+    public void addUser(User user) throws Exception {
+        user.setCashLeft(0); //默认余额为0
+        user.setGame_Name(""); //默认未购买任何游戏
+        userDao.addUser(user);
     }
 }

@@ -11,19 +11,11 @@ import java.util.List;
 @Mapper
 public interface UserDao {
 
-//    查询用户
-    @Select("select * from user")
-     List<User> getAllUser(User user);
+//更具用户名查询用户
+    @Select("select * from user where username=#{username}")
+    User selectAllUser(@Param("username") String username) throws Exception;
 
-//删除用户
-@Delete("delect  from user where id=#{id}")
-     void delectUser(Integer id);
-
-//增加用户
-    @Insert("insert into user values(username,password)")
-    int insertUser(String username,String password);
-
-//    修改用户密码
-    @Update("update user set password=#{password} where username=#{username}")
-    int updatePassword(String username,String password);
+//    增加用户
+    @Insert("insert into user(username,password) values(#{username},#{password})")
+    void addUser(User user) throws Exception;
 }

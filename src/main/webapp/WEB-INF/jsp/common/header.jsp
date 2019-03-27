@@ -29,6 +29,7 @@
                         <li><a href="${pageContext.request.contextPath}/index">主页</a></li>
                         <li><a href="${pageContext.request.contextPath}/profile">游戏商城</a></li>
                         <li><a href="${pageContext.request.contextPath}/about">社区论坛</a></li>
+                        <li><a href="${pageContext.request.contextPath}/login">登录/注册</a></li>
 
                     </ul>
                     <div class="clearfix"> </div>
