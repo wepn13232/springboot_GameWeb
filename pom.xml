@@ -8,7 +8,7 @@
         <version>2.2.0.BUILD-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>top.mnilsy</groupId>
+    <groupId>springboot.dazuoye</groupId>
     <artifactId>door</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>door</name>
