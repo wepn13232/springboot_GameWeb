@@ -201,6 +201,11 @@
 
     });
 </script>
+<script>
+    function scrollTop() {
+       $("html,body").animate({scrollTop:$("#welcome").offset().top},500)
+    }
+</script>
 <!-- //End-slider-script -->
 <script src="${pageContext.request.contextPath}/statics/js/bootstrap.js"></script>
 </body>

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>购物指南</title>
+    <title>社区论坛</title>
     <%@include file="common/head.jsp"%>
 
 </head>
@@ -25,7 +25,7 @@
 <div class="about">
     <div class="container">
         <div class="w3ls-title">
-            <h3 class="agileits-title">购物指南</h3>
+            <h3 class="agileits-title">社区论坛</h3>
         </div>
         <div class="about-w3ls-row">
             <div class="col-md-5 about-left">

@@ -28,7 +28,7 @@
                     <ul class="nav navbar-nav navbar-left cl-effect-14">
                         <li><a href="${pageContext.request.contextPath}/index">主页</a></li>
                         <li><a href="${pageContext.request.contextPath}/profile">游戏分类</a></li>
-                        <li><a href="${pageContext.request.contextPath}/about">购物指南</a></li>
+                        <li><a href="${pageContext.request.contextPath}/about">社区论坛</a></li>
 
                     </ul>
                     <div class="clearfix"> </div>

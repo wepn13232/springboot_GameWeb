@@ -51,7 +51,7 @@
                         <a href="${pageContext.request.contextPath}/statics/images/g1.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
                             <img src="${pageContext.request.contextPath}/statics/images/g1.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
-                                <h4>Portfolio</h4>
+                                <h4>FPS（第一人称射击）</h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">查看</div>
                             </div>
                         </a>
@@ -62,7 +62,7 @@
                         <a href="${pageContext.request.contextPath}/statics/images/g2.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
                             <img src="${pageContext.request.contextPath}/statics/images/g2.jpg" alt="" class="img-responsive" />
                             <div class="overlay">
-                                <h4>Portfolio</h4>
+                                <h4></h4>
                                 <div class="info nullbutton button" data-toggle="modal" data-target="#modal14">Show More</div>
                             </div>
                         </a>
