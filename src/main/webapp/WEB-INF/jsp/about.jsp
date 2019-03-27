@@ -10,12 +10,13 @@
 <html lang="en">
 <head>
     <title>社区论坛</title>
-    <%@include file="common/head.jsp"%>
+    <%@include file="common/head.jsp" %>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/aboutCss.css">
 
 </head>
 <body>
 <!-- header -->
-<%@include file="common/header.jsp"%>
+<%@include file="common/header.jsp" %>
 <!-- //header -->
 <!-- banner -->
 <div class="banner-1">
@@ -27,41 +28,23 @@
         <div class="w3ls-title">
             <h3 class="agileits-title">社区论坛</h3>
         </div>
-        <div class="about-w3ls-row">
-            <div class="col-md-5 about-left">
-                <img src="${pageContext.request.contextPath}/statics/images/about.jpg" class="img-responsive" alt=""/>
-            </div>
-            <div class="col-md-7 about-right">
-                <div class="about-agile-row">
-                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                        <ul id="myTab" class=" nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Trouble?</a></li>
-                            <li role="presentation"><a href="#carl" role="tab" id="carl-tab" data-toggle="tab" aria-controls="carl"> Contact</a></li>
-                        </ul>
-                        <div class="clearfix"> </div>
-                        <div id="myTabContent" class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-                                <div class="tabcontent-grids">
-                                    <p>如果你还不知道怎么在这个网站混一混，了解一蛤下面的步骤~</p>
-                                    <ul>
-                                        <li><i class="fa fa-check-square-o"></i> 浏览社区、论坛 </li>
-                                        <li><i class="fa fa-check-square-o"></i> 浏览游戏分类区 </li>
-                                        <li><i class="fa fa-check-square-o"></i> 挑选你喜欢的游戏 </li>
-                                        <li><i class="fa fa-check-square-o"></i> 加入购物车并购买 </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="carl" aria-labelledby="carl-tab">
-                                <div class="tabcontent-grids">
-                                    <p>遇到什么问题了吗？都可以联系我们的客服：466214222@qq.com</p>
-                                </div>
-                            </div>
-                            <div class="clearfix"> </div>
+        <%--论坛内容区--%>
+        <div class="container-fluid">
+            <div class="content">
+
+                <div class="row">
+                    <a href="${pageContext.request.contextPath}/community" class="col-md-3 col-sm-3 col-md-6 game_a" target="_blank">
+                        <div class="content_div">
+                            <h5 style="color: #00AFF0">《彩虹六号：围攻》</h5>
+                            <p class="content_p">This game is funny as fuck , bro ! Come and join with me !</p>
                         </div>
-                    </div>
+                        <div class="clearfix"></div>
+                    </a>
+                    <div class="clearfix" style="margin-bottom: 4em"></div>
                 </div>
+
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"> </div>
         </div>
     </div>
 </div>
@@ -79,11 +62,6 @@
     </div>
 </div>
 <!-- work end here -->
-<div class="footer-w3copy w3-agileits">
-<p>2019.林启元
-</p></div>
-<!-- //footer -->
-
-<script src="${pageContext.request.contextPath}/statics/js/bootstrap.js"></script>
+<%@include file="common/footer.jsp"%>
 </body>
 </html>

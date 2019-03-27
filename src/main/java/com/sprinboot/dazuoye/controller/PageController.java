@@ -22,4 +22,10 @@ public class PageController {
     public String about(){
         return "about";
     }
+
+//    跳转至详细论坛
+    @RequestMapping("/community")
+    public String community(){
+        return "community";
+    }
 }

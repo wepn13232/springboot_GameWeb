@@ -1,0 +1,35 @@
+.content_div {
+    border-left: 5px solid #01edc9;
+    padding-left: 2em;
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    -ms-transition: ease-in-out 0.2s;
+    -o-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s;
+}
+
+.content_p {
+    padding-top: 1em;
+}
+
+.game_a {
+    background-color: rgba(0, 175, 240, 0);
+    padding: 1em 1em;
+}
+
+/*.game_a:hover {*/
+/*background-color: rgba(0, 175, 240, 0.1);*/
+/*}*/
+.content_div:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.content_p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
