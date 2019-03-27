@@ -28,4 +28,10 @@ public class PageController {
     public String community(){
         return "community";
     }
+
+//    跳转至注册页面
+    @RequestMapping("/register")
+    public String register(){
+        return "register";
+    }
 }
