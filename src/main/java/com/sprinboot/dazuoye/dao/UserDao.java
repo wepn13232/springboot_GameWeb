@@ -16,6 +16,6 @@ public interface UserDao {
     User selectAllUser(@Param("username") String username) throws Exception;
 
 //    增加用户
-    @Insert("insert into user(username,password) values(#{username},#{password})")
+    @Insert("insert into user(username,password,cashLeft,game_name) values(#{username},#{password},#{cashLeft},#{game_name})")
     void addUser(User user) throws Exception;
 }

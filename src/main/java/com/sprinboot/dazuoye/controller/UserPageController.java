@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class PageController {
+@RequestMapping("/user")
+public class UserPageController {
 
-    //    跳转至主页
     @RequestMapping("/index")
-    public String index() {
-        return "index";
+    public String index(){
+        return "user/index";
     }
-
+//    跳转至游戏商城
     @RequestMapping("/profile")
     public String profile() {
         return "profile";
@@ -27,11 +27,5 @@ public class PageController {
     @RequestMapping("/community")
     public String community() {
         return "community";
-    }
-
-    //    跳转至注册页面
-    @RequestMapping("/register")
-    public String register() {
-        return "register";
     }
 }

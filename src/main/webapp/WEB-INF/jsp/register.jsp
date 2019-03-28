@@ -23,7 +23,7 @@
 
         <div class="lowin-box lowin-register">
             <div class="lowin-box-inner">
-                <form>
+                <form action="${pageContext.request.contextPath}/doregister">
                     <p>来创建个账户吧~</p>
                     <div class="lowin-group">
                         <label>Username</label>
@@ -33,7 +33,7 @@
                         <label>Password</label>
                         <input type="password" name="password" autocomplete="current-password" class="lowin-input">
                     </div>
-                    <button class="lowin-btn">
+                    <button class="lowin-btn" type="submit">
                         注册
                     </button>
 

@@ -27,17 +27,18 @@
 
         <div class="lowin-box lowin-login">
             <div class="lowin-box-inner">
-                <form>
+                <form  name="login_form" class="login_form">
                     <p>请登录</p>
                     <div class="lowin-group">
                         <label>Username <a href="#" class="login-back-link">Sign in?</a></label>
-                        <input type="text" autocomplete="text" name="email" class="lowin-input">
+                        <input type="text" autocomplete="text" name="username" class="lowin-input" id="username">
                     </div>
                     <div class="lowin-group">
                         <label>Password <a href="#" class="login-back-link">Sign in?</a></label>
-                        <input type="password" autocomplete="password" name="email" class="lowin-input">
+                        <input type="password" autocomplete="password" name="password" class="lowin-input" id="password">
                     </div>
-                    <button class="lowin-btn login-btn" type="submit">
+                    <span id="spanError"></span>
+                    <button class="lowin-btn login-btn" id="form_submit">
                         登录
                     </button>
 
@@ -53,6 +54,7 @@
 </div>
 
 <%@include file="common/footer.jsp" %>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/loginjs.js"></script>
 
 </body>
 </html>

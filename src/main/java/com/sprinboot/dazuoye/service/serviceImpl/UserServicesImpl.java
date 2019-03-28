@@ -30,9 +30,12 @@ public class UserServicesImpl implements UserServices {
 
     //    用户注册
     @Override
-    public void addUser(User user) throws Exception {
+    public void addUser(String username,String password) throws Exception {
+        User user=new User();
         user.setCashLeft(0); //默认余额为0
-        user.setGame_Name(""); //默认未购买任何游戏
+        user.setGame_name(""); //默认未购买任何游戏
+        user.setUsername(username);
+        user.setPassword(password);
         userDao.addUser(user);
     }
 }
