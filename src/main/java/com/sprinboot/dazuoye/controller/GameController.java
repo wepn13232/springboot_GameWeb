@@ -20,4 +20,10 @@ public class GameController {
         model.addAttribute("gameinfo", gameServices.findByPage(currentPage));
         return "profile";
     }
+
+//    跳转至游戏具体页面
+    @RequestMapping("/game_info")
+    public String game_info(){
+        return "game_info";
+    }
 }

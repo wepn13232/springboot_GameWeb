@@ -9,3 +9,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+.game_pic{
+    width: 200px;
+    height: 300px;
+}

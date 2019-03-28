@@ -30,7 +30,8 @@
     <link href="${pageContext.request.contextPath}/statics/css/index.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- filter css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/swipebox.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/statics/css/shopcss.css"> <!-- filter css -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
+    <!-- filter css -->
     <!-- //Custom Theme files -->
     <!-- js -->
     <script src="${pageContext.request.contextPath}/statics/js/jquery-2.2.3.min.js"></script>
@@ -61,28 +62,53 @@
             <div class="filtr-container">
 
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
-                <div class="thumbnail col-md-3 col-sm-3 col-xs-6 boxshodow">
-                    <div class="game_pic">
-                        <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}" alt="">
-                    </div>
-                    <div class="game_content">
-                        <p class="game_info">${gameinfo.game_info}</p>
-                    </div>
-                    <div class="game_price col-md-4 col-md-offset-8">
-                        <p style="color: red;font-size: 2em">$${gameinfo.game_price}</p>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-md-offset-4">
-                        <a class="btn btn-info" href="#">加入购物车</a>
-                        <a class="btn btn-default" href="#">查看</a>
-                    </div>
-                </div>
-                </c:forEach>
 
-                <div class="clearfix"></div>
+                    <%--<div class=" col-md-3 col-sm-3 col-xs-6 boxshodow">--%>
+                    <%--<div class="thumbnail">--%>
+                    <%--<img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"--%>
+                    <%--alt="">--%>
+                    <%--<div class="caption">--%>
+
+                    <%--<p class="game_info">${gameinfo.game_info}</p>--%>
+                    <%--<div class="game_price col-md-4 col-md-offset-8">--%>
+                    <%--<p style="color: red;font-size: 2em">$${gameinfo.game_price}</p>--%>
+                    <%--</div>--%>
+                    <%--<div class="col-md-12 col-sm-12 col-md-offset-4">--%>
+                    <%--<a class="btn btn-info" href="#">加入购物车</a>--%>
+                    <%--<a class="btn btn-default" href="#">查看</a>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
+                    <%--</div>--%>
+                <div class="col-sm-6 col-md-3">
+                    <a href="${pageContext.request.contextPath}/game_info">
+                        <div class="thumbnail boxshodow">
+                            <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
+                                 alt="通用的占位符缩略图">
+                            <div class="caption">
+                                <p class="game_info">${gameinfo.game_info}</p>
+                                <div class="text-center">
+                                    <p style="color: red;font-size: 2em">
+                                        $${gameinfo.game_price}</p>
+                                </div>
+
+                                <div class="button_shop center-block text-center">
+                                    <a class="btn btn-info" href="#">加入购物车</a>
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
+
+            </c:forEach>
+
+            <div class="clearfix"></div>
         </div>
-        </c:if>
     </div>
+    </c:if>
+</div>
 </div>
 <!-- //portfolio -->
 <!-- footer -->

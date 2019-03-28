@@ -26,6 +26,12 @@ public class UserPageController {
         return "profile";
     }
 
+    //    跳转至游戏具体页面
+    @RequestMapping("/game_info")
+    public String game_info(){
+        return "user/game_info";
+    }
+
     //    跳转至论坛
     @RequestMapping("/about")
     public String about() {

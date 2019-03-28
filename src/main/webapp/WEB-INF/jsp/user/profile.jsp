@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: linqiyuan
@@ -29,7 +30,8 @@
     <link href="${pageContext.request.contextPath}/statics/css/index.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- filter css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/swipebox.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/statics/css/shopcss.css"> <!-- filter css -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
+    <!-- filter css -->
     <!-- //Custom Theme files -->
     <!-- js -->
     <script src="${pageContext.request.contextPath}/statics/js/jquery-2.2.3.min.js"></script>
@@ -55,34 +57,41 @@
         <div class="w3ls-title">
             <h3 class="agileits-title w3title1">游戏商城</h3>
         </div>
+        <c:if test="${!empty requestScope.gameinfo}">
         <div class="gallery_gds agileits-w3layouts">
             <div class="filtr-container">
 
-                <%--<div class="col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Busy streets">--%>
-                <%--<div class="hover">--%>
-                <%--<a href="${pageContext.request.contextPath}/##">--%>
-                <%--<img src="${pageContext.request.contextPath}/statics/images/g1.jpg" alt="" class="img-responsive game_pic" />--%>
-                <%--</a>--%>
-                <%--</div>--%>
-                <%--</div>--%>
+                <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
 
-                <div class="thumbnail col-md-3 col-sm-3 col-xs-6 boxshodow">
-                    <div class="">
-                        <img>
-                    </div>
-                    <div class="">
-                        <p>xxx</p>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-md-offset-4">
-                        <a class="btn btn-info">加入购物车</a>
-                        <a class="btn btn-default">查看</a>
-                    </div>
+                <div class="col-sm-6 col-md-3">
+                    <a href="${pageContext.request.contextPath}/user/game_info">
+                        <div class="thumbnail boxshodow">
+                            <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
+                                 alt="通用的占位符缩略图">
+                            <div class="caption">
+                                <p class="game_info">${gameinfo.game_info}</p>
+                                <div class="text-center">
+                                    <p style="color: red;font-size: 2em">
+                                        $${gameinfo.game_price}</p>
+                                </div>
+
+                                <div class="button_shop center-block text-center">
+                                    <a class="btn btn-info" href="${pageContext.request.contextPath}/user">加入购物车</a>
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-
-                <div class="clearfix"></div>
             </div>
+
+            </c:forEach>
+
+            <div class="clearfix"></div>
         </div>
     </div>
+    </c:if>
+</div>
 </div>
 <!-- //portfolio -->
 <!-- footer -->
