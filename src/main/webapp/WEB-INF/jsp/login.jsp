@@ -39,9 +39,8 @@
                     </div>
                     <span id="spanError" style="color: red" class="col-md-offset-4"></span>
                     <div class="clearfix" style="padding: 1em"></div>
-                    <button class="lowin-btn login-btn" id="form_submit">
-                        登录
-                    </button>
+                    <input class="lowin-btn login-btn" id="form_submit" value="登录" type="button"/>
+
 
                     <div class="text-foot">
                         还没有账号吗? <a href="${pageContext.request.contextPath}/register" class="register-link">注册</a>

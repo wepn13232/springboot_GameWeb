@@ -6,7 +6,7 @@ $(function () {
 function checkUser() {
     $.ajax({
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
-        type: "POST",
+        type: "post",
         url: "/dologin",
         data: {
             "username": $('#username').val(), "password": $('#password').val()
@@ -17,7 +17,8 @@ function checkUser() {
         success: function (data) {
             if (data.lg === "error") {
                 $("#spanError").html("账号密码错误！");
-            } else {
+            }
+            else {
                 username=data.user.username;
                 window.location.href = "/user/index";
             }

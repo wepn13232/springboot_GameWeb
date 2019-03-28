@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -25,12 +26,12 @@ public class UserController {
 
     @RequestMapping("/dologin")
     @ResponseBody
-    public String dologin(@RequestParam String username, @RequestParam String password, Model model, HttpSession httpSession) throws Exception {
+    public String dologin(@RequestParam String username, @RequestParam String password, Model model, HttpServletRequest request) throws Exception {
         User user = userServices.getUser(username, password);
         JSONObject json = new JSONObject();
 
         if (user != null) {
-            httpSession.setAttribute("usersession", user);
+            request.getSession().setAttribute("usersession", user);
                 json.put("user", user);
             json.put("lg", "success");
         } else {

@@ -14,18 +14,18 @@ public class UserPageController {
 //    跳转至游戏商城
     @RequestMapping("/profile")
     public String profile() {
-        return "profile";
+        return "user/profile";
     }
 
     //    跳转至论坛
     @RequestMapping("/about")
     public String about() {
-        return "about";
+        return "user/about";
     }
 
     //    跳转至详细论坛
     @RequestMapping("/community")
     public String community() {
-        return "community";
+        return "user/community";
     }
 }

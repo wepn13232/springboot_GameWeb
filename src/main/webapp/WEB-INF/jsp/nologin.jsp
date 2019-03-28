@@ -12,8 +12,8 @@
         <div class="jumbotron">
             <h1>你想干嘛？</h1>
             <p>你还没登录呢！</p>
-            <p><a href="${pageContext.request.contextPath}/index" class="btn btn-danger btn-lg"
-                  role="button">确定</a></p>
+            <p><a href="${pageContext.request.contextPath}/login" class="btn btn-danger btn-lg"
+                  role="button">前往登录页</a></p>
         </div>
     </div>
 </div>

@@ -34,4 +34,10 @@ public class PageController {
     public String register() {
         return "register";
     }
+
+//    跳转至未登录页面
+    @RequestMapping("/nologin")
+    public String nologin(){
+        return "nologin";
+    }
 }
