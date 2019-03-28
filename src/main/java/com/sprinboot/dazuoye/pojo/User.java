@@ -5,19 +5,19 @@ public class User {
     private String password;//密码
     private Integer id; //id
     private Integer cashLeft;//剩余余额
-    private String game_Name ;//已购买的游戏
+    private String gameExist;//已购买的游戏
 
 
     public User() {
         super();
     }
 
-    public User(String username, String password, Integer id, Integer cashLeft, String game_Name) {
+    public User(String username, String password, Integer id, Integer cashLeft, String gameExist) {
         this.username = username;
         this.password = password;
         this.id = id;
         this.cashLeft = cashLeft;
-        this.game_Name = game_Name;
+        this.gameExist = gameExist;
     }
 
     public String getUsername() {
@@ -52,11 +52,11 @@ public class User {
         this.cashLeft = cashLeft;
     }
 
-    public String getGame_Name() {
-        return game_Name;
+    public String getGameExist() {
+        return gameExist;
     }
 
-    public void setGame_Name(String game_Name) {
-        this.game_Name = game_Name;
+    public void setGameExist(String gameExist) {
+        this.gameExist = gameExist;
     }
 }
