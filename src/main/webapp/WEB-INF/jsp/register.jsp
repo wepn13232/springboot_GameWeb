@@ -33,9 +33,9 @@
                         <label>Password</label>
                         <input type="password" name="password" autocomplete="current-password" class="lowin-input">
                     </div>
-                    <button class="lowin-btn" type="submit">
-                        注册
-                    </button>
+                    <input class="lowin-btn" type="button" value="注册" id="register">
+
+
 
                     <div class="text-foot">
                         已经有账号了？ <a href="${pageContext.request.contextPath}/login" class="login-link">登录</a>
