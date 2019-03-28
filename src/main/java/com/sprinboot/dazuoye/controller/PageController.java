@@ -12,10 +12,7 @@ public class PageController {
         return "index";
     }
 
-    @RequestMapping("/profile")
-    public String profile() {
-        return "profile";
-    }
+
 
     //    跳转至论坛
     @RequestMapping("/about")

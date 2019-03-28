@@ -1,3 +1,11 @@
-.boxshodow{
+.boxshodow {
     box-shadow: 1px 1px 5px rgba(13, 13, 13, 0.42);
+}
+
+.game_info {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
