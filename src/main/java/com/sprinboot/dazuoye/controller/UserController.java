@@ -31,6 +31,7 @@ public class UserController {
 
         if (user != null) {
             httpSession.setAttribute("usersession", user);
+                json.put("user", user);
             json.put("lg", "success");
         } else {
 //            model.addAttribute("error", "账号或密码错误！");

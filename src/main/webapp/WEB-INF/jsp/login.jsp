@@ -37,7 +37,8 @@
                         <label>Password <a href="#" class="login-back-link">Sign in?</a></label>
                         <input type="password" autocomplete="password" name="password" class="lowin-input" id="password">
                     </div>
-                    <span id="spanError"></span>
+                    <span id="spanError" style="color: red" class="col-md-offset-4"></span>
+                    <div class="clearfix" style="padding: 1em"></div>
                     <button class="lowin-btn login-btn" id="form_submit">
                         登录
                     </button>

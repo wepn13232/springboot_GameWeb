@@ -26,10 +26,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-left cl-effect-14">
-                        <li><a href="${pageContext.request.contextPath}/index">主页</a></li>
-                        <li><a href="${pageContext.request.contextPath}/profile">游戏商城</a></li>
-                        <li><a href="${pageContext.request.contextPath}/about">社区论坛</a></li>
-                        <li><a href="${pageContext.request.contextPath}/###">欢迎您，</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/index">主页</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/profile">游戏商城</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/about">社区论坛</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/###">欢迎您，<span class="username"></span></a></li>
+
 
                     </ul>
                     <div class="clearfix"> </div>
