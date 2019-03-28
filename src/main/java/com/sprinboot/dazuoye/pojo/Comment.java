@@ -4,17 +4,18 @@ public class Comment {
     private Integer id;
     private Integer game_id;
     private String comment;
-    private String com_user;
+    private String username;
+
 
     public Comment() {
         super();
     }
 
-    public Comment(Integer id, Integer game_id, String comment, String com_user) {
+    public Comment(Integer id, Integer game_id, String comment, String username) {
         this.id = id;
         this.game_id = game_id;
         this.comment = comment;
-        this.com_user = com_user;
+        this.username = username;
     }
 
     public Integer getId() {
@@ -41,11 +42,11 @@ public class Comment {
         this.comment = comment;
     }
 
-    public String getCom_user() {
-        return com_user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setCom_user(String com_user) {
-        this.com_user = com_user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

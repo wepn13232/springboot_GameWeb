@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class OderList {
     private Integer id;
-    private String game;
-    private String user;
+    private String game_name;
+    private String username;
     private Date date;
 
     public OderList() {
         super();
     }
 
-    public OderList(Integer id, String game, String user, Date date) {
+    public OderList(Integer id, String game_name, String username, Date date) {
         this.id = id;
-        this.game = game;
-        this.user = user;
+        this.game_name = game_name;
+        this.username = username;
         this.date = date;
     }
 
@@ -27,20 +27,20 @@ public class OderList {
         this.id = id;
     }
 
-    public String getGame() {
-        return game;
+    public String getGame_name() {
+        return game_name;
     }
 
-    public void setGame(String game) {
-        this.game = game;
+    public void setGame_name(String game_name) {
+        this.game_name = game_name;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Date getDate() {

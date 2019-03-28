@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class ShopCar {
     private Integer id;
-    private String purchase_user;
-    private String purchase_game;
-    private Integer pruchase_price;
+    private String username;
+    private String game_name;
+    private Integer game_price;
     private Date date;
     private Integer status;
 
@@ -14,11 +14,11 @@ public class ShopCar {
         super();
     }
 
-    public ShopCar(Integer id, String purchase_user, String purchase_game, Integer pruchase_price, Date date, Integer status) {
+    public ShopCar(Integer id, String username, String game_name, Integer game_price, Date date, Integer status) {
         this.id = id;
-        this.purchase_user = purchase_user;
-        this.purchase_game = purchase_game;
-        this.pruchase_price = pruchase_price;
+        this.username = username;
+        this.game_name = game_name;
+        this.game_price = game_price;
         this.date = date;
         this.status = status;
     }
@@ -31,28 +31,28 @@ public class ShopCar {
         this.id = id;
     }
 
-    public String getPurchase_user() {
-        return purchase_user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setPurchase_user(String purchase_user) {
-        this.purchase_user = purchase_user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPurchase_game() {
-        return purchase_game;
+    public String getGame_name() {
+        return game_name;
     }
 
-    public void setPurchase_game(String purchase_game) {
-        this.purchase_game = purchase_game;
+    public void setGame_name(String game_name) {
+        this.game_name = game_name;
     }
 
-    public Integer getPruchase_price() {
-        return pruchase_price;
+    public Integer getGame_price() {
+        return game_price;
     }
 
-    public void setPruchase_price(Integer pruchase_price) {
-        this.pruchase_price = pruchase_price;
+    public void setGame_price(Integer game_price) {
+        this.game_price = game_price;
     }
 
     public Date getDate() {
