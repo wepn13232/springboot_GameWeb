@@ -11,8 +11,8 @@
 <html lang="en">
 <head>
     <title>游戏商城</title>
-    <%@include file="common/head.jsp" %>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
+    <%@include file="common/head.jsp"%>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
     <!-- //web-fonts -->
 </head>
 <body>
@@ -31,40 +31,39 @@
             <h3 class="agileits-title w3title1">游戏商城</h3>
         </div>
         <c:if test="${!empty requestScope.gameinfo}">
-        <div class="gallery_gds agileits-w3layouts">
-            <div class="filtr-container">
+
+            <div class="row col-md-13 col-sm-13">
 
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
+                    <div class="col-sm-6 col-md-3 gamebox">
+                        <a href="${pageContext.request.contextPath}/game_info?id=${gameinfo.id}">
+                            <div class="thumbnail boxshodow">
+                                <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
+                                     alt="通用的占位符缩略图" style="width: 245px;height: 346px">
+                                <div class="caption">
+                                    <p class="game_info">${gameinfo.game_info}</p>
+                                    <div class="text-center">
+                                        <p style="color: red;font-size: 2em">
+                                            $${gameinfo.game_price}</p>
+                                    </div>
 
-                <div class="col-sm-6 col-md-3">
-                    <a href="${pageContext.request.contextPath}/user/game_info?id=${gameinfo.id}">
-                        <div class="thumbnail boxshodow">
-                            <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
-                                 alt="通用的占位符缩略图">
-                            <div class="caption">
-                                <p class="game_info">${gameinfo.game_info}</p>
-                                <div class="text-center">
-                                    <p style="color: red;font-size: 2em">
-                                        $${gameinfo.game_price}</p>
-                                </div>
+                                    <div class="button_shop center-block text-center">
+                                        <a class="btn btn-info" href="${pageContext.request.contextPath}/user/###">加入购物车</a>
+                                    </div>
 
-                                <div class="button_shop center-block text-center">
-                                    <a class="btn btn-info" href="${pageContext.request.contextPath}/user">加入购物车</a>
                                 </div>
-                                </p>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                </c:forEach>
+
             </div>
 
-            </c:forEach>
+        </c:if>
 
-
-            <div class="clearfix"></div>
-        </div>
     </div>
-    </c:if>
+
+
     <table class="table" border="0" cellpadding="0" cellspacing="0" width="900px">
         <tr>
             <td class="td2">
@@ -97,7 +96,7 @@
         </tr>
     </table>
 
-</div>
+    <div class="clearfix"></div>
 </div>
 <!-- //portfolio -->
 <!-- footer -->

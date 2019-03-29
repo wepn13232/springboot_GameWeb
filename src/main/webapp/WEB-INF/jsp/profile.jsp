@@ -11,35 +11,8 @@
 <html lang="en">
 <head>
     <title>游戏商城</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content=""/>
-    <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
-    <!-- Custom Theme files -->
-    <link href="${pageContext.request.contextPath}/statics/css/bootstrap.css" type="text/css" rel="stylesheet"
-          media="all">
-    <link href="${pageContext.request.contextPath}/statics/css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link href="${pageContext.request.contextPath}/statics/css/font-awesome.css" rel="stylesheet">
-    <!-- font-awesome icons -->
-    <link href="${pageContext.request.contextPath}/statics/css/index.css" rel="stylesheet" type="text/css" media="all"/>
-    <!-- filter css -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/swipebox.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
-    <!-- filter css -->
-    <!-- //Custom Theme files -->
-    <!-- js -->
-    <script src="${pageContext.request.contextPath}/statics/js/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!-- web-fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
+   <%@include file="common/head.jsp"%>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
     <!-- //web-fonts -->
 </head>
 <body>
@@ -58,72 +31,72 @@
             <h3 class="agileits-title w3title1">游戏商城</h3>
         </div>
         <c:if test="${!empty requestScope.gameinfo}">
-        <div class="gallery_gds agileits-w3layouts">
-            <div class="filtr-container">
+
+            <div class="row col-md-13 col-sm-13">
 
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
+                    <div class="col-sm-6 col-md-3 gamebox">
+                        <a href="${pageContext.request.contextPath}/game_info?id=${gameinfo.id}">
+                            <div class="thumbnail boxshodow">
+                                <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
+                                     alt="通用的占位符缩略图" style="width: 245px;height: 346px">
+                                <div class="caption">
+                                    <p class="game_info">${gameinfo.game_info}</p>
+                                    <div class="text-center">
+                                        <p style="color: red;font-size: 2em">
+                                            $${gameinfo.game_price}</p>
+                                    </div>
 
-                <div class="col-sm-6 col-md-3">
-                    <a href="${pageContext.request.contextPath}/game_info?id=${gameinfo.id}">
-                        <div class="thumbnail boxshodow">
-                            <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
-                                 alt="通用的占位符缩略图">
-                            <div class="caption">
-                                <p class="game_info">${gameinfo.game_info}</p>
-                                <div class="text-center">
-                                    <p style="color: red;font-size: 2em">
-                                        $${gameinfo.game_price}</p>
-                                </div>
+                                    <div class="button_shop center-block text-center">
+                                        <a class="btn btn-info" href="${pageContext.request.contextPath}/user/###">加入购物车</a>
+                                    </div>
 
-                                <div class="button_shop center-block text-center">
-                                    <a class="btn btn-info" href="#">加入购物车</a>
                                 </div>
-                                </p>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                </c:forEach>
+
             </div>
 
-            </c:forEach>
+        </c:if>
 
-            <table class="table" border="0" cellpadding="0" cellspacing="0" width="900px">
-                <tr>
-                    <td class="td2">
-                        <span>第${requestScope.gameinfo.currPage }/ ${requestScope.gameinfo.totalPage}页</span>
-                        <span>总记录数：${requestScope.gameinfo.totalCount }  每页显示:${requestScope.gameinfo.pageSize}</span>
-
-                        <nav aria-label="Page navigation">
-                            <ul class="pager">
-                                <c:if test="${requestScope.gameinfo.currPage != 1}">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath }/user/profile?currentPage=1">首页</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage-1}">上一页</a>
-                                    </li>
-                                </c:if>
-
-                                <c:if test="${requestScope.gameinfo.currPage != requestScope.gameinfo.totalPage}">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage+1}">下一页</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.totalPage}">尾页</a>
-                                    </li>
-                                </c:if>
-                            </ul>
-                        </nav>
-
-                    </td>
-                </tr>
-            </table>
-
-            <div class="clearfix"></div>
-        </div>
     </div>
-    </c:if>
-</div>
+
+
+    <table class="table" border="0" cellpadding="0" cellspacing="0" width="900px">
+        <tr>
+            <td class="td2">
+                <span>第${requestScope.gameinfo.currPage }/ ${requestScope.gameinfo.totalPage}页</span>
+                <span>总记录数：${requestScope.gameinfo.totalCount }  每页显示:${requestScope.gameinfo.pageSize}</span>
+
+                <nav aria-label="Page navigation">
+                    <ul class="pager">
+                        <c:if test="${requestScope.gameinfo.currPage != 1}">
+                            <li>
+                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=1">首页</a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage-1}">上一页</a>
+                            </li>
+                        </c:if>
+
+                        <c:if test="${requestScope.gameinfo.currPage != requestScope.gameinfo.totalPage}">
+                            <li>
+                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage+1}">下一页</a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.totalPage}">尾页</a>
+                            </li>
+                        </c:if>
+                    </ul>
+                </nav>
+
+            </td>
+        </tr>
+    </table>
+
+    <div class="clearfix"></div>
 </div>
 <!-- //portfolio -->
 <!-- footer -->
