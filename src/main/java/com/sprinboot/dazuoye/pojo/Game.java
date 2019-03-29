@@ -5,16 +5,25 @@ public class Game {
     private String game_name;
     private String game_info;
     private Integer game_price;
+    private String system;
+    private String cpu;
+    private String memory;
+    private String GPU;
+
 
     public Game() {
         super();
     }
 
-    public Game(Integer id, String game_name, String game_info, Integer game_price) {
+    public Game(Integer id, String game_name, String game_info, Integer game_price, String system, String cpu, String memory, String GPU) {
         this.id = id;
         this.game_name = game_name;
         this.game_info = game_info;
         this.game_price = game_price;
+        this.system = system;
+        this.cpu = cpu;
+        this.memory = memory;
+        this.GPU = GPU;
     }
 
     public Integer getId() {
@@ -47,5 +56,37 @@ public class Game {
 
     public void setGame_price(Integer game_price) {
         this.game_price = game_price;
+    }
+
+    public String getSystem() {
+        return system;
+    }
+
+    public void setSystem(String system) {
+        this.system = system;
+    }
+
+    public String getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
+
+    public String getMemory() {
+        return memory;
+    }
+
+    public void setMemory(String memory) {
+        this.memory = memory;
+    }
+
+    public String getGPU() {
+        return GPU;
+    }
+
+    public void setGPU(String GPU) {
+        this.GPU = GPU;
     }
 }

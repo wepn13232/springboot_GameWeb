@@ -30,6 +30,7 @@
                         <li><a href="${pageContext.request.contextPath}/user/profile">游戏商城</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/about">社区论坛</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/###">我的购物车/订单</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/charge">充值</a></li>
 
 
                     </ul>

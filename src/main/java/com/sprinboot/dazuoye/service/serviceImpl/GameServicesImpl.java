@@ -54,9 +54,19 @@ public class GameServicesImpl implements GameServices {
         return pageBean;
     }
 
+
+
 //    获取所有游戏
     @Override
     public List<Game> getAllGame(Game game) throws Exception {
         return gameMapper.getAllGame(game);
+    }
+
+
+    
+//    查询指定id的游戏详细信息
+    @Override
+    public List<Game> selectGameById(int id) throws Exception {
+        return gameMapper.selectGameById(id);
     }
 }

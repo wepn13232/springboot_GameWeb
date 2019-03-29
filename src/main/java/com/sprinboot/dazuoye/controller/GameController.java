@@ -1,5 +1,6 @@
 package com.sprinboot.dazuoye.controller;
 
+import com.sprinboot.dazuoye.pojo.Game;
 import com.sprinboot.dazuoye.service.GameServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 public class GameController {
@@ -21,9 +23,15 @@ public class GameController {
         return "profile";
     }
 
-//    跳转至游戏具体页面
+    //    跳转至游戏具体页面
     @RequestMapping("/game_info")
-    public String game_info(){
+    public String game_info(@RequestParam Integer id, Model model) throws Exception {
+        List<Game> games=gameServices.selectGameById(id);
+        for(Game game:games) {
+            model.addAttribute("gameinfoByid", game);
+        }
         return "game_info";
     }
+
+
 }

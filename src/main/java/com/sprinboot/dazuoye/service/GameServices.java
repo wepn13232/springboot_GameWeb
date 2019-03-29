@@ -14,4 +14,8 @@ public interface GameServices {
 
 //    查询所有游戏
     List<Game> getAllGame(Game game) throws Exception;
+
+
+//    查看指定id的游戏
+    List<Game> selectGameById(int id) throws Exception;
 }

@@ -63,25 +63,8 @@
 
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
 
-                    <%--<div class=" col-md-3 col-sm-3 col-xs-6 boxshodow">--%>
-                    <%--<div class="thumbnail">--%>
-                    <%--<img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"--%>
-                    <%--alt="">--%>
-                    <%--<div class="caption">--%>
-
-                    <%--<p class="game_info">${gameinfo.game_info}</p>--%>
-                    <%--<div class="game_price col-md-4 col-md-offset-8">--%>
-                    <%--<p style="color: red;font-size: 2em">$${gameinfo.game_price}</p>--%>
-                    <%--</div>--%>
-                    <%--<div class="col-md-12 col-sm-12 col-md-offset-4">--%>
-                    <%--<a class="btn btn-info" href="#">加入购物车</a>--%>
-                    <%--<a class="btn btn-default" href="#">查看</a>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
                 <div class="col-sm-6 col-md-3">
-                    <a href="${pageContext.request.contextPath}/game_info">
+                    <a href="${pageContext.request.contextPath}/game_info?id=${gameinfo.id}">
                         <div class="thumbnail boxshodow">
                             <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
                                  alt="通用的占位符缩略图">
@@ -103,6 +86,38 @@
             </div>
 
             </c:forEach>
+
+            <table class="table" border="0" cellpadding="0" cellspacing="0" width="900px">
+                <tr>
+                    <td class="td2">
+                        <span>第${requestScope.gameinfo.currPage }/ ${requestScope.gameinfo.totalPage}页</span>
+                        <span>总记录数：${requestScope.gameinfo.totalCount }  每页显示:${requestScope.gameinfo.pageSize}</span>
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pager">
+                                <c:if test="${requestScope.gameinfo.currPage != 1}">
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/profile?currentPage=1">首页</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage-1}">上一页</a>
+                                    </li>
+                                </c:if>
+
+                                <c:if test="${requestScope.gameinfo.currPage != requestScope.gameinfo.totalPage}">
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage+1}">下一页</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.totalPage}">尾页</a>
+                                    </li>
+                                </c:if>
+                            </ul>
+                        </nav>
+
+                    </td>
+                </tr>
+            </table>
 
             <div class="clearfix"></div>
         </div>
