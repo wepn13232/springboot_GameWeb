@@ -33,7 +33,7 @@ public class GameServicesImpl implements GameServices {
 //        封装当前页数
         pageBean.setCurrPage(currentPage);
 //        每页显示的数据
-        int pageSize = 16;
+        int pageSize = 12;
         pageBean.setPageSize(pageSize);
 //        封装总记录数
         int totalCount = gameMapper.getCount();

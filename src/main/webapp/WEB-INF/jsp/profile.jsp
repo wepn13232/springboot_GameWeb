@@ -36,7 +36,7 @@
 
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
                     <div class="col-sm-6 col-md-3 gamebox">
-                        <a href="${pageContext.request.contextPath}/game_info?id=${gameinfo.id}">
+                        <a href="${pageContext.request.contextPath}/game_info?id=${gameinfo.id}" target="_blank">
                             <div class="thumbnail boxshodow">
                                 <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
                                      alt="通用的占位符缩略图" style="width: 245px;height: 346px">

@@ -17,7 +17,8 @@
 <link href="${pageContext.request.contextPath}/statics/css/font-awesome.css" rel="stylesheet">  <!-- font-awesome icons -->
 <!-- //Custom Theme files -->
 <!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js" type="application/javascript"></script><!-- //js -->
+<%--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js" type="application/javascript"></script>--%>
+<script src="${pageContext.request.contextPath}/statics/js/jquery-2.2.3.min.js" type="application/javascript"></script><!-- //js -->
 <!-- web-fonts -->
 <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
 <link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">

@@ -82,15 +82,15 @@
         <div class="slidw3-agileits">
             <div class="col-md-4 slid-w3text">
                 <h4>快捷的游戏资讯入口</h4>
-                <p>###</p>
+                <p>《只狼》打不过？来我们这找找大神，看看他们韦名第一剑圣の操作！</p>
             </div>
             <div class="col-md-4 slid-w3text">
                 <h4>安全的购买渠道</h4>
-                <p>###</p>
+                <p>黑心商家Email找回？CD-key黑卡被封？在这里，不存在的！</p>
             </div>
             <div class="col-md-4 slid-w3text">
                 <h4>完美售后服务</h4>
-                <p>###</p>
+                <p>俄区代购后回不到国区？来找我们万能的售后，轻轻松松回国区！</p>
             </div>
             <div class="clearfix"> </div>
         </div>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="col-xs-9 features-w3grid-right">
                         <h4>你关注的游戏资讯 </h4>
-                        <p>###</p>
+                        <p>游戏玩家们交流圣地</p>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="col-xs-9 features-w3grid-right">
                         <h4>最全的游戏攻略</h4>
-                        <p>###</p>
+                        <p>韦名城の第一剑圣速通攻略</p>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -137,7 +137,7 @@
 
                     <div class="col-xs-9 features-w3grid-right">
                         <h4>最和谐的游戏论坛 </h4>
-                        <p>###</p>
+                        <p>暴力魔法？联名nm$l？不存在的！</p>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -148,7 +148,7 @@
 
                     <div class="col-xs-9 features-w3grid-right">
                         <h4>最新的游戏打折消息</h4>
-                        <p>###</p>
+                        <p>G胖、土豆、烂橘子的羊毛又多了！</p>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
