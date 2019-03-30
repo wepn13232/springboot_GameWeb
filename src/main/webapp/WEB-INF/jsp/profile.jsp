@@ -74,19 +74,19 @@
                     <ul class="pager">
                         <c:if test="${requestScope.gameinfo.currPage != 1}">
                             <li>
-                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=1">首页</a>
+                                <a href="${pageContext.request.contextPath }/profile?currentPage=1">首页</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage-1}">上一页</a>
+                                <a href="${pageContext.request.contextPath }/profile?currentPage=${requestScope.gameinfo.currPage-1}">上一页</a>
                             </li>
                         </c:if>
 
                         <c:if test="${requestScope.gameinfo.currPage != requestScope.gameinfo.totalPage}">
                             <li>
-                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage+1}">下一页</a>
+                                <a href="${pageContext.request.contextPath }/profile?currentPage=${requestScope.gameinfo.currPage+1}">下一页</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.totalPage}">尾页</a>
+                                <a href="${pageContext.request.contextPath }/profile?currentPage=${requestScope.gameinfo.totalPage}">尾页</a>
                             </li>
                         </c:if>
                     </ul>
