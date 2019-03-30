@@ -6,6 +6,7 @@ import com.sprinboot.dazuoye.service.UserServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -32,7 +33,7 @@ public class UserController {
 
         if (user != null) {
             request.getSession().setAttribute("usersession", user);
-                json.put("user", user);
+            json.put("user", user);
             json.put("lg", "success");
         } else {
 //            model.addAttribute("error", "账号或密码错误！");
@@ -42,10 +43,16 @@ public class UserController {
     }
 
     //    注册用户
-    @RequestMapping("/doregister")
-    public String doregister(@RequestParam String username, @RequestParam String password) throws Exception {
-        userServices.addUser(username, password);
-        return "redirect:/login";
+    @RequestMapping(value = "/doregister")
+    @ResponseBody
+    public String doregister(String userName, String password) throws Exception {
+        JSONObject jsonObject = new JSONObject();
+        if (userServices.addUser(userName, password) > 0) {
+            jsonObject.put("useradd", "1");
+        } else {
+            jsonObject.put("useradd", "0");
+        }
+        return jsonObject.toJSONString();
     }
 
 }

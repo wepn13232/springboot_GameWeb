@@ -17,6 +17,7 @@
 <!-- //Custom Theme files -->
 <!-- js -->
 <script src="${pageContext.request.contextPath}/statics/js/jquery-2.2.3.min.js"></script>
+
 <!-- //js -->
 <!-- web-fonts -->
 <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">

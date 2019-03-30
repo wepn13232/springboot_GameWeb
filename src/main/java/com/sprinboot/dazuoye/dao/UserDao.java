@@ -17,5 +17,5 @@ public interface UserDao {
 
 //    增加用户
     @Insert("insert into user(username,password,cashLeft,game_name) values(#{username},#{password},#{cashLeft},#{game_name})")
-    void addUser(User user) throws Exception;
+    int addUser(User user) throws Exception;
 }

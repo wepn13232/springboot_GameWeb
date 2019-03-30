@@ -19,7 +19,6 @@ function checkUser() {
                 $("#spanError").html("账号密码错误！");
             }
             else {
-                username=data.user.username;
                 window.location.href = "/user/index";
             }
         }

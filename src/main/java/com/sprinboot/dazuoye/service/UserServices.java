@@ -10,5 +10,5 @@ public interface UserServices {
     User getUser(String username, String password) throws Exception;
 
     //    增加用户（用户注册）
-    void addUser(String username, String password) throws Exception;
+    int addUser(String username, String password) throws Exception;
 }
