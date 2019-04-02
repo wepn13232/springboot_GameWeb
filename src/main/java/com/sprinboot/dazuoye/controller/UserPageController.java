@@ -57,5 +57,11 @@ public class UserPageController {
     }
 
 
+//    跳转至购物车、订单界面
+    @RequestMapping("/orderList")
+    public String orderList(){
+        return "user/orderList";
+    }
+
 
 }

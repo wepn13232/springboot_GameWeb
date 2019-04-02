@@ -7,16 +7,18 @@ public class OderList {
     private String game_name;
     private String username;
     private Date date;
+    private int status;
 
     public OderList() {
         super();
     }
 
-    public OderList(Integer id, String game_name, String username, Date date) {
+    public OderList(Integer id, String game_name, String username, Date date, int status) {
         this.id = id;
         this.game_name = game_name;
         this.username = username;
         this.date = date;
+        this.status = status;
     }
 
     public Integer getId() {
@@ -49,5 +51,13 @@ public class OderList {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

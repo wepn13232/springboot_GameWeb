@@ -1,0 +1,41 @@
+.charge_info {
+    width: 80%;
+    margin: 0 auto;
+    height: 150px;
+    background-color: rgba(153, 220, 236, 0.67);
+}
+
+.info_title {
+    font-size: 2em;
+}
+
+.charge_user {
+    width: 80%;
+    margin: 0 auto;
+    height: 60px;
+    background-color: rgba(160, 220, 224, 0.45);
+    font-size: 20px;
+}
+
+.user {
+    margin: auto 0;
+}
+
+.charge_method {
+    width: 80%;
+    margin: 4em auto;
+}
+
+.charge_btn {
+    width: 200px;
+    margin-left: 2em;
+}
+.fenge{
+    width: 80%;
+    margin: 10px auto;
+}
+.fukuang{
+    width: 80%;
+    margin: 10px auto;
+
+}
