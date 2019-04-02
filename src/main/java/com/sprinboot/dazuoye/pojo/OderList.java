@@ -9,6 +9,7 @@ public class OderList {
     private Date date;
     private int status;
 
+
     public OderList() {
         super();
     }

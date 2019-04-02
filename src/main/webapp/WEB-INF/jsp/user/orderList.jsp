@@ -22,7 +22,27 @@
     <div class="panel panel-info">
         <div class="panel-heading">未付款的订单</div>
         <div class="panel-body">
-            Panel content
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>购买的游戏</th>
+                    <th>购买用户</th>
+                    <th>下单日期</th>
+                    <th>订单状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>《彩虹六号：围攻》</td>
+                    <td>linqiyuan </td>
+                    <td>2019/4/1</td>
+                    <td>未付款</td>
+                    <td><button class="btn btn-warning">删除订单</button></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -32,7 +52,25 @@
 <div class="panel panel-success">
     <div class="panel-heading">已完成的订单</div>
     <div class="panel-body">
-        Panel content
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>购买的游戏</th>
+                <th>购买用户</th>
+                <th>购买日期</th>
+                <th>订单状态</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>《彩虹六号：围攻》</td>
+                <td>linqiyuan </td>
+                <td>2019/4/1</td>
+                <td>已购买</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
