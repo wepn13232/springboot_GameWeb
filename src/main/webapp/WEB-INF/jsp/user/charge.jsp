@@ -51,17 +51,19 @@
     <div class="charge_method">
         <form class="form-horizontal">
             <div class="radio">
-                <button  class="btn btn-default btn-lg charge_btn" value="10">10元</button>
-                <button  class="btn btn-default btn-lg charge_btn" value="10">20元</button>
-                <button  class="btn btn-default btn-lg charge_btn" value="10">50元</button>
-                <button  class="btn btn-default btn-lg charge_btn" value="10">100元</button>
-                <input value="" class="btn btn-default btn-lg charge_btn" placeholder="请输入你想充值的金额" style="width: 240px">
+                <%--<button  class="btn btn-default btn-lg charge_btn col-md-2" value="10">10元</button>--%>
+                <button  class="btn btn-default btn-lg charge_btn col-md-2" value="10">20元</button>
+                    <button  class="btn btn-default btn-lg charge_btn col-md-2" value="50" >50元</button>
+                    <button  class="btn btn-default btn-lg charge_btn col-md-2" value="100">100元</button>
+                <input value="" name="selfCash" id="selfCash" class="btn btn-default btn-lg charge_btn col-md-2" placeholder="请输入你想充值的金额" style="width: 240px">
             </div>
         </form>
 
-        <%--充值方式--%>
+        <div class="clearfix" style="padding: 1em"></div>
+
+    <%--充值方式--%>
         <div class="method" style="margin-top: 4em">
-            <p class="col-md-1 col-sm-1">充值方式：</p>
+            <p class="col-md-2 col-sm-2" style="width: 130px">充值方式：</p>
             <div class="radio-inline col-md-3 col-sm-3">
                 <label style="padding-left: 1em" class="radio-inline">
                     <input type="radio">微信
@@ -76,7 +78,7 @@
         <%--显示应付款--%>
         <div class="payCash" style="margin-top: 3em;height: 50px">
             <div class="" style="margin: auto 0;height: 100%">
-            <p class="col-md-1 col-sm-1" style="height: 100%;margin-top: 15px;">应支付金额：</p>
+            <p class="col-md-2 col-sm-2" style="height: 100%;width: 130px;margin-top: 15px;">应支付金额：</p>
             <p class="col-md-2 col-sm-2" style="color: red;font-size: 2em">$ 200</p>
             </div>
         </div>
@@ -87,12 +89,11 @@
 
 
 <%--分割线--%>
-    <div class="fenge">
-    <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+    <div class="fenge" style="width: 80%;margin: 0 auto;height: 1px;background-color: rgba(0,0,0,0.35)">
     </div>
 
 
-    <div class="fukuang">
+    <div class="fukuang" style="padding: 1em">
         <button class="btn btn-info btn-lg">确认付款</button>
     </div>
 </div>
