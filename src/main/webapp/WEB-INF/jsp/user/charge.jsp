@@ -52,43 +52,46 @@
         <form class="form-horizontal">
             <div class="radio">
                 <%--<button  class="btn btn-default btn-lg charge_btn col-md-2" value="10">10元</button>--%>
-                <button  class="btn btn-default btn-lg charge_btn col-md-2" value="10">20元</button>
-                    <button  class="btn btn-default btn-lg charge_btn col-md-2" value="50" >50元</button>
-                    <button  class="btn btn-default btn-lg charge_btn col-md-2" value="100">100元</button>
-                <input value="" name="selfCash" id="selfCash" class="btn btn-default btn-lg charge_btn col-md-2" placeholder="请输入你想充值的金额" style="width: 240px">
+                <button class="btn btn-default btn-lg charge_btn col-md-2" value="10">20元</button>
+                <button class="btn btn-default btn-lg charge_btn col-md-2" value="50">50元</button>
+                <button class="btn btn-default btn-lg charge_btn col-md-2" value="100">100元</button>
+                <input value="" name="selfCash" id="selfCash" class="btn btn-default btn-lg charge_btn col-md-2"
+                       placeholder="请输入你想充值的金额" style="width: 240px">
             </div>
         </form>
 
         <div class="clearfix" style="padding: 1em"></div>
 
-    <%--充值方式--%>
+        <%--充值方式--%>
         <div class="method" style="margin-top: 4em">
-            <p class="col-md-2 col-sm-2" style="width: 130px">充值方式：</p>
-            <div class="radio-inline col-md-3 col-sm-3">
-                <label style="padding-left: 1em" class="radio-inline">
-                    <input type="radio">微信
-                </label>
-                <label style="padding-left: 10em" class="radio-inline">
-                    <input type="radio">支付宝
-                </label>
-            </div>
+            <label class="col-sm-2 col-md-2 control-label" style="width: 100px">支付方式</label>
+            <label class="radio-inline" style="margin-bottom: 10px">
+                <input type="radio" value="weixin" name="shenfen" class="col-md-2 col-sm-2" checked>
+                <img class="col-md-3 col-sm-3" style="width: 140px;height: 30px"
+                     src="${pageContext.request.contextPath}/statics/images/weixin.png" alt="">
+            </label>
+
+            <label class="radio-inline" style="margin-bottom: 10px">
+                <input type="radio" value="weixin" name="shenfen" class="col-md-2 col-sm-2" >
+                <img class="col-md-3 col-sm-3" style="width: 140px;height: 30px"
+                     src="${pageContext.request.contextPath}/statics/images/zhifubao.png" alt="">
+            </label>
         </div>
 
-<div class="clearfix" style="padding: 1em"></div>
+        <div class="clearfix" style="padding: 1em"></div>
         <%--显示应付款--%>
         <div class="payCash" style="margin-top: 3em;height: 50px">
             <div class="" style="margin: auto 0;height: 100%">
-            <p class="col-md-2 col-sm-2" style="height: 100%;width: 130px;margin-top: 15px;">应支付金额：</p>
-            <p class="col-md-2 col-sm-2" style="color: red;font-size: 2em">$ 200</p>
+                <p class="col-md-2 col-sm-2" style="height: 100%;width: 130px;margin-top: 15px;">应支付金额：</p>
+                <p class="col-md-2 col-sm-2" style="color: red;font-size: 2em">$ 200</p>
             </div>
         </div>
-
 
 
     </div>
 
 
-<%--分割线--%>
+    <%--分割线--%>
     <div class="fenge" style="width: 80%;margin: 0 auto;height: 1px;background-color: rgba(0,0,0,0.35)">
     </div>
 
