@@ -37,8 +37,12 @@
     <%--充值人--%>
     <div class="panel charge_user">
         <div class="panel-body">
-            <div class="user col-md-4 col-sm-4">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>充值人：${usersession.username}
+            <div class="user col-md-5 col-sm-5">
+                <span class="glyphicon glyphicon-user col-md-2 col-sm-2" style="width: 130px"
+                      aria-hidden="true">充值人：</span>
+                <h4
+                        class="username col-md-2 col-sm-2" style="width: 200px;margin-top: 5px" name="username"
+                        id="username">${usersession.username}</h4>
             </div>
             <%--剩余余额--%>
             <div class="cashLeft col-md-3 col-sm-3 col-md-offset-3 col-sm-offset-3">
@@ -96,8 +100,7 @@
 
 <%--付款按钮--%>
 <div class="fukuang" style="padding: 1em">
-    <a href="${pageContext.request.contextPath}/user/userCharge?cashCharge=100&username=PostMalone" class="btn btn-info btn-lg" name="charge_button"
-       id="charge_button">确认付款</a>
+    <input type="button" class="btn btn-info btn-lg" name="charge_button" id="charge_button" value="确认付款"/>
 </div>
 
 
@@ -108,7 +111,7 @@
         <div class="modal-content">
             <img src="${pageContext.request.contextPath}/statics/images/wechatPay.jpeg" alt=""
                  class="center-block text-center">
-            <a type="button" class="btn btn-success center-block" data-dismiss="modal">完成支付</a>
+            <a type="button" class="btn btn-success center-block" id="wcmodalBtn" data-dismiss="modal">完成支付</a>
         </div>
         <div class="clearfix" style="padding-top: 1em"></div>
     </div>
@@ -123,7 +126,7 @@
             <%--<h4 class="modal-title alert alert-success" id="myModalLable">恭喜你，注册成功啦！！</h4>--%>
             <img src="${pageContext.request.contextPath}/statics/images/AliPay.jpeg" alt=""
                  class="center-block text-center">
-            <a type="button" class="btn btn-success center-block" id="modalBtn" data-dismiss="modal">完成支付</a>
+            <a type="button" class="btn btn-success center-block" id="alimodalBtn" data-dismiss="modal">完成支付</a>
         </div>
         <div class="clearfix" style="padding-top: 1em"></div>
     </div>

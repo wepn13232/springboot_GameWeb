@@ -79,17 +79,15 @@ public class UserPageController {
 
     //账户充值
     @RequestMapping("/userCharge")
-//    @ResponseBody
+    @ResponseBody
     public String userCharge(@RequestParam int cashCharge, @RequestParam String username) throws Exception {
-//        JSONObject jsonObject = new JSONObject();
+        JSONObject jsonObject = new JSONObject();
         if (userServices.chargeMoney(cashCharge, username) >= 1) {
-//            jsonObject.put("charge", "success");
-            return "redirect:/user/index";
+            jsonObject.put("charge", "success");
         } else {
-//            jsonObject.put("charge", "error");
-            return "user/charge";
+            jsonObject.put("charge", "error");
         }
-//        return jsonObject.toJSONString();
+        return jsonObject.toJSONString();
     }
 
 }
