@@ -42,7 +42,7 @@
             </div>
             <%--剩余余额--%>
             <div class="cashLeft col-md-3 col-sm-3 col-md-offset-3 col-sm-offset-3">
-                <span class="glyphicon glyphicon-yen" aria-hidden="true">剩余余额：${usersession.cashLeft}</span>
+                <span class="glyphicon glyphicon-yen" aria-hidden="true">剩余余额：${cashleft}</span>
             </div>
         </div>
     </div>

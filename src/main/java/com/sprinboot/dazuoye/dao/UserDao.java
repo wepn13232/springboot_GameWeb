@@ -23,4 +23,5 @@ public interface UserDao {
     @Update("update User set cashLeft=cashLeft+#{cashCharge} where username=#{username}")
     int charge(@Param("cashCharge") int cashCharge,@Param("username") String username);
 
+//
 }

@@ -2,6 +2,7 @@ package com.sprinboot.dazuoye.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sprinboot.dazuoye.pojo.Game;
+import com.sprinboot.dazuoye.service.ChargeServices;
 import com.sprinboot.dazuoye.service.GameServices;
 import com.sprinboot.dazuoye.service.UserServices;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,9 @@ public class UserPageController {
     private GameServices gameServices;
     @Resource
     private UserServices userServices;
+    @Resource
+    private ChargeServices chargeServices;
+
 
     @RequestMapping("/index")
     public String index() {
@@ -57,7 +61,9 @@ public class UserPageController {
 
     //    跳转至充值页面
     @RequestMapping("/charge")
-    public String charge() {
+    public String charge(@RequestParam String username,Model model) throws Exception {
+       int cash= chargeServices.checkCashLeft(username);
+        model.addAttribute("cashleft",cash);
         return "user/charge";
     }
 
@@ -67,6 +73,8 @@ public class UserPageController {
     public String orderList() {
         return "user/orderList";
     }
+
+
 
 
     //账户充值

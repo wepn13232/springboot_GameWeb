@@ -4,7 +4,7 @@ public class User {
    private String username;//用户名
     private String password;//密码
     private Integer id; //id
-    private Integer cashLeft;//剩余余额
+    private int cashLeft;//剩余余额
     private String game_name;//已购买的游戏
 
 
@@ -12,7 +12,7 @@ public class User {
         super();
     }
 
-    public User(String username, String password, Integer id, Integer cashLeft, String game_name) {
+    public User(String username, String password, Integer id, int cashLeft, String game_name) {
         this.username = username;
         this.password = password;
         this.id = id;
@@ -44,11 +44,11 @@ public class User {
         this.id = id;
     }
 
-    public Integer getCashLeft() {
+    public int getCashLeft() {
         return cashLeft;
     }
 
-    public void setCashLeft(Integer cashLeft) {
+    public void setCashLeft(int cashLeft) {
         this.cashLeft = cashLeft;
     }
 
