@@ -71,14 +71,14 @@
             <label class="col-sm-2 col-md-2 control-label" style="width: 100px">支付方式</label>
             <label class="radio-inline" style="margin-bottom: 10px">
                 <%--微信--%>
-                <input type="radio" value="weixin" name="shenfen" class="col-md-2 col-sm-2" checked>
+                <input type="radio" value="weixin" name="payRadio" id="weixinPay" class="col-md-2 col-sm-2" checked>
                 <img class="col-md-3 col-sm-3" style="width: 140px;height: 30px"
                      src="${pageContext.request.contextPath}/statics/images/weixin.png" alt="">
             </label>
 
             <%--支付宝--%>
             <label class="radio-inline" style="margin-bottom: 10px">
-                <input type="radio" value="weixin" name="shenfen" class="col-md-2 col-sm-2">
+                <input type="radio" value="zhifubao" name="payRadio" id="AliPay" class="col-md-2 col-sm-2">
                 <img class="col-md-3 col-sm-3" style="width: 140px;height: 30px"
                      src="${pageContext.request.contextPath}/statics/images/zhifubao.png" alt="">
             </label>
@@ -111,7 +111,12 @@
         <div class="modal-content">
             <img src="${pageContext.request.contextPath}/statics/images/wechatPay.jpeg" alt=""
                  class="center-block text-center">
-            <a type="button" class="btn btn-success center-block" id="wcmodalBtn" data-dismiss="modal">完成支付</a>
+            <div class=" text-center col-md-offset-4 col-sm-offset-4" style="width: 400px;">
+                <a type="button" class="btn btn-success text-center  col-md-3 col-sm-3 wcmodalBtn"
+                   data-dismiss="modal" style="margin-top: 1em">完成支付</a>
+                <a type="button" class="btn btn-danger col-md-3 col-sm-3 qxmodalBtn"  data-dismiss="modal"
+                   style="margin-top: 1em">取消支付</a>
+            </div>
         </div>
         <div class="clearfix" style="padding-top: 1em"></div>
     </div>
@@ -126,8 +131,12 @@
             <%--<h4 class="modal-title alert alert-success" id="myModalLable">恭喜你，注册成功啦！！</h4>--%>
             <img src="${pageContext.request.contextPath}/statics/images/AliPay.jpeg" alt=""
                  class="center-block text-center">
-            <a type="button" class="btn btn-success center-block" id="alimodalBtn" data-dismiss="modal">完成支付</a>
-        </div>
+                <div class=" text-center col-md-offset-4 col-sm-offset-4" style="width: 400px;">
+                    <a type="button" class="btn btn-success text-center  col-md-3 col-sm-3 wcmodalBtn"
+                       data-dismiss="modal" style="margin-top: 1em">完成支付</a>
+                    <a type="button" class="btn btn-danger col-md-3 col-sm-3 qxmodalBtn"  data-dismiss="modal"
+                       style="margin-top: 1em">取消支付</a>
+                </div>        </div>
         <div class="clearfix" style="padding-top: 1em"></div>
     </div>
 </div>
