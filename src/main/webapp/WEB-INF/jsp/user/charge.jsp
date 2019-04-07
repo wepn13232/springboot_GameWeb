@@ -88,7 +88,7 @@
         <%--显示应付款--%>
         <div class="payCash" style="margin-top: 3em;height: 50px">
             <p class="col-md-2 col-sm-2" style="height: 100%;width: 130px;margin-top: 15px;">应支付金额:
-            <p class="showCashNum" id="showCashNum" value="" name="cashCharge" style="color: red;font-size: 2em">
+            <p class="showCashNum" id="showCashNum"  name="cashCharge" style="color: red;font-size: 2em"></p>
         </div>
     </div>
 </div>
@@ -101,6 +101,7 @@
 <%--付款按钮--%>
 <div class="fukuang" style="padding: 1em">
     <input type="button" class="btn btn-info btn-lg" name="charge_button" id="charge_button" value="确认付款"/>
+    <span style="color: red" class="fukuang_error"></span>
 </div>
 
 

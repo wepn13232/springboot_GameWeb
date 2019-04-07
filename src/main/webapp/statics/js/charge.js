@@ -15,19 +15,26 @@ function showCash() {
     // alert(num.html());
 }
 
+
+//确认付款总操作
 function confirm() {
     var radio = document.getElementsByName('payRadio');
-    for (var i = 0; i < radio.length; i++) {
-        if (radio[0].checked) {
-            $("#wechatModal").modal("show");
-        } else if (radio[1].checked) {
-            $("#aliModal").modal("show");
+    if ($("#showCashNum").html() !== "" || 0) {
+        for (var i = 0; i < radio.length; i++) {
+            if (radio[0].checked) {
+                $("#wechatModal").modal("show");
+            } else if (radio[1].checked) {
+                $("#aliModal").modal("show");
+            }
         }
+    } else {
+        var error="请选择需要充值的金额数！";
+        $(".fukuang_error").html(error);
     }
-
 }
 
 
+//显示模态框后的操作
 function wcLocationHref() {
     if ($("#wechatModal").modal("hide") || $("#aliModal").modal("hide")) {
         $.ajax({
@@ -58,5 +65,6 @@ function wcLocationHref() {
         });
     }
 }
+
 
 
