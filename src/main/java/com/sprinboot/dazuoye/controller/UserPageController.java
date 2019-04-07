@@ -1,11 +1,14 @@
 package com.sprinboot.dazuoye.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.sprinboot.dazuoye.pojo.Game;
 import com.sprinboot.dazuoye.service.GameServices;
+import com.sprinboot.dazuoye.service.UserServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,9 +18,11 @@ import java.util.List;
 public class UserPageController {
     @Resource
     private GameServices gameServices;
+    @Resource
+    private UserServices userServices;
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "user/index";
     }
 
@@ -30,9 +35,9 @@ public class UserPageController {
 
     //    跳转至游戏具体页面
     @RequestMapping("/game_info")
-    public String game_info(@RequestParam Integer id,Model model) throws Exception{
-        List<Game> games=gameServices.selectGameById(id);
-        for(Game game:games) {
+    public String game_info(@RequestParam Integer id, Model model) throws Exception {
+        List<Game> games = gameServices.selectGameById(id);
+        for (Game game : games) {
             model.addAttribute("gameinfoByid", game);
         }
         return "user/game_info";
@@ -50,18 +55,33 @@ public class UserPageController {
         return "user/community";
     }
 
-//    跳转至充值页面
+    //    跳转至充值页面
     @RequestMapping("/charge")
-    public String charge(){
+    public String charge() {
         return "user/charge";
     }
 
 
-//    跳转至购物车、订单界面
+    //    跳转至购物车、订单界面
     @RequestMapping("/orderList")
-    public String orderList(){
+    public String orderList() {
         return "user/orderList";
     }
 
+
+    //账户充值
+    @RequestMapping("/userCharge")
+//    @ResponseBody
+    public String userCharge(@RequestParam int cashCharge, @RequestParam String username) throws Exception {
+//        JSONObject jsonObject = new JSONObject();
+        if (userServices.chargeMoney(cashCharge, username) >= 1) {
+//            jsonObject.put("charge", "success");
+            return "redirect:/user/index";
+        } else {
+//            jsonObject.put("charge", "error");
+            return "user/charge";
+        }
+//        return jsonObject.toJSONString();
+    }
 
 }

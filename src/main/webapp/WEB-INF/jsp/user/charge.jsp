@@ -81,29 +81,23 @@
         </div>
 
 
-        <div class="clearfix" style="padding: 1em"></div>
         <%--显示应付款--%>
         <div class="payCash" style="margin-top: 3em;height: 50px">
-            <div class="" style="margin: auto 0;height: 100%">
-                <p class="col-md-2 col-sm-2" style="height: 100%;width: 130px;margin-top: 15px;">应支付金额：</p>
-                <p class="col-md-2 col-sm-2" style="color: red;font-size: 2em">$ <span class="showCashNum"
-                                                                                       style="color: red;font-size: 2em"></span>
-                </p>
-            </div>
+            <p class="col-md-2 col-sm-2" style="height: 100%;width: 130px;margin-top: 15px;">应支付金额:
+            <p class="showCashNum" id="showCashNum" value="" name="cashCharge" style="color: red;font-size: 2em">
         </div>
-
-
     </div>
+</div>
 
 
-    <%--分割线--%>
-    <div class="fenge" style="width: 80%;margin: 0 auto;height: 1px;background-color: rgba(0,0,0,0.35)">
-    </div>
+<%--分割线--%>
+<div class="fenge" style="width: 80%;margin: 0 auto;height: 1px;background-color: rgba(0,0,0,0.35)">
+</div>
 
-    <%--付款按钮--%>
-    <div class="fukuang" style="padding: 1em">
-        <button class="btn btn-info btn-lg" name="charge_button" id="charge_button">确认付款</button>
-    </div>
+<%--付款按钮--%>
+<div class="fukuang" style="padding: 1em">
+    <a href="${pageContext.request.contextPath}/user/userCharge?cashCharge=100&username=PostMalone" class="btn btn-info btn-lg" name="charge_button"
+       id="charge_button">确认付款</a>
 </div>
 
 
@@ -112,10 +106,9 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <%--<h4 class="modal-title alert alert-success" id="myModalLable">恭喜你，注册成功啦！！</h4>--%>
             <img src="${pageContext.request.contextPath}/statics/images/wechatPay.jpeg" alt=""
                  class="center-block text-center">
-            <a type="button" class="btn btn-success center-block" id="modalBtn" data-dismiss="modal">完成支付</a>
+            <a type="button" class="btn btn-success center-block" data-dismiss="modal">完成支付</a>
         </div>
         <div class="clearfix" style="padding-top: 1em"></div>
     </div>

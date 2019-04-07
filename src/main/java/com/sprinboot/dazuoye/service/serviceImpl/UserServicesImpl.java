@@ -15,27 +15,42 @@ public class UserServicesImpl implements UserServices {
     @Resource
     private UserDao userDao;
 
-//用户登录
+
+    //用户登录
     @Override
     public User getUser(String username, String password) throws Exception {
-        User user=null;
-        user=userDao.selectAllUser(username);
-        if(user!=null){
-            if(user.getPassword().equals(password)){
+        User user = null;
+        user = userDao.selectAllUser(username);
+        if (user != null) {
+            if (user.getPassword().equals(password)) {
                 return user;
             }
         }
         return null;
     }
 
+
     //    用户注册
     @Override
-    public int addUser(String username,String password) throws Exception {
-        User user=new User();
+    public int addUser(String username, String password) throws Exception {
+        User user = new User();
         user.setCashLeft(0); //默认余额为0
         user.setGame_name(""); //默认未购买任何游戏
         user.setUsername(username);
         user.setPassword(password);
         return userDao.addUser(user);
     }
+
+
+    //    账户充值
+    @Override
+    public int chargeMoney(int cashCharge, String username) throws Exception {
+        User user = new User();
+//         username = user.getUsername();
+//        int cashLeft = user.getCashLeft();
+//        cashCharge = cashLeft + cashCharge;
+        return userDao.charge(cashCharge, username);
+    }
+
+
 }

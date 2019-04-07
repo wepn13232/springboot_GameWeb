@@ -18,4 +18,9 @@ public interface UserDao {
 //    增加用户
     @Insert("insert into user(username,password,cashLeft,game_name) values(#{username},#{password},#{cashLeft},#{game_name})")
     int addUser(User user) throws Exception;
+
+//    充值
+    @Update("update User set cashLeft=cashLeft+#{cashCharge} where username=#{username}")
+    int charge(@Param("cashCharge") int cashCharge,@Param("username") String username);
+
 }
