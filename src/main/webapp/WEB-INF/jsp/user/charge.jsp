@@ -54,7 +54,8 @@
                 <input type="button" class="btn btn-default btn-lg charge_btn1 col-md-2" name="charge_btn" value="20">
                 <input type="button" class="btn btn-default btn-lg charge_btn2 col-md-2" name="charge_btn" value="50">
                 <input type="button" class="btn btn-default btn-lg charge_btn3 col-md-2" name="charge_btn" value="100">
-                <input type="number" value="" name="selfCash" id="selfCash" class="btn btn-default btn-lg charge_btn col-md-2"
+                <input type="number" value="" name="selfCash" id="selfCash"
+                       class="btn btn-default btn-lg charge_btn col-md-2"
                        placeholder="请输入你想充值的金额" onkeyup="value=value.replace(/[&|.|#|^|/]/g,'')" style="width: 240px">
             </div>
         </form>
@@ -65,11 +66,13 @@
         <div class="method" style="margin-top: 4em">
             <label class="col-sm-2 col-md-2 control-label" style="width: 100px">支付方式</label>
             <label class="radio-inline" style="margin-bottom: 10px">
+                <%--微信--%>
                 <input type="radio" value="weixin" name="shenfen" class="col-md-2 col-sm-2" checked>
                 <img class="col-md-3 col-sm-3" style="width: 140px;height: 30px"
                      src="${pageContext.request.contextPath}/statics/images/weixin.png" alt="">
             </label>
 
+            <%--支付宝--%>
             <label class="radio-inline" style="margin-bottom: 10px">
                 <input type="radio" value="weixin" name="shenfen" class="col-md-2 col-sm-2">
                 <img class="col-md-3 col-sm-3" style="width: 140px;height: 30px"
@@ -77,12 +80,15 @@
             </label>
         </div>
 
+
         <div class="clearfix" style="padding: 1em"></div>
         <%--显示应付款--%>
         <div class="payCash" style="margin-top: 3em;height: 50px">
             <div class="" style="margin: auto 0;height: 100%">
                 <p class="col-md-2 col-sm-2" style="height: 100%;width: 130px;margin-top: 15px;">应支付金额：</p>
-                <p class="col-md-2 col-sm-2" style="color: red;font-size: 2em">$ <span class="showCashNum" style="color: red;font-size: 2em"></span></p>
+                <p class="col-md-2 col-sm-2" style="color: red;font-size: 2em">$ <span class="showCashNum"
+                                                                                       style="color: red;font-size: 2em"></span>
+                </p>
             </div>
         </div>
 
@@ -94,9 +100,39 @@
     <div class="fenge" style="width: 80%;margin: 0 auto;height: 1px;background-color: rgba(0,0,0,0.35)">
     </div>
 
-
+    <%--付款按钮--%>
     <div class="fukuang" style="padding: 1em">
         <button class="btn btn-info btn-lg" name="charge_button" id="charge_button">确认付款</button>
+    </div>
+</div>
+
+
+<%--微信模态框--%>
+<div class="modal fade" id="wechatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <%--<h4 class="modal-title alert alert-success" id="myModalLable">恭喜你，注册成功啦！！</h4>--%>
+            <img src="${pageContext.request.contextPath}/statics/images/wechatPay.jpeg" alt=""
+                 class="center-block text-center">
+            <a type="button" class="btn btn-success center-block" id="modalBtn" data-dismiss="modal">完成支付</a>
+        </div>
+        <div class="clearfix" style="padding-top: 1em"></div>
+    </div>
+</div>
+
+
+<%--支付宝模态框--%>
+<div class="modal fade" id="aliModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <%--<h4 class="modal-title alert alert-success" id="myModalLable">恭喜你，注册成功啦！！</h4>--%>
+            <img src="${pageContext.request.contextPath}/statics/images/AliPay.jpeg" alt=""
+                 class="center-block text-center">
+            <a type="button" class="btn btn-success center-block" id="modalBtn" data-dismiss="modal">完成支付</a>
+        </div>
+        <div class="clearfix" style="padding-top: 1em"></div>
     </div>
 </div>
 

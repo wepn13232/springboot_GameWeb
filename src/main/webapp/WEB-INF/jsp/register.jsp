@@ -55,7 +55,7 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <h4 class="modal-title" id="myModalLable">恭喜你，注册成功啦！！</h4>
+            <h4 class="modal-title alert alert-success" id="myModalLable">恭喜你，注册成功啦！！</h4>
         </div>
         <div class="clearfix" style="padding-top: 1em"></div>
         <a type="button" class="btn btn-success" id="modalBtn" data-dismiss="modal">好的</a>
