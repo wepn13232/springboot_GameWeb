@@ -12,8 +12,10 @@ function showCash() {
     var cashNum = $(this).val();
     // alert(cashNum);
     $('.showCashNum').html(~~cashNum);
+    $("#selfCash").val(~~cashNum);
     // alert(num.html());
 }
+
 
 
 //确认付款总操作
