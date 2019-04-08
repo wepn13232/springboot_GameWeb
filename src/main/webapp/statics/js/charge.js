@@ -11,7 +11,7 @@ $(function () {
 function showCash() {
     var cashNum = $(this).val();
     // alert(cashNum);
-    $('.showCashNum').html(cashNum);
+    $('.showCashNum').html(~~cashNum);
     // alert(num.html());
 }
 
