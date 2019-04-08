@@ -33,7 +33,7 @@
             <div class="content">
 
                 <div class="row">
-                    <a href="${pageContext.request.contextPath}/community" class="col-md-3 col-sm-3 col-md-6 game_a" target="_blank">
+                    <a href="${pageContext.request.contextPath}/user/community" class="col-md-3 col-sm-3 col-md-6 game_a" target="_blank">
                         <div class="content_div">
                             <h5 style="color: #00AFF0">《彩虹六号：围攻》</h5>
                             <p class="content_p">This game is funny as fuck , bro ! Come and join with me !</p>
