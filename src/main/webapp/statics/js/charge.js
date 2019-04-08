@@ -20,7 +20,7 @@ function showCash() {
 function confirm() {
     var radio = document.getElementsByName('payRadio');
     var selfC = $("#selfCash").val();
-    if (selfC > 600 || selfC < 0 ) {
+    if (selfC > 600 || selfC <= 0 ) {
         var cashError = "您输入的金额数值过大或过小！";
         $(".fukuang_error").html(cashError);
     }

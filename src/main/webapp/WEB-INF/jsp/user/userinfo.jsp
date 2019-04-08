@@ -18,7 +18,7 @@
 <%--用户信息界面--%>
 <div class="container">
     <%--头像标题--%>
-    <div class="col-md-12 col-sm-12" style="height: 120px;background-color: rgba(226,226,226,0.74);margin: 1em">
+    <div class="col-md-12 col-sm-12" style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
         <%--头像--%>
         <div class="col-md-12 col-sm-12">
             <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"  class="img-circle col-md-3 col-sm-3" style="width: 120px;height: 100px;margin: 10px" alt="">
@@ -33,7 +33,7 @@
         <div class="clearfix" style="padding: 2em"></div>
 
         <h4 style="padding-left: 1em">你拥有的游戏</h4>
-        <div class="col-md-12 col-sm-12" style="height: 320px;background-color: rgba(226,226,226,0.74);margin: 1em">
+        <div class="col-md-12 col-sm-12" style="height: 320px;background-color: rgba(237,237,237,0.52);margin: 1em">
         <%--头像--%>
         <div class="col-md-12 col-sm-12">
 
