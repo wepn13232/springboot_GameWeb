@@ -30,6 +30,13 @@ public class UserPageController {
         return "user/index";
     }
 
+//    跳转至用户信息界面
+    @RequestMapping("/userinfo")
+    public String userinfo(){
+        return "user/userinfo";
+    }
+
+
     //    查询所有游戏并分页(跳转至游戏商城)
     @RequestMapping("/profile")
     public String profile(@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model) throws Exception {
