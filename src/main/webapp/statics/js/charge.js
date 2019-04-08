@@ -19,7 +19,14 @@ function showCash() {
 //确认付款总操作
 function confirm() {
     var radio = document.getElementsByName('payRadio');
+    var selfC = $("#selfCash").val();
+    if (selfC > 600 || selfC < 0 ) {
+        var cashError = "您输入的金额数值过大或过小！";
+        $(".fukuang_error").html(cashError);
+    }
+    else
     if ($("#showCashNum").html() !== "" || 0) {
+        $(".fukuang_error").html("");
         for (var i = 0; i < radio.length; i++) {
             if (radio[0].checked) {
                 $("#wechatModal").modal("show");
@@ -28,7 +35,7 @@ function confirm() {
             }
         }
     } else {
-        var error="请选择需要充值的金额数！";
+        var error = "请选择需要充值的金额数！";
         $(".fukuang_error").html(error);
     }
 }

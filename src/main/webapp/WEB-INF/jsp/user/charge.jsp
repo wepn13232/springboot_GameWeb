@@ -58,9 +58,9 @@
                 <input type="button" class="btn btn-default btn-lg charge_btn1 col-md-2" name="charge_btn" value="20">
                 <input type="button" class="btn btn-default btn-lg charge_btn2 col-md-2" name="charge_btn" value="50">
                 <input type="button" class="btn btn-default btn-lg charge_btn3 col-md-2" name="charge_btn" value="100">
-                <input type="number" value="" name="selfCash" id="selfCash"
+                <input type="number"  name="selfCash" id="selfCash"
                        class="btn btn-default btn-lg charge_btn col-md-2"
-                       placeholder="请输入你想充值的金额" onkeyup="value=value.replace(/[&|.|#|^|/]/g,'')" style="width: 240px">
+                       placeholder="请输入你想充值的金额"  onkeyup="value=value.replace(/[&|.|#|^|/]/g,'')" style="width: 240px"/>
             </div>
         </form>
 
