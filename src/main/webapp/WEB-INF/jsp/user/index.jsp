@@ -23,7 +23,7 @@
                             <h6>欢迎</h6>
                             <h3>这里将是游戏爱好者的天堂</h3>
                             <div class="more">
-                                <a href="${pageContext.request.contextPath}/profile"> 了解更多</a>
+                                <a href="${pageContext.request.contextPath}/user/profile"> 了解更多</a>
                             </div>
                         </div>
                     </li>
