@@ -22,12 +22,12 @@ function showCash() {
 function confirm() {
     var radio = document.getElementsByName('payRadio');
     var selfC = $("#selfCash").val();
-    if (selfC > 600 || selfC <= 0 ) {
-        var cashError = "您输入的金额数值过大或过小！";
+    if (selfC > 600 || selfC < 0 ) {
+        var cashError = "充值金额一次性不可超过600且不能小于0。";
         $(".fukuang_error").html(cashError);
     }
     else
-    if ($("#showCashNum").html() !== "" || 0) {
+    if ($("#showCashNum").html() !== ""||''||0) {
         $(".fukuang_error").html("");
         for (var i = 0; i < radio.length; i++) {
             if (radio[0].checked) {
