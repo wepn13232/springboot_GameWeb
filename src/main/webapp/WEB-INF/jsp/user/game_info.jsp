@@ -74,6 +74,14 @@
     <div class="clearfix" style="padding-top: 1em"></div>
 
 
+        <%--发表评论区--%>
+        <form class="postComment col-md-12 col-sm-12">
+            <textarea class="form-control" style="width: 80%;margin: 0 auto"  rows="3" placeholder="可以在此发表你的评论"></textarea>
+            <div class="clearfix"style="padding: 1em"></div>
+            <input type="button" class="btn btn-primary col-md-2 col-sm-2 col-md-offset-10 col-sm-offset-10" value="发送评论">
+
+        </form>
+
     <%--评论专区--%>
     <div class="comment col-md-12 col-sm-12">
         <div class="col-md-12 col-sm-12" style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
