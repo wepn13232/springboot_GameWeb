@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: linqiyuan
@@ -28,7 +29,7 @@
             ${gameinfoByid.game_info}
         </div>
     </div>
-        <div class="clearfix" style="padding: 1em 1em"></div>
+    <div class="clearfix" style="padding: 1em 1em"></div>
 
     <%--游戏具体内容--%>
     <div class="game_form col-md-12 col-sm-12 center-block">
@@ -73,21 +74,22 @@
     </div>
     <div class="clearfix" style="padding-top: 1em"></div>
 
-        <%--未登录不能评论--%>
-        <%--&lt;%&ndash;发表评论区&ndash;%&gt;--%>
-        <%--<form class="postComment col-md-12 col-sm-12">--%>
-                <%--<textarea class="form-control" style="width: 80%;margin: 0 auto"  rows="3" placeholder="可以在此发表你的评论"></textarea>--%>
-            <%--<div class="clearfix"style="padding: 1em"></div>--%>
-            <%--<input type="button" class="btn btn-primary col-md-2 col-sm-2 col-md-offset-10 col-sm-offset-10" value="发送评论">--%>
+    <%--未登录不能评论--%>
+    <%--&lt;%&ndash;发表评论区&ndash;%&gt;--%>
+    <%--<form class="postComment col-md-12 col-sm-12">--%>
+    <%--<textarea class="form-control" style="width: 80%;margin: 0 auto"  rows="3" placeholder="可以在此发表你的评论"></textarea>--%>
+    <%--<div class="clearfix"style="padding: 1em"></div>--%>
+    <%--<input type="button" class="btn btn-primary col-md-2 col-sm-2 col-md-offset-10 col-sm-offset-10" value="发送评论">--%>
 
-        <%--</form>--%>
+    <%--</form>--%>
 
-        <%--评论专区--%>
-<c:if test="${!empty comment}">
+    <%--评论专区--%>
+    <c:if test="${!empty comment}">
         <c:forEach var="comments" items="${comment}">
 
             <div id="box" class="comment col-md-12 col-sm-12">
-                <div class="col-md-12 col-sm-12" style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
+                <div class="col-md-12 col-sm-12"
+                     style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
                         <%--头像--%>
                     <div class="col-md-12 col-sm-12">
                         <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
@@ -101,7 +103,7 @@
                 </div>
             </div>
         </c:forEach>
-</c:if>
+    </c:if>
 </div>
 <%@include file="common/footer.jsp" %>
 </body>
