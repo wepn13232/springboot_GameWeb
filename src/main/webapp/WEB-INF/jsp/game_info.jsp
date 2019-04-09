@@ -83,6 +83,7 @@
         <%--</form>--%>
 
         <%--评论专区--%>
+<c:if test="${!empty comment}">
         <c:forEach var="comments" items="${comment}">
 
             <div id="box" class="comment col-md-12 col-sm-12">
@@ -100,6 +101,7 @@
                 </div>
             </div>
         </c:forEach>
+</c:if>
 </div>
 <%@include file="common/footer.jsp" %>
 </body>
