@@ -13,6 +13,7 @@
     <title>游戏商城</title>
     <%@include file="common/head.jsp"%>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
+
     <!-- //web-fonts -->
 </head>
 <body>
@@ -25,36 +26,42 @@
 </div>
 <!-- //banner -->
 <!-- portfolio -->
+
 <div class="portfolio">
+
     <div class="container">
         <div class="w3ls-title">
             <h3 class="agileits-title w3title1">游戏商城</h3>
         </div>
+
         <c:if test="${!empty requestScope.gameinfo}">
 
             <div class="row col-md-13 col-sm-13">
 
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
-                    <div class="col-sm-6 col-md-3 gamebox">
-                        <a href="${pageContext.request.contextPath}/user/game_info?id=${gameinfo.id}" target="_blank">
-                            <div class="thumbnail boxshodow">
-                                <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
-                                     alt="通用的占位符缩略图" style="width: 245px;height: 346px">
-                                <div class="caption">
-                                    <p class="game_info">${gameinfo.game_info}</p>
-                                    <div class="text-center">
-                                        <p style="color: red;font-size: 2em">
-                                            $${gameinfo.game_price}</p>
-                                    </div>
+                        <div class="col-sm-6 col-md-3 gamebox">
+                            <a href="${pageContext.request.contextPath}/user/game_info?id=${gameinfo.id}"
+                               target="_blank">
+                                <div class="thumbnail boxshodow">
+                                    <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
+                                         alt="通用的占位符缩略图" style="width: 245px;height: 346px">
+                                    <div class="caption">
+                                        <p class="game_info">${gameinfo.game_info}</p>
+                                        <div class="text-center">
+                                            <p style="color: red;font-size: 2em">
+                                                    $${gameinfo.game_price}</p>
+                                        </div>
+                                        <%--data-自定义标签 ,用${gameinfo.id}做唯一标识--%>
+                                        <input type="hidden" data-gamename="${gameinfo.id}" class="game_name" name="game_name" value="${gameinfo.game_name}" >
+                                        <input type="hidden" data-gameprice="${gameinfo.id}" class="game_price" name="game_price" value="${gameinfo.game_price}" >
+                                        <a type="button" class="button_shop center-block text-center">
+                                            <input type="button" data-disable="${gameinfo.id}" class="btn btn-info shopcar_form "  id="${gameinfo.id}"  value="加入购物车"/>
+                                        </a>
 
-                                    <div class="button_shop center-block text-center">
-                                        <a class="btn btn-info" href="${pageContext.request.contextPath}/user/###">加入购物车</a>
                                     </div>
-
                                 </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
                 </c:forEach>
 
             </div>
@@ -96,6 +103,7 @@
         </tr>
     </table>
 
+
     <div class="clearfix"></div>
 </div>
 <!-- //portfolio -->
@@ -107,25 +115,7 @@
     </p>
 </div>
 <!-- //footer -->
-<!-- Include jQuery & Filterizr -->
-<script src="${pageContext.request.contextPath}/statics/js/jquery.filterizr.js"></script>
-<script src="${pageContext.request.contextPath}/statics/js/controls.js"></script>
-<!-- Kick off Filterizr -->
-<script type="text/javascript">
-    $(function () {
-        //Initialize filterizr with default options
-        $('.filtr-container').filterizr();
-    });
-</script>
-<!--//gallery-->
-<!-- swipe box js -->
-<script src="${pageContext.request.contextPath}/statics/js/jquery.swipebox.min.js"></script>
-<script type="text/javascript">
-    jQuery(function ($) {
-        $(".swipebox").swipebox();
-    });
-</script>
-<!-- //swipe box js -->
-<script src="${pageContext.request.contextPath}/statics/js/bootstrap.js"></script>
+<%@include file="common/footer.jsp" %>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
 </body>
 </html>

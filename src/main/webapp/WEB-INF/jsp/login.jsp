@@ -40,8 +40,6 @@
                     <span id="spanError" style="color: red" class="col-md-offset-4"></span>
                     <div class="clearfix" style="padding: 1em"></div>
                     <input class="lowin-btn login-btn" id="form_submit" value="登录" type="button"/>
-
-
                     <div class="text-foot">
                         还没有账号吗? <a href="${pageContext.request.contextPath}/register" class="register-link">注册</a>
                     </div>
@@ -55,6 +53,6 @@
 
 <%@include file="common/footer.jsp" %>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/loginjs.js"></script>
-
+<script src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
 </body>
 </html>

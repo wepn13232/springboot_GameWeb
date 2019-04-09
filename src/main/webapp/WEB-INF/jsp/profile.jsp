@@ -127,5 +127,7 @@
 </script>
 <!-- //swipe box js -->
 <script src="${pageContext.request.contextPath}/statics/js/bootstrap.js"></script>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
+
 </body>
 </html>

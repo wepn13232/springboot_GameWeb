@@ -7,6 +7,7 @@ public class Comment {
     private String username;
 
 
+    
     public Comment() {
         super();
     }

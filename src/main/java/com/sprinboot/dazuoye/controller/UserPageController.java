@@ -2,8 +2,10 @@ package com.sprinboot.dazuoye.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sprinboot.dazuoye.pojo.Game;
+import com.sprinboot.dazuoye.pojo.ShopCar;
 import com.sprinboot.dazuoye.service.ChargeServices;
 import com.sprinboot.dazuoye.service.GameServices;
+import com.sprinboot.dazuoye.service.ShopCarServices;
 import com.sprinboot.dazuoye.service.UserServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +25,8 @@ public class UserPageController {
     private UserServices userServices;
     @Resource
     private ChargeServices chargeServices;
+    @Resource
+    private ShopCarServices shopCarServices;
 
 
     @RequestMapping("/index")
@@ -77,7 +81,11 @@ public class UserPageController {
 
     //    跳转至购物车、订单界面
     @RequestMapping("/orderList")
-    public String orderList() {
+    public String orderList(@RequestParam String username,Model model) throws Exception {
+        List<ShopCar> shopCarList =shopCarServices.findShopCarByUserName(username);
+        if (shopCarList!=null){
+            model.addAttribute("shopCarList",shopCarList);
+        }
         return "user/orderList";
     }
 

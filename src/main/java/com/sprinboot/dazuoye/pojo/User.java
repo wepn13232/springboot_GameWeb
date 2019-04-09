@@ -1,6 +1,8 @@
 package com.sprinboot.dazuoye.pojo;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
    private String username;//用户名
     private String password;//密码
     private Integer id; //id

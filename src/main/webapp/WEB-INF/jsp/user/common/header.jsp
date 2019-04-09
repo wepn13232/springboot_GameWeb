@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div class="header">
     <nav class="navbar navbar-default">
         <div class="container">
@@ -29,11 +30,9 @@
                         <li><a href="${pageContext.request.contextPath}/user/index">主页</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/profile">游戏商城</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/about">社区论坛</a></li>
-                        <li><a href="${pageContext.request.contextPath}/user/orderList">我的购物车/订单</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/orderList?username=${usersession.username}">我的购物车/订单</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/userinfo">账户信息</a></li>
-                        <li><a href="${pageContext.request.contextPath}/user/charge?username=${usersession.username}">充值</a></li>
-
-
+                        <li><a href="${pageContext.request.contextPath}/user/charge">充值</a></li>
                     </ul>
                     <div class="clearfix"> </div>
                 </div><!-- //navigation -->

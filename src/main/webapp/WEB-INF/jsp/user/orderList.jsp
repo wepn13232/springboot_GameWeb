@@ -16,6 +16,7 @@
 <div class="banner-1"></div>
 
 <%--购物车显示模块--%>
+
 <div class="container-fluid">
     <%--未付款的订单（待购买）--%>
     <div class="clearfix" style="padding: 1em"></div>
@@ -28,20 +29,28 @@
                     <th>购买的游戏</th>
                     <th>购买用户</th>
                     <th>下单日期</th>
+                    <th>金额</th>
                     <th>订单状态</th>
                     <th>操作</th>
                 </tr>
                 </thead>
-
+                <c:forEach var="shopCar" items="${shopCarList}" >
+                <c:if test="${shopCar.status==0}">
                 <tbody>
+                    <input type="hidden" id="id" name="id" value="${shopCar.id}" />
                 <tr>
-                    <td>《彩虹六号：围攻》</td>
-                    <td>linqiyuan </td>
-                    <td>2019/4/1</td>
+                    <td>${shopCar.game_name}</td>
+                    <td>${shopCar.username}</td>
+                    <td>${shopCar.date}</td>
+                    <td>${shopCar.game_price}</td>
                     <td>未付款</td>
-                    <td><button class="btn btn-warning">删除订单</button></td>
+                    <td><button class="btn btn-warning">删除订单</button>
+                        <button class="btn btn-success" style="width: 22%">付款</button>
+                    </td>
                 </tr>
                 </tbody>
+                </c:if>
+              </c:forEach>
             </table>
         </div>
     </div>
@@ -61,21 +70,23 @@
                 <th>订单状态</th>
             </tr>
             </thead>
-
+           <c:forEach var="shopCar" items="${shopCarList}" >
+            <c:if test="${shopCar.status==1}">
             <tbody>
             <tr>
-                <td>《彩虹六号：围攻》</td>
-                <td>linqiyuan </td>
-                <td>2019/4/1</td>
+                <td>${shopCar.game_name}</td>
+                <td>${shopCar.username}</td>
+                <td>${shopCar.date}</td>
                 <td>已购买</td>
             </tr>
             </tbody>
+            </c:if>
+           </c:forEach>
         </table>
     </div>
 </div>
 
 </div>
-
 <%@include file="common/footer.jsp"%>
 </body>
 </html>
