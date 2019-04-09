@@ -44,8 +44,8 @@
                     <td>${shopCar.date}</td>
                     <td>${shopCar.game_price}</td>
                     <td>未付款</td>
-                    <td><button class="btn btn-warning">删除订单</button>
-                        <button class="btn btn-success" style="width: 22%">付款</button>
+                    <td><input class="btn btn-warning" value="删除订单"/>
+                        <input class="btn btn-success" style="width: 22%" value="付款"/>
                     </td>
                 </tr>
                 </tbody>
