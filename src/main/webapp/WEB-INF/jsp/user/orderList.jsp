@@ -18,6 +18,7 @@
 <%--购物车显示模块--%>
 
 <div class="container-fluid">
+
     <%--未付款的订单（待购买）--%>
     <div class="clearfix" style="padding: 1em"></div>
     <div class="panel panel-info">
@@ -36,16 +37,19 @@
                 </thead>
                 <c:forEach var="shopCar" items="${shopCarList}" >
                 <c:if test="${shopCar.status==0}">
+                    <input type="hidden" data-id="b${shopCar.id}" class="id" name="id" value="${shopCar.id}" />
+                    <input type="hidden" data-id="d${shopCar.id}" class="id" name="id" value="${shopCar.id}" />
+                    <input type="hidden" data-gameprice="b${shopCar.id}" class="game_price" name="game_price" value="${shopCar.game_price}" />
                 <tbody>
-                    <input type="hidden" id="id" name="id" value="${shopCar.id}" />
                 <tr>
                     <td>${shopCar.game_name}</td>
                     <td>${shopCar.username}</td>
                     <td>${shopCar.date}</td>
                     <td>${shopCar.game_price}</td>
                     <td>未付款</td>
-                    <td><input class="btn btn-warning" value="删除订单"/>
-                        <input class="btn btn-success" style="width: 22%" value="付款"/>
+                    <td><%--data-自定义标签 ,用按钮的id做唯一标识--%>
+                        <button class="btn btn-warning delete_game" id="d${shopCar.id}">删除订单</button>
+                        <button class="btn btn-success buy_game" style="width: 22%" id="b${shopCar.id}">付款</button>
                     </td>
                 </tr>
                 </tbody>
@@ -87,6 +91,7 @@
 </div>
 
 </div>
-<%@include file="common/footer.jsp"%>
+<%@include file="common/footer.jsp" %>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
 </body>
 </html>

@@ -33,7 +33,17 @@ public class ShopCarServicesImpl implements ShopCarServices {
 
     //更新订单状态
     @Override
-    public boolean modifyShopCar(ShopCar shopCar) throws Exception{
-        return shopCarDao.modifyShopCar(shopCar);
+    public boolean modifyShopCar(Integer id) throws Exception{
+        return shopCarDao.modifyShopCar(id);
+    }
+
+    @Override
+    public boolean deleteShopCar(Integer id) throws Exception {
+        return shopCarDao.deleteShopCar(id);
+    }
+
+    @Override
+    public boolean modifyCashLeft(String username, Integer cashLeft) throws Exception {
+        return shopCarDao.modifyCashLeft(username,cashLeft);
     }
 }

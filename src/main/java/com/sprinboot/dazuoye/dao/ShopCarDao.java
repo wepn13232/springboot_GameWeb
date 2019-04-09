@@ -26,6 +26,14 @@ public interface ShopCarDao {
     boolean addShopCar(ShopCar shopCar)throws Exception;
 
     //更新订单状态
-    @Update("update shopcar set status = 1 where game_name = #{game_name}")
-    boolean modifyShopCar(ShopCar shopCar)throws Exception;
+    @Update("update shopcar set status = 1 where id = #{id}")
+    boolean modifyShopCar(@Param("id") Integer id)throws Exception;
+
+    //删除一条订单
+    @Delete("delete from shopcar where id = #{id}")
+    boolean deleteShopCar(@Param("id") Integer id)throws Exception;
+
+    //付款后更新余额
+    @Update("update user set cashLeft = #{cashLeft} where username = #{username}")
+    boolean modifyCashLeft(String username,Integer cashLeft) throws  Exception;
 }

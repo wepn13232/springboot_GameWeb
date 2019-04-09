@@ -51,7 +51,6 @@
                                             <p style="color: red;font-size: 2em">
                                                     $${gameinfo.game_price}</p>
                                         </div>
-                                        <%--data-自定义标签 ,用${gameinfo.id}做唯一标识--%>
                                         <input type="hidden" data-gamename="${gameinfo.id}" class="game_name" name="game_name" value="${gameinfo.game_name}" >
                                         <input type="hidden" data-gameprice="${gameinfo.id}" class="game_price" name="game_price" value="${gameinfo.game_price}" >
                                         <a type="button" class="button_shop center-block text-center">
