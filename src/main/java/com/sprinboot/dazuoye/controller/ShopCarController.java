@@ -22,14 +22,12 @@ public class ShopCarController {
     //加入购物车
     @RequestMapping(value = "/addshopcar")
     @ResponseBody
-    public String addShopCar(/* @RequestParam String game_name, @RequestParam Integer game_price,*/ShopCar shopCar, HttpServletRequest request) throws Exception {
+    public String addShopCar(ShopCar shopCar, HttpServletRequest request) throws Exception {
         JSONObject json = new JSONObject();
         String username = ((User)request.getSession().getAttribute("usersession")).getUsername();
         shopCar.setDate(new Date());
         shopCar.setUsername(username);
         shopCar.setStatus(0);
-        /*shopCar.setGame_name(game_name);
-        shopCar.setGame_price(game_price);*/
         if (shopCarServices.addShopCar(shopCar)){
             json.put("msg","success");
         }else {

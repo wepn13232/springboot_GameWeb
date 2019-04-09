@@ -53,6 +53,5 @@
 
 <%@include file="common/footer.jsp" %>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/loginjs.js"></script>
-<script src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
 </body>
 </html>

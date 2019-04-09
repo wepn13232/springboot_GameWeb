@@ -4,7 +4,6 @@ $(function () {
 
 
 function checkUser() {
-    alert("sss");
     $.ajax({
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         type: "post",
