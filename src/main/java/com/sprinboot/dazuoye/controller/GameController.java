@@ -1,5 +1,7 @@
 package com.sprinboot.dazuoye.controller;
 
+import com.sprinboot.dazuoye.dao.CommentDao;
+import com.sprinboot.dazuoye.pojo.Comment;
 import com.sprinboot.dazuoye.pojo.Game;
 import com.sprinboot.dazuoye.service.GameServices;
 import org.springframework.stereotype.Controller;
@@ -14,7 +16,8 @@ import java.util.List;
 public class GameController {
     @Resource
     private GameServices gameServices;
-
+    @Resource
+    private CommentDao commentDao;
 
     //    查询所有游戏并分页
     @RequestMapping("/profile")
@@ -27,9 +30,12 @@ public class GameController {
     @RequestMapping("/game_info")
     public String game_info(@RequestParam Integer id, Model model) throws Exception {
         List<Game> games=gameServices.selectGameById(id);
+        List<Comment> comments = commentDao.getAllCommentById(id);
         for(Game game:games) {
             model.addAttribute("gameinfoByid", game);
         }
+            model.addAttribute("comment",comments);
+
         return "game_info";
     }
 

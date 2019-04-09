@@ -73,28 +73,33 @@
     </div>
     <div class="clearfix" style="padding-top: 1em"></div>
 
-        <%--发表评论区--%>
-        <form class="postComment col-md-12 col-sm-12">
-                <textarea class="form-control" style="width: 80%;margin: 0 auto"  rows="3" placeholder="可以在此发表你的评论"></textarea>
-            <div class="clearfix"style="padding: 1em"></div>
-            <input type="button" class="btn btn-primary col-md-2 col-sm-2 col-md-offset-10 col-sm-offset-10" value="发送评论">
+        <%--未登录不能评论--%>
+        <%--&lt;%&ndash;发表评论区&ndash;%&gt;--%>
+        <%--<form class="postComment col-md-12 col-sm-12">--%>
+                <%--<textarea class="form-control" style="width: 80%;margin: 0 auto"  rows="3" placeholder="可以在此发表你的评论"></textarea>--%>
+            <%--<div class="clearfix"style="padding: 1em"></div>--%>
+            <%--<input type="button" class="btn btn-primary col-md-2 col-sm-2 col-md-offset-10 col-sm-offset-10" value="发送评论">--%>
 
-        </form>
+        <%--</form>--%>
 
         <%--评论专区--%>
-        <div class="comment col-md-12 col-sm-12">
-            <div class="col-md-12 col-sm-12" style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
-                <%--头像--%>
-                <div class="col-md-12 col-sm-12">
-                    <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"  class="img-circle col-md-3 col-sm-3" style="width: 120px;height: 100px;margin: 10px" alt="">
-                    <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
-                        <p>${usersession.username}:</p>
-                        <p>卧槽这游戏真jier好玩！</p>
-                    </div>
+        <c:forEach var="comments" items="${comment}">
 
+            <div id="box" class="comment col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12" style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
+                        <%--头像--%>
+                    <div class="col-md-12 col-sm-12">
+                        <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
+                             class="img-circle col-md-3 col-sm-3"
+                             style="width: 120px;height: 100px;margin: 10px" alt="">
+                        <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
+                            <p>${comments.username}:</p>
+                            <p>${comments.comment}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </c:forEach>
 </div>
 <%@include file="common/footer.jsp" %>
 </body>

@@ -1,6 +1,8 @@
 package com.sprinboot.dazuoye.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sprinboot.dazuoye.dao.CommentDao;
+import com.sprinboot.dazuoye.pojo.Comment;
 import com.sprinboot.dazuoye.pojo.Game;
 import com.sprinboot.dazuoye.pojo.ShopCar;
 import com.sprinboot.dazuoye.service.ChargeServices;
@@ -27,6 +29,8 @@ public class UserPageController {
     private ChargeServices chargeServices;
     @Resource
     private ShopCarServices shopCarServices;
+    @Resource
+    private CommentDao commentDao;
 
 
     @RequestMapping("/index")
@@ -52,9 +56,12 @@ public class UserPageController {
     @RequestMapping("/game_info")
     public String game_info(@RequestParam Integer id, Model model) throws Exception {
         List<Game> games = gameServices.selectGameById(id);
+        List<Comment> comments = commentDao.getAllCommentById(id);
         for (Game game : games) {
             model.addAttribute("gameinfoByid", game);
         }
+            model.addAttribute("comment",comments);
+
         return "user/game_info";
     }
 
