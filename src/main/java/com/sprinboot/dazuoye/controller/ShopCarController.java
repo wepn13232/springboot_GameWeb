@@ -49,7 +49,7 @@ public class ShopCarController {
         //查出余额
         int cashLeft = chargeServices.checkCashLeft(username);
         if(cashLeft>=game_price){
-            if (shopCarServices.modifyShopCar(id)){
+            if (shopCarServices.modifyShopCar(id,new Date())){
                 int latercash=cashLeft-game_price;
                 //更新余额
                 shopCarServices.modifyCashLeft(username,latercash);

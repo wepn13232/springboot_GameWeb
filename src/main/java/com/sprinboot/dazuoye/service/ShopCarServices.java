@@ -3,6 +3,7 @@ package com.sprinboot.dazuoye.service;
 import com.sprinboot.dazuoye.pojo.ShopCar;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public interface ShopCarServices {
     boolean addShopCar(ShopCar shopCar)throws Exception;
 
     //更新订单状态
-    boolean modifyShopCar(Integer id)throws Exception;
+    boolean modifyShopCar(Integer id, Date buyDate)throws Exception;
 
     //删除一条订单
     boolean deleteShopCar(@Param("id") Integer id)throws Exception;

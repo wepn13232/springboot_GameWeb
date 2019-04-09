@@ -6,6 +6,7 @@ import com.sprinboot.dazuoye.service.ShopCarServices;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,15 +34,17 @@ public class ShopCarServicesImpl implements ShopCarServices {
 
     //更新订单状态
     @Override
-    public boolean modifyShopCar(Integer id) throws Exception{
-        return shopCarDao.modifyShopCar(id);
+    public boolean modifyShopCar(Integer id, Date buyDate) throws Exception{
+        return shopCarDao.modifyShopCar(id,buyDate);
     }
 
+    //删除一条订单
     @Override
     public boolean deleteShopCar(Integer id) throws Exception {
         return shopCarDao.deleteShopCar(id);
     }
 
+    //付款后更新余额
     @Override
     public boolean modifyCashLeft(String username, Integer cashLeft) throws Exception {
         return shopCarDao.modifyCashLeft(username,cashLeft);

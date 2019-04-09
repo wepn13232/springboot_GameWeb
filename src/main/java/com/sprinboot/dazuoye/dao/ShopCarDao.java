@@ -4,6 +4,7 @@ import com.sprinboot.dazuoye.pojo.ShopCar;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -26,8 +27,8 @@ public interface ShopCarDao {
     boolean addShopCar(ShopCar shopCar)throws Exception;
 
     //更新订单状态
-    @Update("update shopcar set status = 1 where id = #{id}")
-    boolean modifyShopCar(@Param("id") Integer id)throws Exception;
+    @Update("update shopcar set status = 1 ,date = #{buyDate} where id = #{id}")
+    boolean modifyShopCar(@Param("id") Integer id, Date buyDate)throws Exception;
 
     //删除一条订单
     @Delete("delete from shopcar where id = #{id}")
