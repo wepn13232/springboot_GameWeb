@@ -12,6 +12,8 @@ function showCash() {
     var cashNum = $(this).val();
     // alert(cashNum);
     $('.showCashNum').html(~~cashNum);
+    $("#selfCash").val("");
+
     // alert(num.html());
 }
 function showCash1() {
