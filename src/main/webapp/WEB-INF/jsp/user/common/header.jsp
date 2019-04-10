@@ -31,7 +31,7 @@
                         <li><a href="${pageContext.request.contextPath}/user/profile">游戏商城</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/about">社区论坛</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/orderList?username=${usersession.username}">我的购物车/订单</a></li>
-                        <li><a href="${pageContext.request.contextPath}/user/userinfo">账户信息</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/userinfo?username=${usersession.username}">账户信息</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/charge?username=${usersession.username}">充值</a></li>
                     </ul>
                     <div class="clearfix"> </div>

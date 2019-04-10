@@ -40,7 +40,9 @@ public class UserPageController {
 
 //    跳转至用户信息界面
     @RequestMapping("/userinfo")
-    public String userinfo(){
+    public String userinfo(@RequestParam String username,Model model) throws Exception {
+        int cashLef=chargeServices.checkCashLeft(username);
+        model.addAttribute("cashLeft",cashLef);
         return "user/userinfo";
     }
 

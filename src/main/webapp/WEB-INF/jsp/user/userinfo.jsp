@@ -25,7 +25,7 @@
             <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
                 <p >用户名：${usersession.username}</p>
                 <div class="clearfix" style="padding: 5px"></div>
-                <p>余额：${usersession.username}</p>
+                <p>余额：${cashLeft}</p>
             </div>
 
         </div>
