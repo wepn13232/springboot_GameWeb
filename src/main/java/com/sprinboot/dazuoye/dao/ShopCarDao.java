@@ -37,4 +37,5 @@ public interface ShopCarDao {
     //付款后更新余额
     @Update("update user set cashLeft = #{cashLeft} where username = #{username}")
     boolean modifyCashLeft(String username,Integer cashLeft) throws  Exception;
+
 }
