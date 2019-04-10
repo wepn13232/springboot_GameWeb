@@ -7,14 +7,14 @@ public class ShopCar {
     private String username;
     private String game_name;
     private Integer game_price;
-    private Date date;
+    private String date;
     private Integer status;
 
     public ShopCar() {
         super();
     }
 
-    public ShopCar(Integer id, String username, String game_name, Integer game_price, Date date, Integer status) {
+    public ShopCar(Integer id, String username, String game_name, Integer game_price, String date, Integer status) {
         this.id = id;
         this.username = username;
         this.game_name = game_name;
@@ -55,11 +55,11 @@ public class ShopCar {
         this.game_price = game_price;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

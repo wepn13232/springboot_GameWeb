@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -28,7 +29,9 @@ public class ShopCarController {
     public String addShopCar(ShopCar shopCar, HttpServletRequest request) throws Exception {
         JSONObject json = new JSONObject();
         String username = ((User)request.getSession().getAttribute("usersession")).getUsername();
-        shopCar.setDate(new Date());
+        Date date = new Date();
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        shopCar.setDate(dateformat.format(date));
         shopCar.setUsername(username);
         shopCar.setStatus(0);
         if (shopCarServices.addShopCar(shopCar)){
