@@ -40,9 +40,9 @@ function buyGame() {
 
 //付款操作模态框（输入密码）
 function confirmBuyGame() {
+    //点击确认
     if($("#payModal").modal("hide")){
         //输入密码，判断密码
-        if(AJAX){
             $.ajax({
                 contentType: "application/json; charset=utf-8",
                 type: "get",
@@ -68,9 +68,6 @@ function confirmBuyGame() {
 
                 }
             })
-        }else{
-
-        }
     }
 }
 
