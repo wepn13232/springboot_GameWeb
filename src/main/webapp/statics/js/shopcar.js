@@ -1,8 +1,8 @@
 $(function () {
     $(".shopcar_form").bind("click", addShopCar);
-    $(".buy_game").bind("click", buyGame);
+    $(".buy_game").bind("click",buyGame);
     $(".delete_game").bind("click", deleteGame);
-
+   /* $("#qrmodalBtn").bind("click",confirmBuyGame);*/
 });
 
 //加入购物车响应函数
@@ -51,7 +51,6 @@ function buyGame() {
             },
             async: true,
             dataType: "json",
-
             success: function (data) {
                 //密码正确，付款购买响应函数
                 if (data.msg === "success") {
@@ -76,8 +75,15 @@ function buyGame() {
                                 alert("付款失败");
                             }
                             if (data.msg === "less") {
-                                window.confirm("余额不足，是否现在充值？");
-                                window.location.href = "/user/charge?username=" + data.username;
+                                //调用confirm确认框，确认是否充值
+                                    var r=confirm("余额不足，是否现在充值？");
+                                    if (r==true){
+                                        window.location.href = "/user/charge?username=" + data.username;
+                                    }
+                                    else{
+                                        $("#payModal").modal("hide");
+                                        $(".payPassword").val("");
+                                    }
                             }
                         },
                         error: function () {
@@ -85,19 +91,14 @@ function buyGame() {
                     })
                 }
                 if (data.msg === "error") {
-                    /* $("#payModal").modal("show");*/
                     $(".message").html("密码错误！请重新输入");
                     $(".payPassword").val("");
                 }
             },
-
             error: function () {
-
             }
         })
-
     }
-
 }
 
 
