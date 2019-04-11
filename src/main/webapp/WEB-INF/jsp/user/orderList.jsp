@@ -18,7 +18,6 @@
 <%--购物车显示模块--%>
 
 <div class="container-fluid">
-
     <%--未付款的订单（待购买）--%>
     <div class="clearfix" style="padding: 1em"></div>
     <div class="panel panel-info">
@@ -104,7 +103,7 @@
         </div>
         <div class="clearfix" style="padding-top: 3em"></div>
         <div slot="afooter">
-        <a type="button" class="btn btn-success col-md-offset-3 col-sm-offset-3" style="margin-top: 1em" id="qrmodalBtn" data-dismiss="modal">确认</a>
+        <a type="button" class="btn btn-success col-md-offset-3 col-sm-offset-3" style="margin-top: 1em" id="qrmodalBtn">确认</a>
         <a type="button" class="btn btn-danger" style="margin-left: 4em;margin-top: 1em" id="qxmodalBtn" data-dismiss="modal">取消</a>
         </div>
         </div>
