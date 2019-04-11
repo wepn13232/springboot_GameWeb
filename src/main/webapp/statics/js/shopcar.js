@@ -2,7 +2,7 @@ $(function () {
     $(".shopcar_form").bind("click", addShopCar);
     $(".buy_game").bind("click", buyGame);
     $(".delete_game").bind("click", deleteGame);
-    $("#qrmodalBtn").bind("click",confirmBuyGame);
+
 });
 
 //加入购物车响应函数
@@ -30,46 +30,70 @@ function addShopCar() {
         }
     })
 }
-
-
-//付款购买响应函数
+//弹出操作模态框
 function buyGame() {
     var id = $(this).attr('id');
     $("#payModal").modal("show");
-}
-
-//付款操作模态框（输入密码）
-function confirmBuyGame() {
-    //点击确认
-    if($("#payModal").modal("hide")){
-        //输入密码，判断密码
+    /*console.log(id);*/
+    $("#qrmodalBtn").bind("click",confirmBuyGame);
+    //付款操作模态框（输入密码）
+    function confirmBuyGame() {
+        if($("#payModal").modal("hide")){
+            //输入密码，判断密码
             $.ajax({
                 contentType: "application/json; charset=utf-8",
                 type: "get",
-                url: "/buygame",
-                data: {
-                    "id": $("input[data-id=" + id + "]").val(), "game_price": $("input[data-gameprice=" + id + "]").val()
+                url:"/payok",
+                data:{
+                    "paypassword":$(".payPassword").val()
                 },
-                async: true,
-                dataType: "json",
-                success: function (data) {
-                    if (data.msg === "success") {
-                        window.location.reload();
+                async:true,
+                dataType:"json",
+                success:function (data) {
+                    //密码正确，付款购买响应函数
+                    if (data.msg==="success") {
+                        /*$("#payModal").modal("hide")*/
+                        $.ajax({
+                            contentType: "application/json; charset=utf-8",
+                            type: "get",
+                            url: "/buygame",
+                            data: {
+                                "id": $("input[data-id=" + id + "]").val(), "game_price": $("input[data-gameprice=" + id + "]").val()
+                            },
+                            async: true,
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.msg === "success") {
+                                    window.location.reload();
+                                }
+                                if (data.msg === "error") {
+                                    alert("付款失败");
+                                }
+                                if (data.msg === "less") {
+                                    window.confirm("余额不足，是否现在充值？");
+                                    window.location.href = "/user/charge?username=" + data.username;
+                                }
+                            },
+                            error: function () {
+                            }
+                        })
                     }
                     if (data.msg === "error") {
-                        alert("付款失败");
-                    }
-                    if (data.msg === "less") {
-                        window.confirm("余额不足，是否现在充值？");
-                        window.location.href = "/user/charge?username=" + data.username;
+                       /* $("#payModal").modal("show");*/
+                        $(".message").html("密码错误！请重新输入");
+                        $(".payPassword").val("");
                     }
                 },
-                error: function () {
-
+                error:function () {
                 }
             })
+       }
+        else{
+        }
     }
+
 }
+
 
 //删除订单
 function deleteGame() {

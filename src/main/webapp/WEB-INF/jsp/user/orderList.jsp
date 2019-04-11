@@ -96,16 +96,18 @@
 
 <%--付款模态框--%>
 <div class="modal fade" style="padding: 15em" id="payModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
+     aria-hidden="true" >
     <div class="modal-dialog">
         <div class="modal-content">
-            <p class="col-md-12 col-sm-12" style="width: 300px">请输入登录密码以支付购买：</p>
-            <input class="form-control payPassword col-md-12 col-sm-12" style="width: 500px" required/>
+            <p class="col-md-12 col-sm-12 message" style="width: 300px">请输入登录密码以支付购买：</p>
+            <input type="password" class="form-control payPassword col-md-12 col-sm-12" style="width: 500px" required/>
         </div>
         <div class="clearfix" style="padding-top: 3em"></div>
+        <div slot="afooter">
         <a type="button" class="btn btn-success col-md-offset-3 col-sm-offset-3" style="margin-top: 1em" id="qrmodalBtn" data-dismiss="modal">确认</a>
         <a type="button" class="btn btn-danger" style="margin-left: 4em;margin-top: 1em" id="qxmodalBtn" data-dismiss="modal">取消</a>
-    </div>
+        </div>
+        </div>
 </div>
 
 <%@include file="common/footer.jsp" %>

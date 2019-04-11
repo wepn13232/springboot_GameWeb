@@ -5,6 +5,7 @@ import com.sprinboot.dazuoye.pojo.ShopCar;
 import com.sprinboot.dazuoye.pojo.User;
 import com.sprinboot.dazuoye.service.ChargeServices;
 import com.sprinboot.dazuoye.service.ShopCarServices;
+import com.sun.net.httpserver.Authenticator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,6 +43,20 @@ public class ShopCarController {
         return json.toJSONString();
     }
 
+    //验证密码支付
+    @RequestMapping(value = "payok")
+    @ResponseBody
+    public String payPassword(@RequestParam String paypassword,HttpServletRequest request){
+        String password = ((User)request.getSession().getAttribute("usersession")).getPassword();
+        JSONObject json = new JSONObject();
+        if (password.equals(paypassword)){
+            json.put("msg", "success");
+        }else {
+            json.put("msg", "error");
+        }
+        return json.toJSONString();
+    }
+
     //付款购买
     @RequestMapping(value = "/buygame")
     @ResponseBody
@@ -66,6 +81,8 @@ public class ShopCarController {
         }
         return json.toJSONString();
     }
+
+
 
     //删除订单
     @RequestMapping(value = "/deletegame")
