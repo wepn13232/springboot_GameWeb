@@ -25,4 +25,7 @@ public interface ShopCarServices {
 
     //付款后更新余额
     boolean modifyCashLeft(String username,Integer cashLeft) throws  Exception;
+
+    //根据用户名字和游戏名查询订单状态
+    Integer findStatusByUserNameAndGameName(String username,String game_name)throws Exception;
 }

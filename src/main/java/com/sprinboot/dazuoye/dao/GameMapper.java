@@ -23,8 +23,8 @@ public interface GameMapper {
      List<Game> findByPage(HashMap<String, Object> map) throws Exception;
 
     //查询所有游戏（利用分页）
-    @Select("select * from Game")
-     List<Game> getAllGame(Game game) throws Exception;
+    /*@Select("select * from Game")
+     List<Game> getAllGame(Game game) throws Exception;*/
 
 //    查看指定游戏信息
     @Select("select * from Game where id=#{id}")

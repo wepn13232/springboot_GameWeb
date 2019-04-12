@@ -37,7 +37,7 @@
         <c:if test="${!empty requestScope.gameinfo}">
 
             <div class="row col-md-13 col-sm-13">
-
+                <%--requestScope通常是在servlet或者action的服务端中通过request.setAttribute()方法把数据放到request对象中供客户端获取，然后客户端获取的方法就是requestScope.getAttribute()--%>
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
                         <div class="col-sm-6 col-md-3 gamebox">
                             <a href="${pageContext.request.contextPath}/user/game_info?id=${gameinfo.id}"
@@ -51,11 +51,27 @@
                                             <p style="color: red;font-size: 2em">
                                                     $${gameinfo.game_price}</p>
                                         </div>
+                                            <%--加入购物车模块--%>
                                         <input type="hidden" data-gamename="${gameinfo.id}" class="game_name" name="game_name" value="${gameinfo.game_name}" >
                                         <input type="hidden" data-gameprice="${gameinfo.id}" class="game_price" name="game_price" value="${gameinfo.game_price}" >
-                                        <a type="button" class="button_shop center-block text-center">
-                                            <input type="button" data-disable="${gameinfo.id}" class="btn btn-info shopcar_form "  id="${gameinfo.id}"  value="加入购物车"/>
-                                        </a>
+                                        <c:if test="${gameinfo.game_status==null}">
+                                            <a type="button" class="button_shop center-block text-center">
+                                                <input type="button" data-disable="${gameinfo.id}" class="btn btn-info shopcar_form "  id="${gameinfo.id}"  value="加入购物车"/>
+                                            </a>
+                                        </c:if>
+                                        <c:if test="${gameinfo.game_status==1}">
+                                            <a type="button" class="button_shop center-block text-center">
+                                                <input type="button"  class="btn btn-info "  value="已购买" disabled>
+                                            </a>
+                                        </c:if>
+                                        <c:if test="${gameinfo.game_status==0}">
+                                            <a type="button" class="button_shop center-block text-center">
+                                                <input type="button" class="btn btn-info "  value="已加入购物车" disabled/>
+                                            </a>
+                                        </c:if>
+
+
+
 
                                     </div>
                                 </div>

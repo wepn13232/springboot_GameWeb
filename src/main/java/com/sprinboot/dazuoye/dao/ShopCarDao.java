@@ -19,7 +19,7 @@ public interface ShopCarDao {
      * 根据用户名字查询订单
      * @return
      */
-    @Select("select * from shopcar where username = #{username}")
+    @Select("select * from shopcar where username = #{username} order by date desc")
     List<ShopCar> findShopCarByUserName(@Param("username") String username) throws Exception;
 
     //添加订单到购物车
@@ -38,4 +38,7 @@ public interface ShopCarDao {
     @Update("update user set cashLeft = #{cashLeft} where username = #{username}")
     boolean modifyCashLeft(String username,Integer cashLeft) throws  Exception;
 
+    //根据用户名字和游戏名查询订单状态
+    @Select("select * from shopcar where username = #{username} and game_name = #{game_name}")
+    Integer findStatusByUserNameAndGameName(String username,String game_name)throws Exception;
 }

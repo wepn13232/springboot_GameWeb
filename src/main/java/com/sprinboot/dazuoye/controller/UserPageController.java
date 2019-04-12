@@ -2,9 +2,7 @@ package com.sprinboot.dazuoye.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sprinboot.dazuoye.dao.CommentDao;
-import com.sprinboot.dazuoye.pojo.Comment;
-import com.sprinboot.dazuoye.pojo.Game;
-import com.sprinboot.dazuoye.pojo.ShopCar;
+import com.sprinboot.dazuoye.pojo.*;
 import com.sprinboot.dazuoye.service.ChargeServices;
 import com.sprinboot.dazuoye.service.GameServices;
 import com.sprinboot.dazuoye.service.ShopCarServices;
@@ -16,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -49,8 +49,9 @@ public class UserPageController {
 
     //    查询所有游戏并分页(跳转至游戏商城)
     @RequestMapping("/profile")
-    public String profile(@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model) throws Exception {
-        model.addAttribute("gameinfo", gameServices.findByPage(currentPage));
+    public String profile(@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model, HttpServletRequest request) throws Exception {
+        String username = ((User)request.getSession().getAttribute("usersession")).getUsername();
+        model.addAttribute("gameinfo", gameServices.findByPage(currentPage,username));
         return "user/profile";
     }
 
