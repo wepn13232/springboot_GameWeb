@@ -68,6 +68,27 @@ public class UserPageController {
         return "user/game_info";
     }
 
+    //  发表新的评论
+    @RequestMapping(value = "/addComment")
+    @ResponseBody
+    public String addComment(String name, String comments,Integer id) throws Exception {
+        JSONObject json = new JSONObject();
+        int flag = commentDao.selectGameStatus(name,id);
+        Comment comment =new Comment();
+        comment.setUsername(name);
+        comment.setGame_id(id);
+        comment.setComment(comments);
+        if (flag==1){
+            if (commentDao.addComment(comment)){
+                json.put("msg","success");
+            }else {
+                json.put("msg","error1");   //添加失败
+            }
+        }   else {
+            json.put("msg","error2");   //未购买游戏
+        }
+        return json.toJSONString();
+    }
     //    跳转至论坛
     @RequestMapping("/about")
     public String about() {

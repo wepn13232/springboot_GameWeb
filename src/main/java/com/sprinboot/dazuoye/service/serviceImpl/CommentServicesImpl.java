@@ -22,11 +22,23 @@ public class CommentServicesImpl implements CommentServices {
 
     //发表评论
     @Override
-    public int addComment(String username, String comment,int game_id) throws Exception {
+    public Boolean addComment(String username, String comment,int game_id) throws Exception {
         Comment comment1 = new Comment();
         comment1.setGame_id(game_id);
         comment1.setUsername(username);
         comment1.setComment(comment);
         return commentDao.addComment(comment1);
+    }
+
+    //判断用户游戏状态
+    @Override
+    public int selectGameStatus(String username, int game_id) throws Exception {
+        int flag=commentDao.selectGameStatus(username,game_id);
+        if (flag==1){
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
 }

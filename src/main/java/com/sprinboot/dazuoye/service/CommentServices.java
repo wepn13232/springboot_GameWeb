@@ -9,5 +9,8 @@ public interface CommentServices {
     List<Comment> getAllCommentById(int id) throws Exception;
 
     //发表评论
-    int addComment(String username,String comment,int game_id) throws Exception;
+    Boolean addComment(String username,String comment,int game_id) throws Exception;
+
+    //判断用户游戏状态
+    int selectGameStatus(String username,int game_id) throws Exception;
 }

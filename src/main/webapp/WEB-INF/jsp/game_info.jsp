@@ -85,9 +85,10 @@
 
     <%--评论专区--%>
     <c:if test="${!empty comment}">
+        <div id="box" class="comment col-md-12 col-sm-12">
         <c:forEach var="comments" items="${comment}">
 
-            <div id="box" class="comment col-md-12 col-sm-12">
+
                 <div class="col-md-12 col-sm-12"
                      style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
                         <%--头像--%>
@@ -101,8 +102,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
         </c:forEach>
+        </div>
     </c:if>
 </div>
 <%@include file="common/footer.jsp" %>
