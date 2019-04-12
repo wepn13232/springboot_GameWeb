@@ -11,7 +11,7 @@ function addShopCar() {
     $.ajax({
         contentType: "application/json; charset=utf-8",
         type: "get",
-        url: "/addshopcar",
+        url: "/user/addshopcar",
         data: {
             "game_name": $("input[data-gamename=" + id + "]").val(),
             "game_price": $("input[data-gameprice=" + id + "]").val()

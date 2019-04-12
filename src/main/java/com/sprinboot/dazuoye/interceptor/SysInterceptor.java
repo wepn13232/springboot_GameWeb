@@ -10,7 +10,8 @@ public class SysInterceptor implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new Interceptor()).addPathPatterns("/user/**","/addshopcar");
+        registry.addInterceptor(new Interceptor()).addPathPatterns("/user/**");
+
     }
 
 }

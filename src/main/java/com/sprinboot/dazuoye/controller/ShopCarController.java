@@ -18,6 +18,7 @@ import java.util.Date;
 
 
 @Controller
+@RequestMapping("/user")
 public class ShopCarController {
     @Resource
     private ShopCarServices shopCarServices;

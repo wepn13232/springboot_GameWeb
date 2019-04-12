@@ -124,11 +124,6 @@
 <!-- //portfolio -->
 <!-- footer -->
 
-<div class="footer-w3copy w3-agileits">
-    <p>
-        2019.林启元
-    </p>
-</div>
 <!-- //footer -->
 <%@include file="common/footer.jsp" %>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
