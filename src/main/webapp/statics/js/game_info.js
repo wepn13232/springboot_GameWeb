@@ -9,9 +9,9 @@ $(function () {
             type: "get",
             url: "/user/addComment",
             data: {
-                "username":$("#username").val(),
-                "comment":$("#addTxt").val(),
-                "game_id":$("#game_id").val()
+                "name":$("#username").val(),
+                "comments":$("#addTxt").val(),
+                "id":$("#game_id").val()
             },
             async: true,
             dataType: "json",
@@ -28,6 +28,7 @@ $(function () {
                 +"</div>"
 
                 $("#box").html(html);
+                alert("评论成功!")
             },
             error1: function () {
                 alert("发表评论错误！")

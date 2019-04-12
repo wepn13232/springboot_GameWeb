@@ -27,13 +27,14 @@ public class CommentServicesImpl implements CommentServices {
         comment1.setGame_id(game_id);
         comment1.setUsername(username);
         comment1.setComment(comment);
+        System.out.println(comment1);
         return commentDao.addComment(comment1);
     }
 
     //判断用户游戏状态
     @Override
-    public int selectGameStatus(String username, int game_id) throws Exception {
-        int flag=commentDao.selectGameStatus(username,game_id);
+    public Integer selectGameStatus(String username, int game_id) throws Exception {
+        Integer flag=commentDao.selectGameStatus(username,game_id);
         if (flag==1){
             return 1;
         }

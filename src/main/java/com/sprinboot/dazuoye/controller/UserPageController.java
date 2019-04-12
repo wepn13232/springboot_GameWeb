@@ -73,7 +73,9 @@ public class UserPageController {
     @ResponseBody
     public String addComment(String name, String comments,Integer id) throws Exception {
         JSONObject json = new JSONObject();
-        int flag = commentDao.selectGameStatus(name,id);
+
+        Integer flag = commentDao.selectGameStatus(name,id);
+        System.out.println("******************"+name+"*******"+comments+"*********"+id);
         Comment comment =new Comment();
         comment.setUsername(name);
         comment.setGame_id(id);

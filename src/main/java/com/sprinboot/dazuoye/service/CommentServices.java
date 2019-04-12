@@ -12,5 +12,5 @@ public interface CommentServices {
     Boolean addComment(String username,String comment,int game_id) throws Exception;
 
     //判断用户游戏状态
-    int selectGameStatus(String username,int game_id) throws Exception;
+    Integer selectGameStatus(String username,int game_id) throws Exception;
 }
