@@ -24,7 +24,12 @@ public class GameController {
     //    查询所有游戏并分页
     @RequestMapping("/profile")
     public String profile(@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model, HttpServletRequest request) throws Exception {
-        String username = ((User)request.getSession().getAttribute("usersession")).getUsername();
+        String username ;
+        if(request.getSession().getAttribute("usersession")==null){
+            username="zhaocaiqibilipalade";
+        }else {
+            username= ((User)request.getSession().getAttribute("usersession")).getUsername();
+        }
         model.addAttribute("gameinfo", gameServices.findByPage(currentPage,username));
         return "profile";
     }

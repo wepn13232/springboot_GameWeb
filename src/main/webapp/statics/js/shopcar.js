@@ -50,7 +50,7 @@ function buyGame() {
         $.ajax({
             contentType: "application/json; charset=utf-8",
             type: "get",
-            url: "/payok",
+            url: "/user/payok",
             data: {
                 "paypassword": $(".payPassword").val()
             },
@@ -62,7 +62,7 @@ function buyGame() {
                     $.ajax({
                         contentType: "application/json; charset=utf-8",
                         type: "get",
-                        url: "/buygame",
+                        url: "/user/buygame",
                         data: {
                             "id": $("input[data-id=" + id + "]").val(),
                             "game_price": $("input[data-gameprice=" + id + "]").val()
@@ -115,7 +115,7 @@ function deleteGame() {
        $.ajax({
            contentType: "application/json; charset=utf-8",
            type: "get",
-           url: "/deletegame",
+           url: "/user/deletegame",
            data: {
                "id": $("input[data-id=" + id + "]").val()
            },
