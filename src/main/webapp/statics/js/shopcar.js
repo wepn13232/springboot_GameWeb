@@ -77,7 +77,7 @@ function buyGame() {
                             if (data.msg === "less") {
                                 //调用confirm确认框，确认是否充值
                                     var r=confirm("余额不足，是否现在充值？");
-                                    if (r==true){
+                                    if (r===true){
                                         window.location.href = "/user/charge?username=" + data.username;
                                     }
                                     else{
