@@ -20,7 +20,11 @@ function addShopCar() {
         dataType: "json",
         success: function (data) {
             if (data.msg === "success") {
-                $("[data-disable=" + id + "]").attr("disabled", "true");
+               $("[data-disable=" + id + "]").attr({
+                   "disabled": "true",
+                    "value":"已加入购物车"
+               });
+
             } else {
                 $("[data-span=" + id + "]").html("加入购物车失败！");
             }

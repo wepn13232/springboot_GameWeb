@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface GameServices {
     //    获取总记录数
-    int selectCount() throws Exception;
+    /*int selectCount() throws Exception;*/
 
     //    分页操作
-    PageBean<Game> findByPage(int currentPage) throws Exception;
+    PageBean<Game> findByPage(int currentPage,String username) throws Exception;
 
 //    查询所有游戏
-    List<Game> getAllGame(Game game) throws Exception;
+    /*List<Game> getAllGame(Game game) throws Exception;*/
 
 
 //    查看指定id的游戏

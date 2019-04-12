@@ -49,4 +49,9 @@ public class ShopCarServicesImpl implements ShopCarServices {
     public boolean modifyCashLeft(String username, Integer cashLeft) throws Exception {
         return shopCarDao.modifyCashLeft(username,cashLeft);
     }
+
+    @Override
+    public Integer findStatusByUserNameAndGameName(String username, String game_name) throws Exception {
+        return shopCarDao.findStatusByUserNameAndGameName(username,game_name);
+    }
 }
