@@ -24,7 +24,8 @@ function addShopCar() {
                    "disabled": "true",
                     "value":"已加入购物车"
                });
-
+               $("[data-disable=" + id + "]").removeClass("btn-info");
+                $("[data-disable=" + id + "]").addClass("btn-warning");
             } else {
                 $("[data-span=" + id + "]").html("加入购物车失败！");
             }
@@ -109,26 +110,28 @@ function buyGame() {
 //删除订单
 function deleteGame() {
     var id = $(this).attr('id');
-    window.confirm("确认删除？");
-    $.ajax({
-        contentType: "application/json; charset=utf-8",
-        type: "get",
-        url: "/deletegame",
-        data: {
-            "id": $("input[data-id=" + id + "]").val()
-        },
-        async: true,
-        dataType: "json",
-        success: function (data) {
-            if (data.msg === "success") {
-                window.location.reload();
-            }
-            if (data.msg === "error") {
-                alert("删除失败");
-            }
-        },
-        error: function () {
-        }
-    })
+   var r= window.confirm("确认删除？");
+   if(r===true){
+       $.ajax({
+           contentType: "application/json; charset=utf-8",
+           type: "get",
+           url: "/deletegame",
+           data: {
+               "id": $("input[data-id=" + id + "]").val()
+           },
+           async: true,
+           dataType: "json",
+           success: function (data) {
+               if (data.msg === "success") {
+                   window.location.reload();
+               }
+               if (data.msg === "error") {
+                   alert("删除失败");
+               }
+           },
+           error: function () {
+           }
+       })
+   }
 }
 

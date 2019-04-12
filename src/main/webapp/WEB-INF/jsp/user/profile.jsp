@@ -61,12 +61,12 @@
                                         </c:if>
                                         <c:if test="${gameinfo.game_status==1}">
                                             <a type="button" class="button_shop center-block text-center">
-                                                <input type="button"  class="btn btn-info "  value="已购买" disabled>
+                                                <input type="button"  class="btn btn-success "  value="已购买" disabled>
                                             </a>
                                         </c:if>
                                         <c:if test="${gameinfo.game_status==0}">
                                             <a type="button" class="button_shop center-block text-center">
-                                                <input type="button" class="btn btn-info "  value="已加入购物车" disabled/>
+                                                <input type="button" class="btn btn-warning "  value="已加入购物车" disabled/>
                                             </a>
                                         </c:if>
 

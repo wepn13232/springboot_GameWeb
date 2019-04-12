@@ -48,7 +48,7 @@
                                     </div>
 
                                     <div class="button_shop center-block text-center">
-                                        <a class="btn btn-info" href="${pageContext.request.contextPath}/user/###">加入购物车</a>
+                                        <a class="btn btn-info" href="${pageContext.request.contextPath}/addshopcar">加入购物车</a>
                                     </div>
 
                                 </div>
