@@ -75,19 +75,18 @@ function buyGame() {
                                 setTimeout(function () {
                                     window.location.reload();
                                 }, 500)
-                            }
+                            }else
                             if (data.msg === "error") {
                                 alert("付款失败");
-                            }
+                            }else
                             if (data.msg === "less") {
                                 //调用confirm确认框，确认是否充值
-                                    var r=confirm("余额不足，是否现在充值？");
+                                    var r=window.confirm("余额不足，是否现在充值？");
                                     if (r===true){
                                         window.location.href = "/user/charge?username=" + data.username;
-                                    }
-                                    else{
-                                        $("#payModal").modal("hide");
-                                        $(".payPassword").val("");
+                                    }else{
+                                        // $("#payModal").modal("hide");
+                                        // $(".payPassword").val("");
                                     }
                             }
                         },
