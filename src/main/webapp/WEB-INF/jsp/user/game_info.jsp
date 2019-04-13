@@ -80,15 +80,14 @@
                value="发送评论">
         <input type="text" hidden id="username" class="username" value="${usersession.username}"/>
         <input type="text" hidden id="game_name" class="game_name" value="${gameinfoByid.game_name}"/>
-        <%--<input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}"/>--%>
+        <input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}"/>
     </form>
 
 
     <%--评论专区--%>
+        <div id="box" class="comment col-md-12 col-sm-12">
     <c:if test="${!empty comment}">
         <c:forEach var="comments" items="${comment}">
-
-            <div id="box" class="comment col-md-12 col-sm-12">
                 <div class="col-md-12 col-sm-12"
                      style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
                         <%--头像--%>
@@ -102,9 +101,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
         </c:forEach>
     </c:if>
+        </div>
 </div>
 
 

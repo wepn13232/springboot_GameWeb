@@ -77,24 +77,24 @@ public class UserPageController {
     //  发表新的评论
     @RequestMapping(value = "/addComment")
     @ResponseBody
-    public String addComment(String name, String comments,Integer id) throws Exception {
+    public String addComment(String name, String comments,int id) throws Exception {
         JSONObject json = new JSONObject();
 
-        Integer flag = commentDao.selectGameStatus(name,id);
-        System.out.println("******************"+name+"*******"+comments+"*********"+id);
+//        Integer flag = commentDao.selectGameStatus(name,id);
+//        System.out.println("******************"+name+"*******"+comments+"*********"+id);
         Comment comment =new Comment();
         comment.setUsername(name);
         comment.setGame_id(id);
         comment.setComment(comments);
-        if (flag==1){
+//        if (flag==1){
             if (commentDao.addComment(comment)){
                 json.put("msg","success");
             }else {
                 json.put("msg","error1");   //添加失败
             }
-        }   else {
-            json.put("msg","error2");   //未购买游戏
-        }
+//        }   else {
+//            json.put("msg","error2");   //未购买游戏
+//        }
         return json.toJSONString();
     }
     //    跳转至论坛
