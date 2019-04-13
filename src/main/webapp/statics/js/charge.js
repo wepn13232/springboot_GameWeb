@@ -69,8 +69,9 @@ function wcLocationHref() {
                 "json",
             success: function (data) {
                 if (data.charge === "success") {
+                    var username=$(".username").html();
                     setTimeout(function () {
-                        window.location.href = "/user/index"
+                        window.location.href = "/user/userinfo?username="+username
                     }, 500)
                 } else {
                     // window.location.href = "/user/index";
