@@ -66,46 +66,63 @@
 
         </ul>
     </div>
-    <div class="bt _group" style="margin: 0 auto;width: 200px">
-        <a href="${pageContext.request.contextPath}/user/###"
-           class="btn btn-success " style="margin-left: 25px">购买</a>
-        <a href="${pageContext.request.contextPath}/user/###"
-           class="btn btn-info" style="margin-left: 10px; ">加入购物车</a>
-    </div>
+
     <div class="clearfix" style="padding-top: 1em"></div>
 
 
     <%--发表评论区--%>
+
     <form class="postComment col-md-12 col-sm-12">
-        <textarea class="form-control" style="width: 80%;margin: 0 auto" rows="3" id="addTxt" placeholder="可以在此发表你的评论"></textarea>
+        <textarea class="form-control" style="width: 80%;margin: 0 auto" rows="3" id="addTxt"
+                  placeholder="可以在此发表你的评论"></textarea>
         <div class="clearfix" style="padding: 1em"></div>
-        <input type="button" class="btn btn-primary col-md-2 col-sm-2 col-md-offset-10 col-sm-offset-10" id="addComment" value="发送评论">
-        <input type="text" style="display:none" id="username" value="${usersession.username}">
-        <input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}">
+        <input type="button" class="btn btn-primary col-md-2 col-sm-2 col-md-offset-10 col-sm-offset-10" id="addComment"
+               value="发送评论">
+        <input type="text" hidden id="username" class="username" value="${usersession.username}"/>
+        <input type="text" hidden id="game_name" class="game_name" value="${gameinfoByid.game_name}"/>
+        <%--<input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}"/>--%>
     </form>
 
-    <%--评论专区--%>
-<c:if test="${!empty comment}">
-    <c:forEach var="comments" items="${comment}">
 
-        <div id="box" class="comment col-md-12 col-sm-12">
-            <div class="col-md-12 col-sm-12" style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
-                    <%--头像--%>
-                <div class="col-md-12 col-sm-12">
-                    <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
-                         class="img-circle col-md-3 col-sm-3"
-                         style="width: 120px;height: 100px;margin: 10px" alt="">
-                    <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
-                        <p>${comments.username}:</p>
-                        <p>${comments.comment}</p>
+    <%--评论专区--%>
+    <c:if test="${!empty comment}">
+        <c:forEach var="comments" items="${comment}">
+
+            <div id="box" class="comment col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12"
+                     style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
+                        <%--头像--%>
+                    <div class="col-md-12 col-sm-12">
+                        <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
+                             class="img-circle col-md-3 col-sm-3"
+                             style="width: 120px;height: 100px;margin: 10px" alt="">
+                        <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
+                            <p>${comments.username}:</p>
+                            <p>${comments.comment}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </c:forEach>
-</c:if>
+        </c:forEach>
+    </c:if>
 </div>
+
+
+<%--提示模态框--%>
+<div class="modal fade" style="padding: 15em" id="checkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <p class="alert alert-info">您还没购买此游戏，暂时不支持评价该游戏熬。</p>
+        <%--<div class="clearfix" style="padding-top: 3em"></div>--%>
+        <div slot="afooter">
+            <a type="button" class="btn btn-success center-block" style="margin-top: 1em;width: 100px" id="qrmodalBtn" data-dismiss="modal">确认</a>
+            <%--<a type="button" class="btn btn-danger" style="margin-left: 4em;margin-top: 1em" id="qxmodalBtn" data-dismiss="modal">取消</a>--%>
+        </div>
+    </div>
+</div>
+
 <%@include file="common/footer.jsp" %>
-<script src="${pageContext.request.contextPath}/statics/js/game_info.js"></script>
+<%--<script src="${pageContext.request.contextPath}/statics/js/game_info.js"></script>--%>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
 </body>
 </html>

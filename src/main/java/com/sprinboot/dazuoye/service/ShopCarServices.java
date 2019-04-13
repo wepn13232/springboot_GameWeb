@@ -14,18 +14,19 @@ public interface ShopCarServices {
     //根据用户名字查询订单
     List<ShopCar> findShopCarByUserName(String username) throws Exception;
 
+
     //添加订单到购物车
-    boolean addShopCar(ShopCar shopCar)throws Exception;
+    boolean addShopCar(ShopCar shopCar) throws Exception;
 
     //更新订单状态
-    boolean modifyShopCar(Integer id, Date buyDate)throws Exception;
+    boolean modifyShopCar(Integer id, Date buyDate) throws Exception;
 
     //删除一条订单
-    boolean deleteShopCar(@Param("id") Integer id)throws Exception;
+    boolean deleteShopCar(@Param("id") Integer id) throws Exception;
 
     //付款后更新余额
-    boolean modifyCashLeft(String username,Integer cashLeft) throws  Exception;
+    boolean modifyCashLeft(String username, Integer cashLeft) throws Exception;
 
     //根据用户名字和游戏名查询订单状态
-    Integer findStatusByUserNameAndGameName(String username,String game_name)throws Exception;
+    Integer findStatusByUserNameAndGameName(String username, String game_name) throws Exception;
 }

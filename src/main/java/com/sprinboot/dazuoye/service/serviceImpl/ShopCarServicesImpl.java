@@ -26,16 +26,17 @@ public class ShopCarServicesImpl implements ShopCarServices {
         return shopCarDao.findShopCarByUserName(username);
     }
 
+
     //添加订单到购物车
     @Override
-    public boolean addShopCar(ShopCar shopCar)throws Exception {
+    public boolean addShopCar(ShopCar shopCar) throws Exception {
         return shopCarDao.addShopCar(shopCar);
     }
 
     //更新订单状态
     @Override
-    public boolean modifyShopCar(Integer id, Date buyDate) throws Exception{
-        return shopCarDao.modifyShopCar(id,buyDate);
+    public boolean modifyShopCar(Integer id, Date buyDate) throws Exception {
+        return shopCarDao.modifyShopCar(id, buyDate);
     }
 
     //删除一条订单
@@ -47,11 +48,13 @@ public class ShopCarServicesImpl implements ShopCarServices {
     //付款后更新余额
     @Override
     public boolean modifyCashLeft(String username, Integer cashLeft) throws Exception {
-        return shopCarDao.modifyCashLeft(username,cashLeft);
+        return shopCarDao.modifyCashLeft(username, cashLeft);
     }
 
+
+    //    根据用户名和游戏名查看状态
     @Override
     public Integer findStatusByUserNameAndGameName(String username, String game_name) throws Exception {
-        return shopCarDao.findStatusByUserNameAndGameName(username,game_name);
+        return shopCarDao.findStatusByUserNameAndGameName(username, game_name);
     }
 }

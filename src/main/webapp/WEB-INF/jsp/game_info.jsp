@@ -66,12 +66,6 @@
 
         </ul>
     </div>
-    <div class="bt _group" style="margin: 0 auto;width: 200px">
-        <a href="${pageContext.request.contextPath}/user/###"
-           class="btn btn-success " style="margin-left: 25px">购买</a>
-        <a href="${pageContext.request.contextPath}/user/###"
-           class="btn btn-info" style="margin-left: 10px; ">加入购物车</a>
-    </div>
     <div class="clearfix" style="padding-top: 1em"></div>
 
     <%--未登录不能评论--%>
