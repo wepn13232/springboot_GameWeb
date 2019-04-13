@@ -33,7 +33,7 @@ public class CommentController {
     public String checkComment(@RequestParam String username, @RequestParam String game_name) throws Exception {
         JSONObject jsonObject = new JSONObject();
         Integer status = shopCarServices.findStatusByUserNameAndGameName(username, game_name);
-        System.out.println(status);
+//        System.out.println("****************"+status+"*****************"+username+"*****************"+game_name);
         if (status != null && status == 1) {
             jsonObject.put("commentMsg", "checked");
         } else if (status == null || status == 0) {

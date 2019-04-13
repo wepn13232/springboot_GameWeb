@@ -32,9 +32,9 @@ $(function () {
             },
             error1: function () {
                 alert("发表评论错误！")
-            },
-            error2: function () {
-                alert("你还没购买该游戏，无法发表评论!")
-            }
+             }//,
+            // error2: function () {
+            //     alert("你还没购买该游戏，无法发表评论!")
+            // }
         })
 }

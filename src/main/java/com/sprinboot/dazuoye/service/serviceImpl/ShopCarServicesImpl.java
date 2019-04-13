@@ -55,6 +55,7 @@ public class ShopCarServicesImpl implements ShopCarServices {
     //    根据用户名和游戏名查看状态
     @Override
     public Integer findStatusByUserNameAndGameName(String username, String game_name) throws Exception {
+
         return shopCarDao.findStatusByUserNameAndGameName(username, game_name);
     }
 }
