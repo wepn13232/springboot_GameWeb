@@ -34,7 +34,6 @@ function checkComment() {
                         success: function (data) {
                             if (data.msg === "success") {
                                 var cp=$("#comment_pic").attr("data_pic");
-                            var box =document.getElementById("box");    //获取原来页面的标签
                             var html="";
                             html+="<div class='col-md-12 col-sm-12' style='height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em'>"    //新增评论模板
                                 +"<div class='col-md-12 col-sm-12'>"
@@ -46,8 +45,9 @@ function checkComment() {
                                 +"</div>"
                                 +"</div>"
 
-                                box.innerHTML+=html;    //拼接显示
+                                $("#box").prepend(html);//添加至选定标签前
                             alert("评论成功!");
+                                $("#addTxt").val('');
 
                             }
                             else if (data.msg === "error1") {
