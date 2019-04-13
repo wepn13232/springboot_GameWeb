@@ -32,17 +32,27 @@
     </div>
         <div class="clearfix" style="padding: 2em"></div>
 
-        <h4 style="padding-left: 1em">你拥有的游戏</h4>
-        <div class="col-md-12 col-sm-12" style="height: 320px;background-color: rgba(237,237,237,0.52);margin: 1em">
-        <%--头像--%>
-        <div class="col-md-12 col-sm-12">
+        <h4 style="padding-left: 1em;color: #00AFF0" >你拥有的游戏</h4>
+        <div class="col-md-12 col-sm-12" style="background-color: rgba(237,237,237,0.52);margin: 1em">
+        <div class="col-md-12 col-sm-12" style="padding: 1em">
+
+            <%--游戏块--%>
+            <c:if test="${!empty requestScope.userGameInfo}">
+                <c:forEach var="usergameinfo" items="${requestScope.userGameInfo}">
+             <div class="col-md-3 col-sm-4">
+                 <a href="${pageContext.request.contextPath}/user/game_info?id=${usergameinfo.id}" class="thumbnail text-center">
+                     <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${usergameinfo.id}.jpg" style="width: 230px;height: 325px" class="img-rounded" alt="">
+                     <p>${usergameinfo.game_name}</p>
+                 </a>
+             </div>
+                </c:forEach>
+            </c:if>
+
+
 
         </div>
     </div>
-    <%--详细信息--%>
-    <div class="">
 
-    </div>
 </div>
 
 <%@include file="common/footer.jsp"%>

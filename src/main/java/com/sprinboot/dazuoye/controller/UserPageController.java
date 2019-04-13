@@ -3,10 +3,8 @@ package com.sprinboot.dazuoye.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.sprinboot.dazuoye.dao.CommentDao;
 import com.sprinboot.dazuoye.pojo.*;
-import com.sprinboot.dazuoye.service.ChargeServices;
-import com.sprinboot.dazuoye.service.GameServices;
-import com.sprinboot.dazuoye.service.ShopCarServices;
-import com.sprinboot.dazuoye.service.UserServices;
+import com.sprinboot.dazuoye.service.*;
+import com.sprinboot.dazuoye.service.serviceImpl.UserinfoServicesImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +29,8 @@ public class UserPageController {
     private ShopCarServices shopCarServices;
     @Resource
     private CommentDao commentDao;
+    @Resource
+    private UserinfoServices userinfoServices;
 
 
     @RequestMapping("/index")
@@ -38,11 +38,17 @@ public class UserPageController {
         return "user/index";
     }
 
+
 //    跳转至用户信息界面
     @RequestMapping("/userinfo")
     public String userinfo(@RequestParam String username,Model model) throws Exception {
         int cashLef=chargeServices.checkCashLeft(username);
         model.addAttribute("cashLeft",cashLef);
+//        查询已拥有的游戏
+        List<Game> games=userinfoServices.getGameByUser(username);
+//        System.out.println(games);
+        model.addAttribute("userGameInfo",games);
+
         return "user/userinfo";
     }
 
@@ -137,5 +143,7 @@ public class UserPageController {
         }
         return jsonObject.toJSONString();
     }
+
+
 
 }
