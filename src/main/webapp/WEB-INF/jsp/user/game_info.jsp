@@ -88,7 +88,7 @@
         <div id="box" class="comment col-md-12 col-sm-12">
     <c:if test="${!empty comment}">
         <c:forEach var="comments" items="${comment}">
-                <div class="col-md-12 col-sm-12"
+                <div class="col-md-12 col-sm-12 comment_content"
                      style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
                         <%--头像--%>
                     <div class="col-md-12 col-sm-12">
@@ -120,6 +120,11 @@
         </div>
     </div>
 </div>
+
+
+<img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
+     class="img-circle col-md-3 col-sm-3" data_pic="${pageContext.request.contextPath}/statics/images/t1.jpg"
+     style="width: 120px;height: 100px;margin: 10px" alt="" hidden id="comment_pic">
 
 
 <%@include file="common/footer.jsp" %>
