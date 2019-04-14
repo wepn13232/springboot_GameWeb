@@ -97,11 +97,18 @@ public class UserPageController {
 //        }
         return json.toJSONString();
     }
-    //    跳转至论坛
+
+
+    //    论坛首页查询所有游戏
     @RequestMapping("/about")
-    public String about() {
+    public String about(Model model) throws Exception {
+        Game game=new Game();
+        List<Game> games=gameServices.getAllGame(game);
+        model.addAttribute("gamesinfo",games);
         return "user/about";
     }
+
+
 
     //    跳转至详细论坛
     @RequestMapping("/community")

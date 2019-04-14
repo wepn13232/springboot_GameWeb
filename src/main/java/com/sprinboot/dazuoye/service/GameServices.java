@@ -13,7 +13,7 @@ public interface GameServices {
     PageBean<Game> findByPage(int currentPage,String username) throws Exception;
 
 //    查询所有游戏
-    /*List<Game> getAllGame(Game game) throws Exception;*/
+    List<Game> getAllGame(Game game) throws Exception;
 
 
 //    查看指定id的游戏

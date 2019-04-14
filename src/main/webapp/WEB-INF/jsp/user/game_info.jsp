@@ -96,7 +96,7 @@
                              class="img-circle col-md-3 col-sm-3"
                              style="width: 120px;height: 100px;margin: 10px" alt="">
                         <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
-                            <p>${comments.username}:</p>
+                            <p style="color: #00AFF0">${comments.username}:</p>
                             <p>${comments.comment}</p>
                         </div>
                     </div>

@@ -32,16 +32,22 @@
         <div class="container-fluid">
             <div class="content">
 
+                <c:if test="${!empty gamesinfo}">
+
                 <div class="row">
+                    <c:forEach var="gameinfo" items="${gamesinfo}">
                     <a href="${pageContext.request.contextPath}/user/community" class="col-md-3 col-sm-3 col-md-6 game_a" target="_blank">
                         <div class="content_div">
-                            <h5 style="color: #00AFF0">《彩虹六号：围攻》</h5>
-                            <p class="content_p">This game is funny as fuck , bro ! Come and join with me !</p>
+                            <h5 style="color: #00AFF0">${gameinfo.game_name}</h5>
+                            <p class="content_p">${gameinfo.game_info}</p>
                         </div>
-                        <div class="clearfix"></div>
                     </a>
+                    </c:forEach>
                     <div class="clearfix" style="margin-bottom: 4em"></div>
+
                 </div>
+
+                </c:if>
 
                 <div class="clearfix"></div>
             </div>

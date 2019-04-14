@@ -68,14 +68,7 @@
     </div>
     <div class="clearfix" style="padding-top: 1em"></div>
 
-    <%--未登录不能评论--%>
-    <%--&lt;%&ndash;发表评论区&ndash;%&gt;--%>
-    <%--<form class="postComment col-md-12 col-sm-12">--%>
-    <%--<textarea class="form-control" style="width: 80%;margin: 0 auto"  rows="3" placeholder="可以在此发表你的评论"></textarea>--%>
-    <%--<div class="clearfix"style="padding: 1em"></div>--%>
-    <%--<input type="button" class="btn btn-primary col-md-2 col-sm-2 col-md-offset-10 col-sm-offset-10" value="发送评论">--%>
 
-    <%--</form>--%>
 
     <%--评论专区--%>
     <c:if test="${!empty comment}">
@@ -91,7 +84,7 @@
                              class="img-circle col-md-3 col-sm-3"
                              style="width: 120px;height: 100px;margin: 10px" alt="">
                         <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
-                            <p>${comments.username}:</p>
+                            <p  style="color: #00AFF0">${comments.username}:</p>
                             <p>${comments.comment}</p>
                         </div>
                     </div>

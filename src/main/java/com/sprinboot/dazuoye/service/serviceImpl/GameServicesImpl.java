@@ -75,6 +75,11 @@ public class GameServicesImpl implements GameServices {
         return pageBean;
     }
 
+//查询所有游戏
+    @Override
+    public List<Game> getAllGame(Game game) throws Exception {
+        return gameMapper.getAllGame(game);
+    }
 
 
 //    获取所有游戏

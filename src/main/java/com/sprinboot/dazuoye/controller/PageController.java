@@ -14,11 +14,7 @@ public class PageController {
 
 
 
-    //    跳转至论坛
-    @RequestMapping("/about")
-    public String about() {
-        return "about";
-    }
+
 
     //    跳转至详细论坛
     @RequestMapping("/community")
