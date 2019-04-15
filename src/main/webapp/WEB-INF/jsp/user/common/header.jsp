@@ -31,7 +31,18 @@
                         <li><a href="${pageContext.request.contextPath}/user/profile">游戏商城</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/about">社区论坛</a></li>
                         <li><a href="${pageContext.request.contextPath}/user/orderList?username=${usersession.username}">我的购物车/订单</a></li>
-                        <li><a href="${pageContext.request.contextPath}/user/userinfo?username=${usersession.username}">账户信息</a></li>
+                        <%--<li><a href="${pageContext.request.contextPath}/user/userinfo?username=${usersession.username}">账户信息</a></li>--%>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                账户
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav_a" href="${pageContext.request.contextPath}/user/userinfo?username=${usersession.username}">账户详情信息</a></li>
+                                <li><a class="nav_a" href="${pageContext.request.contextPath}/logout">注销当前账户</a></li>
+                            </ul>
+
+                        </li>
                         <li><a href="${pageContext.request.contextPath}/user/charge?username=${usersession.username}">充值</a></li>
                     </ul>
                     <div class="clearfix"> </div>

@@ -22,9 +22,18 @@
                         <div class="banner-textagileinfo">
                             <h6>欢迎</h6>
                             <h3>这里将是游戏爱好者的天堂</h3>
-                            <div class="more">
-                                <a href="${pageContext.request.contextPath}/user/profile"> 了解更多</a>
-                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-textagileinfo">
+                            <h6>在这里</h6>
+                            <h3>了解到最全面、最完整的攻略</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-textagileinfo">
+                            <h6>在这里</h6>
+                            <h3>购买到最便宜最好的游戏</h3>
                         </div>
                     </li>
                 </ul>

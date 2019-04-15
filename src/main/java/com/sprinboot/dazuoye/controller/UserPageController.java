@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 
@@ -39,15 +40,15 @@ public class UserPageController {
     }
 
 
-//    跳转至用户信息界面
+    //    跳转至用户信息界面
     @RequestMapping("/userinfo")
-    public String userinfo(@RequestParam String username,Model model) throws Exception {
-        int cashLef=chargeServices.checkCashLeft(username);
-        model.addAttribute("cashLeft",cashLef);
+    public String userinfo(@RequestParam String username, Model model) throws Exception {
+        int cashLef = chargeServices.checkCashLeft(username);
+        model.addAttribute("cashLeft", cashLef);
 //        查询已拥有的游戏
-        List<Game> games=userinfoServices.getGameByUser(username);
+        List<Game> games = userinfoServices.getGameByUser(username);
 //        System.out.println(games);
-        model.addAttribute("userGameInfo",games);
+        model.addAttribute("userGameInfo", games);
 
         return "user/userinfo";
     }
@@ -56,8 +57,8 @@ public class UserPageController {
     //    查询所有游戏并分页(跳转至游戏商城)
     @RequestMapping("/profile")
     public String profile(@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model, HttpServletRequest request) throws Exception {
-        String username = ((User)request.getSession().getAttribute("usersession")).getUsername();
-        model.addAttribute("gameinfo", gameServices.findByPage(currentPage,username));
+        String username = ((User) request.getSession().getAttribute("usersession")).getUsername();
+        model.addAttribute("gameinfo", gameServices.findByPage(currentPage, username));
         return "user/profile";
     }
 
@@ -69,7 +70,7 @@ public class UserPageController {
         for (Game game : games) {
             model.addAttribute("gameinfoByid", game);
         }
-            model.addAttribute("comment",comments);
+        model.addAttribute("comment", comments);
 
         return "user/game_info";
     }
@@ -77,21 +78,21 @@ public class UserPageController {
     //  发表新的评论
     @RequestMapping(value = "/addComment")
     @ResponseBody
-    public String addComment(String name, String comments,int id) throws Exception {
+    public String addComment(String name, String comments, int id) throws Exception {
         JSONObject json = new JSONObject();
 
 //        Integer flag = commentDao.selectGameStatus(name,id);
 //        System.out.println("******************"+name+"*******"+comments+"*********"+id);
-        Comment comment =new Comment();
+        Comment comment = new Comment();
         comment.setUsername(name);
         comment.setGame_id(id);
         comment.setComment(comments);
 //        if (flag==1){
-            if (commentDao.addComment(comment)){
-                json.put("msg","success");
-            }else {
-                json.put("msg","error1");   //添加失败
-            }
+        if (commentDao.addComment(comment)) {
+            json.put("msg", "success");
+        } else {
+            json.put("msg", "error1");   //添加失败
+        }
 //        }   else {
 //            json.put("msg","error2");   //未购买游戏
 //        }
@@ -102,12 +103,11 @@ public class UserPageController {
     //    论坛首页查询所有游戏
     @RequestMapping("/about")
     public String about(Model model) throws Exception {
-        Game game=new Game();
-        List<Game> games=gameServices.getAllGame(game);
-        model.addAttribute("gamesinfo",games);
+        Game game = new Game();
+        List<Game> games = gameServices.getAllGame(game);
+        model.addAttribute("gamesinfo", games);
         return "user/about";
     }
-
 
 
     //    跳转至详细论坛
@@ -118,24 +118,22 @@ public class UserPageController {
 
     //    跳转至充值页面
     @RequestMapping("/charge")
-    public String charge(@RequestParam String username,Model model) throws Exception {
-       int cash= chargeServices.checkCashLeft(username);
-        model.addAttribute("cashleft",cash);
+    public String charge(@RequestParam String username, Model model) throws Exception {
+        int cash = chargeServices.checkCashLeft(username);
+        model.addAttribute("cashleft", cash);
         return "user/charge";
     }
 
 
     //    跳转至购物车、订单界面
     @RequestMapping("/orderList")
-    public String orderList(@RequestParam String username,Model model) throws Exception {
-        List<ShopCar> shopCarList =shopCarServices.findShopCarByUserName(username);
-        if (shopCarList!=null){
-            model.addAttribute("shopCarList",shopCarList);
+    public String orderList(@RequestParam String username, Model model) throws Exception {
+        List<ShopCar> shopCarList = shopCarServices.findShopCarByUserName(username);
+        if (shopCarList != null) {
+            model.addAttribute("shopCarList", shopCarList);
         }
         return "user/orderList";
     }
-
-
 
 
     //账户充值
@@ -150,6 +148,7 @@ public class UserPageController {
         }
         return jsonObject.toJSONString();
     }
+
 
 
 

@@ -3,6 +3,9 @@ package com.sprinboot.dazuoye.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class PageController {
 
@@ -35,5 +38,14 @@ public class PageController {
     }
 
 
+    //注销当前账户
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        if (session!=null){
+            session.invalidate();
+        }
+        return "redirect:index";
+    }
 
 }
