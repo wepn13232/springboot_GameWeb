@@ -20,4 +20,12 @@ public class UserinfoServicesImpl implements UserinfoServices {
     public List<Game> getGameByUser(String username) throws Exception {
         return userinfoDao.getGame(username);
     }
+
+    //    查询游戏总价值
+    @Override
+    public List<Game> getAllPrice(String username) throws Exception {
+        return userinfoDao.getAllPrice(username);
+    }
+
+
 }

@@ -47,9 +47,17 @@ public class UserPageController {
         model.addAttribute("cashLeft", cashLef);
 //        查询已拥有的游戏
         List<Game> games = userinfoServices.getGameByUser(username);
-//        System.out.println(games);
         model.addAttribute("userGameInfo", games);
 
+
+//        查询游戏总价
+        int sum = 0;
+        List<Game> prices = userinfoServices.getAllPrice(username);
+        for (int i = 0; i < prices.size(); i++) {
+            int p = prices.get(i).getGame_price();
+            sum = sum + p;
+        }
+        model.addAttribute("sumGamePrice", sum);
         return "user/userinfo";
     }
 
@@ -148,8 +156,6 @@ public class UserPageController {
         }
         return jsonObject.toJSONString();
     }
-
-
 
 
 }
