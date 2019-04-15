@@ -7,6 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<style type="text/css">
+    .pointer{
+        cursor: pointer;
+    }
+</style>
 <div class="header">
     <nav class="navbar navbar-default">
         <div class="container">
@@ -39,7 +44,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a  href="${pageContext.request.contextPath}/user/userinfo?username=${usersession.username}">账户详情信息</a></li>
-                                <li><a id="logout" href="">注销当前账户</a></li>
+                                <li><a id="logout"  class="pointer">注销当前账户</a></li>
                             </ul>
 
                         </li>
