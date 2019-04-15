@@ -55,4 +55,19 @@ public class UserController {
         return jsonObject.toJSONString();
     }
 
+    //注销当前账户
+    @RequestMapping("/logout")
+    @ResponseBody
+    public String logout(HttpServletRequest request) {
+        JSONObject jsonObject=new JSONObject();
+        HttpSession session = request.getSession();
+        if (session!=null){
+            session.invalidate();
+            jsonObject.put("msg","success");
+        }else {
+            jsonObject.put("msg","error");
+        }
+        return jsonObject.toJSONString();
+    }
+
 }
