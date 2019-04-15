@@ -1,0 +1,23 @@
+$(function () {
+    $("#logout").bind("click",logout);
+});
+
+function logout() {
+    $.ajax({
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        type: "post",
+        url: "/logout",
+        async: true,
+        dataType: "json",
+        success:function (data) {
+            if(data.msg==="success"){
+                alert("注销成功！");
+                window.location.href="/login";
+            }
+        },error:function () {
+
+        },complete:function () {
+
+        }
+    })
+}

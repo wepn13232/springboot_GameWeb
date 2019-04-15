@@ -1,7 +1,9 @@
 package com.sprinboot.dazuoye.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,9 +16,6 @@ public class PageController {
     public String index() {
         return "index";
     }
-
-
-
 
 
     //    跳转至详细论坛
@@ -40,12 +39,17 @@ public class PageController {
 
     //注销当前账户
     @RequestMapping("/logout")
+    @ResponseBody
     public String logout(HttpServletRequest request) {
+        JSONObject jsonObject=new JSONObject();
         HttpSession session = request.getSession();
         if (session!=null){
             session.invalidate();
+            jsonObject.put("msg","success");
+        }else {
+            jsonObject.put("msg","error");
         }
-        return "redirect:index";
+        return jsonObject.toJSONString();
     }
 
 }

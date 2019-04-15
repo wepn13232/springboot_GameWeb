@@ -38,8 +38,8 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav_a" href="${pageContext.request.contextPath}/user/userinfo?username=${usersession.username}">账户详情信息</a></li>
-                                <li><a class="nav_a" href="${pageContext.request.contextPath}/logout">注销当前账户</a></li>
+                                <li><a  href="${pageContext.request.contextPath}/user/userinfo?username=${usersession.username}">账户详情信息</a></li>
+                                <li><a id="logout" href="${pageContext.request.contextPath}/logout">注销当前账户</a></li>
                             </ul>
 
                         </li>
