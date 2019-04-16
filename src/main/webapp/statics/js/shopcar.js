@@ -71,6 +71,7 @@ function buyGame() {
                         dataType: "json",
                         success: function (data) {
                             if (data.msg === "success") {
+                                alert("购买成功！");
                                 $("#payModal").modal("hide");
                                 setTimeout(function () {
                                     window.location.reload();
