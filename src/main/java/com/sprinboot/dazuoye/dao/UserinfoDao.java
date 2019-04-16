@@ -19,6 +19,6 @@ public interface UserinfoDao {
 
 
 //    查询游戏总价值
-    @Select("select game_price from shopcar where username=#{username}")
+    @Select("select game_price from shopcar where username=#{username} and status='1'")
     List<Game> getAllPrice(@Param("username") String username) throws Exception;
 }
