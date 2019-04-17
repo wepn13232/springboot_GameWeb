@@ -32,6 +32,8 @@ public class UserPageController {
     private CommentDao commentDao;
     @Resource
     private UserinfoServices userinfoServices;
+    @Resource
+    private ForumServices forumServices;
 
 
     @RequestMapping("/index")
@@ -157,5 +159,13 @@ public class UserPageController {
         return jsonObject.toJSONString();
     }
 
-
+    //展示各游戏论坛帖子
+    @RequestMapping("/showforum")
+    public String showForum(@RequestParam int game_id,Model model)throws Exception{
+        List<Forum> forumList= forumServices.findForumByGameId(game_id);
+        if(forumList!=null){
+            model.addAttribute("forumList", forumList);
+        }
+        return "community";
+    }
 }

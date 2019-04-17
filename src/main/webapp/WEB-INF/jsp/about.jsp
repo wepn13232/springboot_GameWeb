@@ -35,16 +35,17 @@
 
                 <c:if test="${!empty gamesinfo}">
                     <div class="row">
-                    <c:forEach var="gameinfo" items="${gamesinfo}">
-                        <a href="${pageContext.request.contextPath}/community" class="col-md-3 col-sm-3 col-md-6 game_a" target="_blank">
-                            <div class="content_div">
-                                <h5 style="color: #00AFF0">${gameinfo.game_name}</h5>
-                                <p class="content_p">${gameinfo.game_info}</p>
-                            </div>
-                            <div class="clearfix" style="margin-bottom: 1em"></div>
+                        <c:forEach var="gameinfo" items="${gamesinfo}">
+                            <a href="${pageContext.request.contextPath}/showforum?game_id=${gameinfo.id}"
+                               class="col-md-3 col-sm-3 col-md-6 game_a" target="_blank">
+                                <div class="content_div">
+                                    <h5 style="color: #00AFF0">${gameinfo.game_name}</h5>
+                                    <p class="content_p">${gameinfo.game_info}</p>
+                                </div>
+                                <div class="clearfix" style="margin-bottom: 1em"></div>
 
-                        </a>
-                    </c:forEach>
+                            </a>
+                        </c:forEach>
                         <div class="clearfix" style="margin-bottom: 4em"></div>
 
                     </div>
@@ -70,6 +71,6 @@
     </div>
 </div>
 <!-- work end here -->
-<%@include file="common/footer.jsp"%>
+<%@include file="common/footer.jsp" %>
 </body>
 </html>

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author Cedric on 2019/4/8 21:37
  * @filename ShopCarServicesImpl
- * @description
+ * @description 购物车方法实现
  */
 @Service
 public class ShopCarServicesImpl implements ShopCarServices {

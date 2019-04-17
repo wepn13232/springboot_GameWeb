@@ -20,18 +20,17 @@
 <div class="container">
     <div class="clearfix" style="padding: 1em"></div>
     <%--列表组--%>
+    <c:forEach var="forum" items="${forumList}">
     <div class="list-group">
-
-        <a href="#" class="list-group-item lis list-group-item-info">
-            <h3 class="list-group-item-heading">《彩虹六号：围攻》新进打法</h3>
-            <h5 style="padding-top: 5px">发帖人:</h5>
-            <p class="list-group-item-text">每期一个小技巧之新进干员rushB</p>
+        <a href="${pageContext.request.contextPath}/user" class="list-group-item lis list-group-item-info">
+            <h3 class="list-group-item-heading">${forum.forum_title}</h3>
+            <h5 style="padding-top: 5px">发帖人:${forum.username}</h5>
+            <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;"
+               class="list-group-item-text">${forum.forum_content}</p>
         </a>
         <div class="clearfix" style="padding-bottom: 10px"></div>
-
-
-
     </div>
+    </c:forEach>
     <div class="clearfix" style="padding-bottom: 10px"></div>
 
 

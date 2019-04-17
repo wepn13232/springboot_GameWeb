@@ -36,7 +36,7 @@
 
                 <div class="row">
                     <c:forEach var="gameinfo" items="${gamesinfo}">
-                    <a href="${pageContext.request.contextPath}/user/community" class="col-md-3 col-sm-3 col-md-6 game_a" target="_blank">
+                    <a href="${pageContext.request.contextPath}/user/showforum?game_id=${gameinfo.id}" class="col-md-3 col-sm-3 col-md-6 game_a" target="_blank">
                         <div class="content_div">
                             <h5 style="color: #00AFF0">${gameinfo.game_name}</h5>
                             <p class="content_p">${gameinfo.game_info}</p>

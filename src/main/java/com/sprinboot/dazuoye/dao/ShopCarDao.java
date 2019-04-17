@@ -28,7 +28,7 @@ public interface ShopCarDao {
     @Insert("insert into shopcar (username,game_name,game_price,date,status) values(#{username},#{game_name},#{game_price},#{date},#{status})")
     boolean addShopCar(ShopCar shopCar) throws Exception;
 
-    //更新订单状态
+    //购买，更新订单状态
     @Update("update shopcar set status = 1 ,date = #{buyDate} where id = #{id}")
     boolean modifyShopCar(@Param("id") Integer id, Date buyDate) throws Exception;
 
@@ -43,4 +43,8 @@ public interface ShopCarDao {
     //根据用户名字和游戏名查询订单状态
     @Select("select status from shopcar where username = #{username} and game_name = #{game_name}")
     Integer findStatusByUserNameAndGameName(String username, String game_name) throws Exception;
+
+    //多选付款购买
+    @Update("update shopcar set status = 1 ,date = #{buyDate} where id in(#{moreid})")
+    boolean modifyMoreShopCar(@Param("moreid" )String moreid, Date buyDate )throws Exception;
 }

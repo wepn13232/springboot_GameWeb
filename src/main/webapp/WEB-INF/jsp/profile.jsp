@@ -31,9 +31,7 @@
             <h3 class="agileits-title w3title1">游戏商城</h3>
         </div>
         <c:if test="${!empty requestScope.gameinfo}">
-
             <div class="row col-md-13 col-sm-13">
-
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
                     <div class="col-sm-6 col-md-3 gamebox">
                         <a href="${pageContext.request.contextPath}/game_info?id=${gameinfo.id}" target="_blank">
