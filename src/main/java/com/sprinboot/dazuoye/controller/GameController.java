@@ -5,6 +5,7 @@ import com.sprinboot.dazuoye.pojo.Comment;
 import com.sprinboot.dazuoye.pojo.Game;
 import com.sprinboot.dazuoye.pojo.ShopCar;
 import com.sprinboot.dazuoye.pojo.User;
+import com.sprinboot.dazuoye.service.CommentServices;
 import com.sprinboot.dazuoye.service.GameServices;
 import com.sprinboot.dazuoye.service.ShopCarServices;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class GameController {
     @Resource
     private GameServices gameServices;
     @Resource
-    private CommentDao commentDao;
+    private CommentServices commentServices;
     @Resource
     private ShopCarServices shopCarServices;
 
@@ -40,7 +41,7 @@ public class GameController {
 
     //    跳转至游戏具体页面
     @RequestMapping("/game_info")
-    public String game_info(@RequestParam Integer id, Model model) throws Exception {
+    public String game_info(@RequestParam Integer id,@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model) throws Exception {
 //        查看游戏详情信息
         List<Game> games = gameServices.selectGameById(id);
         for (Game game : games) {
@@ -48,9 +49,7 @@ public class GameController {
         }
 
 //        列出所有评论
-        List<Comment> comments = commentDao.getAllCommentById(id);
-
-        model.addAttribute("comment", comments);
+        model.addAttribute("comment", commentServices.findByPage(currentPage,id));
 
         return "game_info";
     }
