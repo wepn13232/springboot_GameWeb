@@ -29,7 +29,7 @@ public class UserPageController {
     @Resource
     private ShopCarServices shopCarServices;
     @Resource
-    private CommentDao commentDao;
+    private CommentServices commentServices;
     @Resource
     private UserinfoServices userinfoServices;
     @Resource
@@ -74,16 +74,30 @@ public class UserPageController {
 
     //    跳转至游戏具体页面
     @RequestMapping("/game_info")
-    public String game_info(@RequestParam Integer id, Model model) throws Exception {
+    public String game_info(@RequestParam Integer id,@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model) throws Exception {
         List<Game> games = gameServices.selectGameById(id);
-        List<Comment> comments = commentDao.getAllCommentById(id);
+        //List<Comment> comments = commentServices.findByPage(id,currentPage);
         for (Game game : games) {
             model.addAttribute("gameinfoByid", game);
         }
-        model.addAttribute("comment", comments);
-
+        model.addAttribute("comment", commentServices.findByPage(currentPage,id));
+//        System.out.println("*****************************************"+commentServices.findByPage(currentPage,id));
         return "user/game_info";
     }
+
+    //分页操作方法
+//    @RequestMapping("/refreshPage")
+//    @ResponseBody
+//    public String refreshPage(int id,int currentPage,Model model) throws Exception  {
+//        JSONObject json = new JSONObject();
+//        if (commentServices.findByPage(currentPage,id)!=null){
+//            model.addAttribute(commentServices.findByPage(currentPage,id));
+//            json.put("msg","success");
+//        }   else {
+//            json.put("msg", "error1");
+//        }
+//        return json.toJSONString();
+//    }
 
     //  发表新的评论
     @RequestMapping(value = "/addComment")
@@ -98,7 +112,7 @@ public class UserPageController {
         comment.setGame_id(id);
         comment.setComment(comments);
 //        if (flag==1){
-        if (commentDao.addComment(comment)) {
+        if (commentServices.addComment(comment)) {
             json.put("msg", "success");
         } else {
             json.put("msg", "error1");   //添加失败
