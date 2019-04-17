@@ -93,6 +93,39 @@
         </c:forEach>
         </div>
     </c:if>
+        <c:if test="${!empty comment}">
+            <table id="page" class="table" border="0" cellpadding="0" cellspacing="0" width="900px">
+                <tr>
+                    <td class="td2">
+                        <span>第${comment.currPage }/ ${comment.totalPage}页</span>
+                        <span>总记录数：${comment.totalCount }  每页显示:${comment.pageSize}</span>
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pager">
+                                <c:if test="${comment.currPage != 1}">
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=1">首页</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=${requestScope.comment.currPage-1}">上一页</a>
+                                    </li>
+                                </c:if>
+
+                                <c:if test="${comment.currPage != comment.totalPage}">
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=${requestScope.comment.currPage+1}">下一页</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=${requestScope.comment.totalPage}">尾页</a>
+                                    </li>
+                                </c:if>
+                            </ul>
+                        </nav>
+
+                    </td>
+                </tr>
+            </table>
+        </c:if>
 </div>
 <%@include file="common/footer.jsp" %>
 </body>

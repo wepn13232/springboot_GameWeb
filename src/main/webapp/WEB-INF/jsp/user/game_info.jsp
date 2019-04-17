@@ -109,7 +109,7 @@
 
         </div>
 <c:if test="${!empty comment}">
-    <table class="table" border="0" cellpadding="0" cellspacing="0" width="900px">
+    <table id="page" class="table" border="0" cellpadding="0" cellspacing="0" width="900px">
         <tr>
             <td class="td2">
                 <span>第${comment.currPage }/ ${comment.totalPage}页</span>
