@@ -126,7 +126,7 @@
                             </li>
                         </c:if>
 
-                        <c:if test="${requestScope.request.currPage != requestScope.comment.totalPage}">
+                        <c:if test="${comment.currPage != comment.totalPage}">
                             <li>
                                 <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=${requestScope.comment.currPage+1}">下一页</a>
                             </li>

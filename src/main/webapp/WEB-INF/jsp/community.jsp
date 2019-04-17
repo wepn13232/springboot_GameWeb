@@ -23,7 +23,7 @@
     <%--列表组--%>
     <c:forEach var="forum" items="${forumList}">
         <div class="list-group">
-            <a href="${pageContext.request.contextPath}" class="list-group-item lis list-group-item-info">
+            <a href="${pageContext.request.contextPath}/forum_info" class="list-group-item lis list-group-item-info">
                 <h3 class="list-group-item-heading">${forum.forum_title}</h3>
                 <h5 style="padding-top: 5px">发帖人:${forum.username}</h5>
                 <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;"

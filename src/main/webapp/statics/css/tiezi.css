@@ -1,0 +1,47 @@
+.whiteblock {
+    width: 68.7%;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #fefdff;
+    margin-top: 250px;
+}
+
+.content {
+    width: 85%;
+    margin: 0 auto;
+    background-color: #fefdff;
+    margin-bottom: 50px;
+}
+
+.wallpaper {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+}
+
+#wallpaper {
+    background-color: #e7e7e7;
+}
+
+.news_content {
+    width: 85%;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: normal;
+    padding-bottom: 20px;
+    font-family: "Avenir Next", Helvetica, Arial, "Hiragino Sans GB", 冬青黑体, "Microsoft YaHei New", "Microsoft Yahei", 微软雅黑, 宋体, SimSun, STXihei, 华文细黑, sans-serif;;
+}
+
+p pre {
+    margin: 0 0 24px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

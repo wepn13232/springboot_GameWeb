@@ -1,12 +1,7 @@
 package com.sprinboot.dazuoye.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class PageController {
@@ -37,6 +32,10 @@ public class PageController {
     }
 
 
-
+//跳转到具体帖子页面
+    @RequestMapping("/forum_info")
+    public String forum_info(){
+        return "forum_info";
+    }
 
 }
