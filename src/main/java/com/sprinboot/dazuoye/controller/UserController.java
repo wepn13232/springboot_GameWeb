@@ -32,9 +32,15 @@ public class UserController {
         JSONObject json = new JSONObject();
 
         if (user != null) {
-            request.getSession().setAttribute("usersession", user);
-            json.put("user", user);
-            json.put("lg", "success");
+//            判断是否为管理员账号
+            if (user.getUsername().equals("admin")) {
+                request.getSession().setAttribute("usersession", user);
+                json.put("user", "admin");
+            } else {
+                request.getSession().setAttribute("usersession", user);
+                json.put("user", user);
+                json.put("lg", "success");
+            }
         } else {
 //            model.addAttribute("error", "账号或密码错误！");
             json.put("lg", "error");
@@ -59,13 +65,13 @@ public class UserController {
     @RequestMapping("/logout")
     @ResponseBody
     public String logout(HttpServletRequest request) {
-        JSONObject jsonObject=new JSONObject();
+        JSONObject jsonObject = new JSONObject();
         HttpSession session = request.getSession();
-        if (session!=null){
+        if (session != null) {
             session.invalidate();
-            jsonObject.put("msg","success");
-        }else {
-            jsonObject.put("msg","error");
+            jsonObject.put("msg", "success");
+        } else {
+            jsonObject.put("msg", "error");
         }
         return jsonObject.toJSONString();
     }

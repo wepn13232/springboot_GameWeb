@@ -17,8 +17,9 @@ function checkUser() {
         success: function (data) {
             if (data.lg === "error") {
                 $("#spanError").html("账号密码错误！");
-            }
-            else {
+            } else if (data.user === "admin") {
+                window.location.href = "/admin/index";
+            } else {
                 window.location.href = "/user/index";
             }
         }
