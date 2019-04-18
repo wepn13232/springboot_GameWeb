@@ -43,8 +43,12 @@
                         <a href="${pageContext.request.contextPath}/user/game_info?id=${gameinfo.id}"
                            target="_blank">
                             <div class="thumbnail boxshodow">
+                                <%--打折符号--%>
+                                <img class="hidden" src="${pageContext.request.contextPath}/statics/images/sale.png" style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
+                                    <%--游戏图片--%>
                                 <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
-                                     alt="通用的占位符缩略图" style="width: 245px;height: 346px">
+                                     alt="通用的占位符缩略图" style="width: 245px;height: 346px;">
+
                                 <div class="caption">
                                     <p class="game_info">${gameinfo.game_info}</p>
                                     <div class="text-center">
