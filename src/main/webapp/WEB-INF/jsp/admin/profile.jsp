@@ -40,7 +40,7 @@
                     <%--requestScope通常是在servlet或者action的服务端中通过request.setAttribute()方法把数据放到request对象中供客户端获取，然后客户端获取的方法就是requestScope.getAttribute()--%>
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
                     <div class="col-sm-6 col-md-3 gamebox">
-                        <a href="${pageContext.request.contextPath}/user/game_info?id=${gameinfo.id}"
+                        <a href="${pageContext.request.contextPath}/admin/game_info?id=${gameinfo.id}"
                            target="_blank">
                             <div class="thumbnail boxshodow">
                                 <%--打折符号--%>

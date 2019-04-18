@@ -33,7 +33,7 @@ public class AdminController {
 
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "admin/index";
     }
 
@@ -47,13 +47,13 @@ public class AdminController {
 
     //    跳转至游戏具体页面
     @RequestMapping("/game_info")
-    public String game_info(@RequestParam Integer id,@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model) throws Exception {
+    public String game_info(@RequestParam Integer id, @RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model) throws Exception {
         List<Game> games = gameServices.selectGameById(id);
         //List<Comment> comments = commentServices.findByPage(id,currentPage);
         for (Game game : games) {
             model.addAttribute("gameinfoByid", game);
         }
-        model.addAttribute("comment", commentServices.findByPage(currentPage,id));
+        model.addAttribute("comment", commentServices.findByPage(currentPage, id));
 //        System.out.println("*****************************************"+commentServices.findByPage(currentPage,id));
         return "admin/game_info";
     }
@@ -69,12 +69,13 @@ public class AdminController {
 
     //展示各游戏论坛帖子
     @RequestMapping("/showforum")
-    public String showForum(@RequestParam int game_id,Model model)throws Exception{
-        List<Forum> forumList= forumServices.findForumByGameId(game_id);
-        if(forumList!=null){
+    public String showForum(@RequestParam int game_id, Model model) throws Exception {
+        List<Forum> forumList = forumServices.findForumByGameId(game_id);
+        if (forumList != null) {
             model.addAttribute("forumList", forumList);
         }
         return "community";
     }
+
 
 }
