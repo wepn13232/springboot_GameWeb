@@ -70,30 +70,69 @@
 
 
 
-    <%--评论专区--%>
-    <c:if test="${!empty comment}">
+        <%--评论专区--%>
         <div id="box" class="comment col-md-12 col-sm-12">
-        <c:forEach var="comments" items="${comment}">
-
-
-                <div class="col-md-12 col-sm-12"
-                     style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
-                        <%--头像--%>
-                    <div class="col-md-12 col-sm-12">
-                        <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
-                             class="img-circle col-md-3 col-sm-3"
-                             style="width: 120px;height: 100px;margin: 10px" alt="">
-                        <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
-                            <p  style="color: #00AFF0">${comments.username}:</p>
-                            <p>${comments.comment}</p>
+            <c:if test="${!empty comment}">
+                <c:forEach var="comments" items="${comment.lists}" >
+                    <div class="col-md-12 col-sm-12 comment_content"
+                         style="height: 120px;background-color: rgba(237,237,237,0.52);margin: 1em">
+                            <%--头像--%>
+                        <div class="col-md-12 col-sm-12">
+                            <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
+                                 class="img-circle col-md-3 col-sm-3"
+                                 style="width: 120px;height: 100px;margin: 10px" alt="">
+                            <div class="content col-md-4 col-sm-4" style="margin: 30px 0">
+                                <p style="color: #00AFF0">${comments.username}:</p>
+                                <p>${comments.comment}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-        </c:forEach>
+                </c:forEach>
+            </c:if>
+
+
         </div>
-    </c:if>
+        <c:if test="${!empty comment}">
+            <table id="page" class="table" border="0" cellpadding="0" cellspacing="0" width="900px">
+                <tr>
+                    <td class="td2">
+                        <span>第${comment.currPage }/ ${comment.totalPage}页</span>
+                        <span>总记录数：${comment.totalCount }  每页显示:${comment.pageSize}</span>
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pager">
+                                <c:if test="${comment.currPage != 1}">
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=1">首页</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=${requestScope.comment.currPage-1}">上一页</a>
+                                    </li>
+                                </c:if>
+
+                                <c:if test="${comment.currPage != comment.totalPage}">
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=${requestScope.comment.currPage+1}">下一页</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath }/user/game_info?id=${requestScope.gameinfoByid.id}&currentPage=${requestScope.comment.totalPage}">尾页</a>
+                                    </li>
+                                </c:if>
+                            </ul>
+                        </nav>
+
+                    </td>
+                </tr>
+            </table>
+        </c:if>
 </div>
+
+<img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
+     class="img-circle col-md-3 col-sm-3" data_pic="${pageContext.request.contextPath}/statics/images/t1.jpg"
+     style="width: 120px;height: 100px;margin: 10px" alt="" hidden id="comment_pic">
+
 <%@include file="common/footer.jsp" %>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
 </body>
 </html>
