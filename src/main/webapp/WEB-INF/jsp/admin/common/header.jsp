@@ -40,8 +40,8 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a id="changePrice"  class="pointer">修改游戏价格</a></li>
-                                <li><a id="tieziManage"  class="pointer">论坛帖子管理</a></li>
+                                <li><a href="" id="changePrice"  class="pointer">修改游戏价格</a></li>
+                                <li><a href="" id="tieziManage"  class="pointer">论坛帖子管理</a></li>
                                 <li><a id="logout"  class="pointer">注销</a></li>
                             </ul>
 
