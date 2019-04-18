@@ -44,7 +44,6 @@
                                 <li><a href="" id="tieziManage"  class="pointer">论坛帖子管理</a></li>
                                 <li><a id="logout"  class="pointer">注销</a></li>
                             </ul>
-
                         </li>
                     </ul>
                     <div class="clearfix"> </div>
