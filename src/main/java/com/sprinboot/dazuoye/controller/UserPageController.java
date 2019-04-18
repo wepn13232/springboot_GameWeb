@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 
@@ -180,6 +181,14 @@ public class UserPageController {
         if(forumList!=null){
             model.addAttribute("forumList", forumList);
         }
-        return "community";
+        return "user/community";
+    }
+
+    //查看帖子具体内容
+    @RequestMapping(value = "/findcontent")
+    public String findContent(@RequestParam int id,Model model)throws Exception{
+        Forum forum = forumServices.findForumByForumId(id);
+        model.addAttribute("forum",forum);
+        return "user/forum_info";
     }
 }

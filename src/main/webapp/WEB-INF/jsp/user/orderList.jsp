@@ -39,9 +39,10 @@
                 <c:if test="${shopCar.status==0}">
                     <input type="hidden" data-id="d${shopCar.id}" class="id" name="id" value="${shopCar.id}" />
                     <input type="hidden" data-gameprice="b${shopCar.id}" class="game_price" name="game_price" value="${shopCar.game_price}" />
+                    <input type="hidden" data-gamesprice="${shopCar.id}" class="game_price" name="game_price" value="${shopCar.game_price}" />
                 <tbody>
                 <tr>
-                    <td><input type="checkbox" value="${shopCar.id}"  name="shopCharsId"></td>
+                    <td><input type="checkbox"  value="${shopCar.id}"  name="shopCharsId"></td>
                     <td>${shopCar.game_name}</td>
                     <td>${shopCar.username}</td>
                     <td>${shopCar.date}</td>
@@ -58,7 +59,10 @@
                 </c:if>
               </c:forEach>
             </table>
-            <a href="${pageContext.request.contextPath}"><button class="btn btn-info buy_game" style="width: 6em ;margin-left: 79.5em" >多选付款</button></a>
+            <button class="btn btn-info buy_moregame" style="width: 6em ;margin-left: 75%" >多选付款</button>
+            <button class="btn btn-info allcheck" >全选</button>
+            <button class="btn btn-info nocheck" >取消</button>
+            <button class="btn btn-info revcheck" >反选</button>
         </div>
     </div>
 

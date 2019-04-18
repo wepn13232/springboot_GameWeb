@@ -45,6 +45,8 @@ public interface ShopCarDao {
     Integer findStatusByUserNameAndGameName(String username, String game_name) throws Exception;
 
     //多选付款购买
-    @Update("update shopcar set status = 1 ,date = #{buyDate} where id in(#{moreid})")
+    @Update("update shopcar set status = 1 ,date = #{buyDate} where id in(${moreid})")
     boolean modifyMoreShopCar(@Param("moreid" )String moreid, Date buyDate )throws Exception;
+
+
 }

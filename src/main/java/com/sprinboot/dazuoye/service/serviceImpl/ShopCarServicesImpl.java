@@ -58,4 +58,12 @@ public class ShopCarServicesImpl implements ShopCarServices {
 
         return shopCarDao.findStatusByUserNameAndGameName(username, game_name);
     }
+
+    //多选付款购买
+    @Override
+    public boolean modifyMoreShopCar(String moreid, Date buyDate) throws Exception {
+        return shopCarDao.modifyMoreShopCar(moreid,buyDate);
+    }
+
+
 }

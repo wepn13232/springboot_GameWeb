@@ -2,6 +2,7 @@ package com.sprinboot.dazuoye.service;
 
 import com.sprinboot.dazuoye.pojo.ShopCar;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.Date;
 import java.util.List;
@@ -29,4 +30,8 @@ public interface ShopCarServices {
 
     //根据用户名字和游戏名查询订单状态
     Integer findStatusByUserNameAndGameName(String username, String game_name) throws Exception;
+
+    //多选付款购买
+    boolean modifyMoreShopCar(String moreid, Date buyDate )throws Exception;
+
 }

@@ -1,6 +1,8 @@
 package com.sprinboot.dazuoye.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.sprinboot.dazuoye.pojo.ShopCar;
 import com.sprinboot.dazuoye.pojo.User;
 import com.sprinboot.dazuoye.service.ChargeServices;
@@ -11,9 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.Max;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @Controller
@@ -82,7 +88,30 @@ public class ShopCarController {
         return json.toJSONString();
     }
 
-
+    @RequestMapping(value = "/buymoregame")
+    @ResponseBody
+    public String buyMoreGame(@RequestParam String moreid,@RequestParam Integer moregame_price
+                                , HttpServletRequest request)throws  Exception{
+        JSONObject json  = new JSONObject();
+        String username=((User)request.getSession().getAttribute("usersession")).getUsername();
+        String ids=moreid.substring(1,moreid.length()-1);
+        //查出余额
+        int cashLeft = chargeServices.checkCashLeft(username);
+        if(cashLeft>=moregame_price){
+            if (shopCarServices.modifyMoreShopCar(ids,new Date())){
+                int latercash=cashLeft-moregame_price;
+                //更新余额
+                shopCarServices.modifyCashLeft(username,latercash);
+                json.put("msg","success");
+            }else {
+                json.put("msg","error");
+            }
+        }else {
+            json.put("username",username);
+            json.put("msg","less");
+        }
+        return json.toJSONString();
+    }
 
     //删除订单
     @RequestMapping(value = "/deletegame")

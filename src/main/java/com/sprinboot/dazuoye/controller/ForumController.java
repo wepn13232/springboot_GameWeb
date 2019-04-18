@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -47,7 +49,7 @@ public class ForumController {
     public String findContent(@RequestParam int id,Model model)throws Exception{
         Forum forum = forumServices.findForumByForumId(id);
         model.addAttribute("forum",forum);
-        return "user/";
+        return "forum_info";
     }
 
 }
