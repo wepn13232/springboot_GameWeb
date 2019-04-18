@@ -42,7 +42,7 @@
                             <ul class="dropdown-menu">
                                 <%--<li><a href="${pageContext.request.contextPath}/admin/changePrice" id="changePrice"  class="pointer">修改游戏价格</a></li>--%>
                                 <li><a href="${pageContext.request.contextPath}" id="tieziManage"  class="pointer">论坛帖子管理</a></li>
-                                <li><a id="logout"  class="pointer">注销</a></li>
+                                <li><a   class="pointer logout">注销</a></li>
                             </ul>
                         </li>
                     </ul>

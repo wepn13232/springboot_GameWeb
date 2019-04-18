@@ -44,7 +44,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a  href="${pageContext.request.contextPath}/user/userinfo?username=${usersession.username}">账户详情信息</a></li>
-                                <li><a id="logout"  class="pointer">注销当前账户</a></li>
+                                <li><a   class="pointer logout">注销当前账户</a></li>
                             </ul>
 
                         </li>
