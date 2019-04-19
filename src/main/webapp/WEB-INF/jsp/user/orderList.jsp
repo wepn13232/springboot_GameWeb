@@ -45,11 +45,12 @@
                                value="${shopCar.game_price}"/>
                         <tbody>
                         <tr id="shopStatus1">
-                            <td><input type="checkbox" value="${shopCar.id}" name="shopCharsId" class="shopCharsId"></td>
+                            <td><input type="checkbox" value="${shopCar.id}" name="shopCharsId" class="shopCharsId">
+                            </td>
                             <td>${shopCar.game_name}</td>
                             <td>${shopCar.username}</td>
                             <td>${shopCar.date}</td>
-                            <td>${shopCar.game_price}</td>
+                            <td class="td_game_price">${shopCar.game_price}</td>
                             <td>未付款</td>
 
                             <td><%--data-自定义标签 ,用按钮的id做唯一标识--%>
@@ -64,13 +65,19 @@
                 </c:forEach>
             </table>
             <div class="hidden" id="button_group">
-                <button class="btn btn-info allcheck">全选</button>
-                <button class="btn btn-info nocheck">取消</button>
-                <button class="btn btn-success buy_moregame" id="duoxuanPay" style="width: 6em ;margin-left: 73%" disabled>
+                <button class="btn btn-info allcheck col-md-1 col-sm-1">全选</button>
+                <button class="btn btn-info nocheck col-md-1 col-sm-1" style="margin-left: 5px">取消</button>
+                <%--全部金额--%>
+                <p id="yuan" style="width: 120px;margin-left: 58%;padding-top: 6px" class="col-md-1 col-sm-1"  >总共需支付：
+                </p>
+                <p id="totalPrice" style="color: red;font-size: 1.5em;width: 100px" class="col-md-1 col-sm-1">
+                    0
+                </p>
+
+                <button class="btn btn-success buy_moregame col-md-1 col-sm-1" id="duoxuanPay" disabled>
                     多选付款
                 </button>
             </div>
-
 
 
         </div>

@@ -27,6 +27,7 @@ $(function () {
     $(".nocheck").click(function () {
         $(":checkbox").prop("checked", false);
         $("#duoxuanPay").attr("disabled", true);
+        $("#totalPrice").html("");
     });
 
 });
@@ -34,20 +35,30 @@ $(function () {
 //判断checkBox选上了
 function checkBoxOK() {
     var c = $(".shopCharsId");
+    var list = $(this).parent().parent("tr").children("td").eq(4);
+    //复选框
     for (var i = 0; i < c.length; i++) {
         if ((c[i].checked) === true) {
             $("#duoxuanPay").attr("disabled", false);
             break;
         } else {
             $("#duoxuanPay").attr("disabled", true);
+            $("#totalPrice").html("0");
         }
     }
 
-
-    // if($(":checkbox").prop("checked", true)){
-    //     $("#duoxuanPay").removeClass("disabled");
-    // }
+//计算被选上的游戏的价值（计算需支付的总金额）
+    var sum=0;
+    c.each(function () {
+        var isChecked = $(this).prop("checked");
+        if (isChecked === true) {
+            var list_val = $(this).parent().parent("tr").children("td").eq(4).html();
+            sum+=parseInt(list_val);
+        }
+    });
+    $("#totalPrice").html(sum);
 }
+
 
 
 //加入购物车响应函数
