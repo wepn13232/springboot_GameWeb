@@ -4,13 +4,11 @@ $(function () {
     $(".delete_game").bind("click", deleteGame);
     $(".buy_moregame").bind("click", buyMoreGame)
     /* $("#qrmodalBtn").bind("click",confirmBuyGame);*/
-
     //判断是否有订单显示按钮
     var status1 = $("#shopStatus1").html();
     if (status1 != null) {
         $("#button_group").removeClass("hidden");
     }
-
     $(".shopCharsId").bind("click", checkBoxOK);
 
 });
@@ -21,6 +19,16 @@ $(function () {
     $(".allcheck").click(function () {
         $(":checkbox").prop("checked", true);
         $("#duoxuanPay").attr("disabled", false);
+        //计算总价值
+        var sum=0;
+        $(".shopCharsId").each(function () {
+            var isChecked = $(this).prop("checked");
+            if (isChecked === true) {
+                var list_val = $(this).parent().parent("tr").children("td").eq(4).html();
+                sum+=parseInt(list_val);
+            }
+        });
+        $("#totalPrice").html(sum);
     });
 
 // 全不选

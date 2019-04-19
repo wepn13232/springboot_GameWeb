@@ -12,3 +12,5 @@
 <!-- //footer -->
 
 <script src="${pageContext.request.contextPath}/statics/js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/statics/js/index.js"></script>
+
