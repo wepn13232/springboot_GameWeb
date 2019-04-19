@@ -156,6 +156,7 @@ public class UserPageController {
         List<ShopCar> shopCarList = shopCarServices.findShopCarByUserName(username);
         if (shopCarList != null) {
             model.addAttribute("shopCarList", shopCarList);
+
         }
         return "user/orderList";
     }

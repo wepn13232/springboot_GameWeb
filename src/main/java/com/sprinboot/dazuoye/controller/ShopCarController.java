@@ -88,6 +88,7 @@ public class ShopCarController {
         return json.toJSONString();
     }
 
+//    多选付款
     @RequestMapping(value = "/buymoregame")
     @ResponseBody
     public String buyMoreGame(@RequestParam String moreid,@RequestParam Integer moregame_price
