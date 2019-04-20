@@ -29,4 +29,6 @@ public class ForumServicesImpl implements ForumServices {
     public Forum findForumByForumId(int id)throws Exception {
         return forumDao.findForumByForumId(id);
     }
+
+
 }

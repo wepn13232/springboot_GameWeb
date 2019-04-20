@@ -2,10 +2,7 @@ package com.sprinboot.dazuoye.dao;
 
 
 import com.sprinboot.dazuoye.pojo.Game;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -28,4 +25,8 @@ public interface AdminDao {
     //查询游戏信息进行后端处理
     @Select("select * from game where id = #{id}")
     Game selectGameInfo(@Param("id")int id) throws Exception;
+
+    //根据帖子id删除帖子
+    @Delete("delete from forum where id = #{id}")
+    boolean deleteForumByForumId(@Param("id") int id) throws Exception;
 }

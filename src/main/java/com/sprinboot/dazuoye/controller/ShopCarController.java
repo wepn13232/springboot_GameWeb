@@ -1,8 +1,6 @@
 package com.sprinboot.dazuoye.controller;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.sprinboot.dazuoye.pojo.ShopCar;
 import com.sprinboot.dazuoye.pojo.User;
 import com.sprinboot.dazuoye.service.ChargeServices;
@@ -13,13 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.constraints.Max;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 
 @Controller

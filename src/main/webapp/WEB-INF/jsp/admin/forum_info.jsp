@@ -21,7 +21,7 @@
     </div>
 </div>
 
-<%--新闻界面模块--%>
+<%--帖子界面模块--%>
 
 <div class="wallpaper" id="wallpaper">
     <div class="container">

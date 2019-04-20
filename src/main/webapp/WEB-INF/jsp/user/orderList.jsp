@@ -37,7 +37,6 @@
                 </thead>
                 <c:forEach var="shopCar" items="${shopCarList}">
                     <c:if test="${shopCar.status==0}">
-
                         <input type="hidden" data-id="d${shopCar.id}" class="id" name="id" value="${shopCar.id}"/>
                         <input type="hidden" data-gameprice="b${shopCar.id}" class="game_price" name="game_price"
                                value="${shopCar.game_price}"/>

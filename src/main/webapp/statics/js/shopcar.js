@@ -2,7 +2,7 @@ $(function () {
     $(".shopcar_form").bind("click", addShopCar);
     $(".buy_game").bind("click", buyGame);
     $(".delete_game").bind("click", deleteGame);
-    $(".buy_moregame").bind("click", buyMoreGame)
+    $(".buy_moregame").bind("click", buyMoreGame);
     /* $("#qrmodalBtn").bind("click",confirmBuyGame);*/
     //判断是否有订单显示按钮
     var status1 = $("#shopStatus1").html();
@@ -55,18 +55,25 @@ function checkBoxOK() {
         }
     }
 
+    /* var moregame_price = 0;
+     var items = document.getElementsByName("shopCharsId");
+     for (var i = 0; i < items.length; i++) {
+         if (items[i].checked) {
+             moregame_price += parseFloat($("input[data-gamesprice=" + items[i].value + "]").val());
+         }
+X     }
+     $("#totalPrice").html(moregame_price);*/
 //计算被选上的游戏的价值（计算需支付的总金额）
-    var sum=0;
+    var sum = 0;
     c.each(function () {
         var isChecked = $(this).prop("checked");
         if (isChecked === true) {
             var list_val = $(this).parent().parent("tr").children("td").eq(4).html();
-            sum+=parseInt(list_val);
+            sum += parseInt(list_val);
         }
     });
     $("#totalPrice").html(sum);
 }
-
 
 
 //加入购物车响应函数

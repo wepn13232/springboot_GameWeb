@@ -57,10 +57,17 @@ public class AdminServiceImpl implements AdminServices {
         }
     }
 
+
     //查询游戏信息
     @Override
     public Game selectGameInfo(int id) throws Exception {
         Game game =adminDao.selectGameInfo(id);
         return game;
+    }
+
+    //根据帖子id删除帖子
+    @Override
+    public boolean deleteForumByForumId(int id) throws Exception {
+        return adminDao.deleteForumByForumId(id);
     }
 }

@@ -1,9 +1,8 @@
 package com.sprinboot.dazuoye.service;
 
 import com.sprinboot.dazuoye.pojo.Game;
-import org.apache.ibatis.annotations.Param;
 
-import java.util.HashMap;
+
 
 public interface AdminServices {
     //修改游戏价格(打折)
@@ -17,4 +16,7 @@ public interface AdminServices {
 
     //查询游戏信息
     Game selectGameInfo(int id) throws Exception;
+
+    //根据帖子id删除帖子
+    boolean deleteForumByForumId(int id) throws Exception;
 }

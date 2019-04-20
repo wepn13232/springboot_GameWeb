@@ -90,6 +90,19 @@ public class AdminController {
         return "admin/forum_info";
     }
 
+    //删除帖子
+    @RequestMapping("/deleteforum")
+    @ResponseBody
+    public String deleteForum(@RequestParam int id) throws Exception{
+        JSONObject json  = new JSONObject();
+        if (adminServices.deleteForumByForumId(id)){
+            json.put("msg","success");
+        }else{
+            json.put("msg","error");
+        }
+        return json.toJSONString();
+    }
+
     //修改游戏价格
     @RequestMapping("/modifyGamePrice")
     @ResponseBody

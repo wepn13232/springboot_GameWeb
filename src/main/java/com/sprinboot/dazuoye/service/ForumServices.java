@@ -16,4 +16,6 @@ public interface ForumServices {
 
     //根据帖子id查询帖子具体内容
     Forum findForumByForumId (int id)throws Exception;
+
+
 }
