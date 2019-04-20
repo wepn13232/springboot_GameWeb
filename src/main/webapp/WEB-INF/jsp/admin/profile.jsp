@@ -44,7 +44,9 @@
                            target="_blank">
                             <div class="thumbnail boxshodow">
                                 <%--打折符号--%>
-                                <img class="hidden" src="${pageContext.request.contextPath}/statics/images/sale.png" style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
+                                <c:if test="${gameinfo.status==1}">
+                                <img  src="${pageContext.request.contextPath}/statics/images/sale.png" id="discountPic" style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
+                                </c:if>
                                     <%--游戏图片--%>
                                 <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
                                      alt="通用的占位符缩略图" style="width: 245px;height: 346px;">
@@ -54,6 +56,7 @@
                                     <div class="text-center">
                                         <p style="color: red;font-size: 2em">
                                             $${gameinfo.game_price}</p>
+                                        <input class="hidden" value="${gameinfo.status}" id="gameinfo_status"/>
                                     </div>
                                         <%--加入购物车模块--%>
                                     <input type="hidden" data-gamename="${gameinfo.id}" class="game_name"

@@ -74,6 +74,8 @@ function checkComment() {
     })
 }
 
+
+//游戏打折
 function discount() {
     var id = $("#game_id").val();
     $.ajax({                                                //确认游戏打折状态
@@ -103,8 +105,9 @@ function discount() {
                     success: function (data) {
                         if (data.msg === "success") {
                             alert("修改成功")
-                            $("#save_box").load("http://localhost:8080/admin/game_info?id=" + id + " #save_box");   //修改后刷新div信息
-                            $("#game_info").load("http://localhost:8080/admin/game_info?id=" + id + " #game_info");
+                            // $("#save_box").load("http://localhost:8080/admin/game_info?id=" + id + " #save_box");   //修改后刷新div信息
+                            // $("#game_info").load("http://localhost:8080/admin/game_info?id=" + id + " #game_info");
+                            window.location.reload();
                         } else if (data.msg === "error") {
                             alert("修改失败")
                         }
@@ -151,8 +154,9 @@ function cacelDiscount() {
                     success: function (data) {
                         if(data.msg==="success") {
                             alert("恢复成功")
-                            $("#save_box").load("http://localhost:8080/admin/game_info?id="+id+" #save_box" );   //修改后刷新div信息
-                            $("#game_info").load("http://localhost:8080/admin/game_info?id=" + id + " #game_info");
+                            // $("#save_box").load("http://localhost:8080/admin/game_info?id="+id+" #save_box" );   //修改后刷新div信息
+                            // $("#game_info").load("http://localhost:8080/admin/game_info?id=" + id + " #game_info");
+                            window.location.reload();
                         }   else if (data.msg==="error") {
                             alert("恢复失败")
                         }
@@ -170,30 +174,6 @@ function cacelDiscount() {
         }
     })
 
-    // $.ajax({
-    //     contentType: "application/json; charset=utf-8",
-    //     type: "get",
-    //     url: "/admin/modifyGamePrice",
-    //     data: {
-    //         id:$("#game_id").val()
-    //     },
-    //     async: true,
-    //     dataType: "json",
-    //     success: function (data) {
-    //         if(data.msg==="success") {
-    //             alert("修改成功")
-    //             $("#save_box").load("http://localhost:8080/admin/game_info?id="+id+"#save_box" );   //修改后刷新div信息
-    //         }   else if (data.msg==="error") {
-    //             alert("修改失败")
-    //         }
-    //     },
-    //     error:function () {
-    //
-    //     },
-    //     complete:function () {
-    //
-    //     }
-    // })
 }
 
 

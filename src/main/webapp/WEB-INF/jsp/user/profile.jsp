@@ -43,6 +43,10 @@
                         <a href="${pageContext.request.contextPath}/user/game_info?id=${gameinfo.id}"
                            target="_blank">
                             <div class="thumbnail boxshodow">
+                                    <%--打折符号--%>
+                                <c:if test="${gameinfo.status==1}">
+                                    <img  src="${pageContext.request.contextPath}/statics/images/sale.png" id="discountPic" style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
+                                </c:if>
                                 <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
                                      alt="通用的占位符缩略图" style="width: 245px;height: 346px">
                                 <div class="caption">
@@ -130,5 +134,6 @@
 <!-- //footer -->
 <%@include file="common/footer.jsp" %>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
+
 </body>
 </html>
