@@ -74,7 +74,16 @@ public class AdminController {
         if (forumList != null) {
             model.addAttribute("forumList", forumList);
         }
-        return "community";
+        return "admin/community";
+    }
+
+
+    //查看帖子具体内容
+    @RequestMapping(value = "/findcontent")
+    public String findContent(@RequestParam int id,Model model)throws Exception{
+        Forum forum = forumServices.findForumByForumId(id);
+        model.addAttribute("forum",forum);
+        return "admin/forum_info";
     }
 
 

@@ -17,7 +17,7 @@
 </head>
 <body>
 <!-- header -->
-<%@include file="common/header.jsp" %>
+<%@include file="common/header.jsp"%>
 <!-- //header -->
 <!-- banner -->
 <div class="banner-1">

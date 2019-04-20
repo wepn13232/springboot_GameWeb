@@ -35,7 +35,7 @@ $(function () {
     $(".nocheck").click(function () {
         $(":checkbox").prop("checked", false);
         $("#duoxuanPay").attr("disabled", true);
-        $("#totalPrice").html("");
+        $("#totalPrice").html("0");
     });
 
 });
