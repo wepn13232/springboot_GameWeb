@@ -10,13 +10,14 @@ public class Game {
     private String memory;
     private String GPU;
     private Integer game_status;
+    private Integer save_price;
 
 
     public Game() {
         super();
     }
 
-    public Game(Integer id, String game_name, String game_info, Integer game_price, String system, String cpu, String memory, String GPU, Integer game_status) {
+    public Game(Integer id, String game_name, String game_info, Integer game_price, String system, String cpu, String memory, String GPU, Integer game_status,Integer save_price) {
         this.id = id;
         this.game_name = game_name;
         this.game_info = game_info;
@@ -26,6 +27,7 @@ public class Game {
         this.memory = memory;
         this.GPU = GPU;
         this.game_status = game_status;
+        this.save_price = save_price;
     }
 
     public Integer getId() {
@@ -99,4 +101,8 @@ public class Game {
     public void setGame_status(Integer game_status) {
         this.game_status = game_status;
     }
+
+    public Integer getSave_price() {return save_price;}
+
+    public void setSave_price(Integer save_price) {this.save_price = save_price;}
 }

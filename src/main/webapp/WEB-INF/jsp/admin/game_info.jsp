@@ -32,7 +32,7 @@
     <div class="clearfix" style="padding: 1em 1em"></div>
 
     <%--游戏具体内容--%>
-    <div class="game_form col-md-12 col-sm-12 center-block">
+    <div id="game_info" class="game_form col-md-12 col-sm-12 center-block">
         <ul class="list-group col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
             <li class="list-group-item" style="height: 40px">
                 <p class="col-md-2 col-md-2">游戏名字：</p>
@@ -69,7 +69,7 @@
 
 
     <%--降价面板--%>
-    <div class="panel panel-primary" style="width: 85%;margin: 0 auto">
+    <div id="save_box" class="panel panel-primary" style="width: 85%;margin: 0 auto">
         <div class="panel-heading">
             <h3 class="panel-title">修改价格</h3>
         </div>
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="form-group" style="padding-left: 2em">
-                    <label for="gamePrice">游戏原价格：</label>
+                    <label for="gamePrice">游戏当前价格：</label>
                     <input type="text" class="form-control" id="gamePrice" value="${gameinfoByid.game_price}" disabled>
                 </div>
 
@@ -91,10 +91,11 @@
                 </div>
 
                 <label>
-                    <input class="btn btn-primary" value="确认修改" type="button" style="margin-left: 1em"/>
+                    <input id="discount" class="btn btn-primary" value="确认修改" type="button" style="margin-left: 1em"/>
+                    <input id="cancelDiscount" class="btn btn-primary" value="恢复原价" type="button" style="margin-left: 1em"/>
                 </label>
             </form>
-
+                <input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}"/>
         </div>
     </div>
 

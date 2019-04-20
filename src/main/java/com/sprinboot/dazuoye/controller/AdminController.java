@@ -1,5 +1,6 @@
 package com.sprinboot.dazuoye.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.sprinboot.dazuoye.pojo.Forum;
 import com.sprinboot.dazuoye.pojo.Game;
 import com.sprinboot.dazuoye.pojo.User;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +32,8 @@ public class AdminController {
     private UserinfoServices userinfoServices;
     @Resource
     private ForumServices forumServices;
+    @Resource
+    private AdminServices adminServices;
 
 
     @RequestMapping("/index")
@@ -86,5 +90,43 @@ public class AdminController {
         return "admin/forum_info";
     }
 
+    //修改游戏价格
+    @RequestMapping("/modifyGamePrice")
+    @ResponseBody
+    public String modifyGamePrice(@RequestParam int save_price,@RequestParam int id) throws Exception{
+        JSONObject json = new JSONObject();
+        if (adminServices.modifyGamePrice(save_price,id)){
+            json.put("msg","success");
+        }else {
+            json.put("msg","error");
+        }
+        return json.toJSONString();
+    }
+
+    //恢复游戏价格
+    @RequestMapping("/modifyGamePriceBack")
+    @ResponseBody
+    public String modifyGamePriceBack(@RequestParam int id) throws Exception{
+        JSONObject json = new JSONObject();
+        if (adminServices.modifyGamePriceBack(id)){
+            json.put("msg","success");
+        }else {
+            json.put("msg","error");
+        }
+        return json.toJSONString();
+    }
+
+    //查询游戏是否打折
+    @RequestMapping("/checkStatu")
+    @ResponseBody
+    public String checkStatus(@RequestParam int id) throws Exception{
+        JSONObject json = new JSONObject();
+        if (adminServices.checkStatu(id)){
+            json.put("msg","yes");
+        }   else {
+            json.put("msg","no");
+        }
+        return json.toJSONString();
+    }
 
 }
