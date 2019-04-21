@@ -30,6 +30,7 @@
                         <label>
                             <input type="text" autocomplete="text" name="username" id="userName" class="lowin-input"/>
                         </label>
+                        <span id="registerError" style="color: red"></span>
                     </div>
                     <div class="lowin-group">
                         <label>Password</label>
@@ -37,7 +38,8 @@
                             <input type="password" name="password" id="passWord" autocomplete="current-password" class="lowin-input"/>
                         </label>
                     </div>
-                    <input type="button" class="lowin-btn" value="注册" id="register"/>
+                    <input  type="button" class="lowin-btn" value="注册" id="register"/>
+
 
 
                     <div class="text-foot">

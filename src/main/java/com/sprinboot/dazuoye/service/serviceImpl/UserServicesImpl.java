@@ -29,6 +29,12 @@ public class UserServicesImpl implements UserServices {
         return null;
     }
 
+//    查询是否已经存在用户，给予注册
+    @Override
+    public User checkUser(String username) throws Exception {
+        return userDao.selectAllUser(username);
+    }
+
 
     //    用户注册
     @Override

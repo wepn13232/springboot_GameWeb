@@ -61,6 +61,25 @@ public class UserController {
         return jsonObject.toJSONString();
     }
 
+    //    检查是否已经存在该用户
+    @RequestMapping("/checkUser")
+    @ResponseBody
+    public String checkUser(@RequestParam String userName) throws Exception {
+        JSONObject jsonObject = new JSONObject();
+        String user = null;
+        if (userServices.checkUser(userName) != null) {
+            user = userServices.checkUser(userName).getUsername();
+            if (user.equals(userName)) {
+                System.out.println("查询到相同用户");
+                jsonObject.put("checkUser", "1");
+            }
+        } else {
+            System.out.println("没查询到相同用户");
+            jsonObject.put("checkUser", "0");
+        }
+        return jsonObject.toJSONString();
+    }
+
     //注销当前账户
     @RequestMapping("/logout")
     @ResponseBody
