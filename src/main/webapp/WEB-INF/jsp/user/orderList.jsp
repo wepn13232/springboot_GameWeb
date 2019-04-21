@@ -37,10 +37,8 @@
                 </thead>
                 <c:forEach var="shopCar" items="${shopCarList}">
                     <c:if test="${shopCar.status==0}">
-                        <input type="hidden" data-id="d${shopCar.id}" class="id" name="id" value="${shopCar.id}"/>
-                        <input type="hidden" data-gameprice="b${shopCar.id}" class="game_price" name="game_price"
-                               value="${shopCar.game_price}"/>
-                        <input type="hidden" data-gamesprice="${shopCar.id}" class="game_price" name="game_price"
+                        <%--<input type="hidden" data-id="d${shopCar.id}" class="id" name="id" value="${shopCar.id}"/>--%>
+                        <input type="hidden" data-gameprice="${shopCar.id}" class="game_price" name="game_price"
                                value="${shopCar.game_price}"/>
                         <tbody>
                         <tr id="shopStatus1">
@@ -53,9 +51,8 @@
                             <td>未付款</td>
 
                             <td><%--data-自定义标签 ,用按钮的id做唯一标识--%>
-                                <button class="btn btn-warning delete_game" id="d${shopCar.id}">删除订单</button>
-                                <button class="btn btn-success buy_game" style="width:6em" id="b${shopCar.id}">付款
-                                </button>
+                                <button class="btn btn-warning delete_game" id="${shopCar.id}">删除订单</button>
+                                <button class="btn btn-success buy_game" style="width:6em" id="${shopCar.id}">付款</button>
                             </td>
 
                         </tr>
