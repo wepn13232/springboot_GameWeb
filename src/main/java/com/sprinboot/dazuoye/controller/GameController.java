@@ -31,7 +31,7 @@ public class GameController {
 
     //    查询所有游戏并分页
     @RequestMapping("/profile")
-    public String profile(@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model, HttpServletRequest request) throws Exception {
+    public String profile(@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, @RequestParam(value = "form_content", defaultValue = "", required = false) String form_content, Model model, HttpServletRequest request) throws Exception {
         String username;
         if (request.getSession().getAttribute("usersession") == null) {
             String uuid = UUID.randomUUID().toString().replaceAll("-", "");
@@ -40,40 +40,43 @@ public class GameController {
             username = ((User) request.getSession().getAttribute("usersession")).getUsername();
         }
         model.addAttribute("gameinfo", gameServices.findByPage(currentPage, username));
+        if (form_content != null) {
+            List<Game> gamelist = gameServices.selectGameByFormContent(form_content);
+
+        }
+
         return "profile";
     }
 
     //    跳转至游戏具体页面
     @RequestMapping("/game_info")
-    public String game_info(@RequestParam Integer id,@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model) throws Exception {
+    public String game_info(@RequestParam Integer id, @RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model) throws Exception {
 //        查看游戏详情信息
         List<Game> games = gameServices.selectGameById(id);
         for (Game game : games) {
             model.addAttribute("gameinfoByid", game);
         }
-
 //        列出所有评论
-        model.addAttribute("comment", commentServices.findByPage(currentPage,id));
+        model.addAttribute("comment", commentServices.findByPage(currentPage, id));
 
         return "game_info";
     }
 
     //查询游戏
-    @RequestMapping(value = "/findgame")
-    public String findgame(@RequestParam String form_content,Model model, HttpServletRequest request) throws Exception{
-
+    @RequestMapping(value = "/profile/search")
+    @ResponseBody
+    public List<Game> search(@RequestParam String form_content, Model model) throws Exception {
+        JSONObject jsonObject = new JSONObject();
         List<Game> gamelist = gameServices.selectGameByFormContent(form_content);
-        if(!gamelist.isEmpty()) {
+        System.out.println(gamelist);
+        if (!gamelist.isEmpty()) {
             model.addAttribute("gamelist", gamelist);
-        }else{
-            model.addAttribute("msg","没有此游戏，请再次输入！");
+            jsonObject.put("msg", "success");
+        } else {
+            jsonObject.put("msg", "error");
         }
-        return "profile";
+        return gamelist;
     }
-
-
-
-
 
 
 }

@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <title>游戏商城</title>
-   <%@include file="common/head.jsp"%>
+    <%@include file="common/head.jsp" %>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
     <!-- //web-fonts -->
 </head>
@@ -32,14 +32,16 @@
         </div>
         <%--如果gamelist不为空,显示查询的游戏，gamelist是方法c层findgame用model传过来的值--%>
         <c:if test="${!empty gamelist}">
-           <div class="row col-md-13 col-sm-13">
+            <div class="row col-md-13 col-sm-13">
                 <c:forEach var="game" items="${gamelist}">
                     <div class="col-sm-6 col-md-3 gamebox">
                         <a href="${pageContext.request.contextPath}/game_info?id=${game.id}" target="_blank">
                             <div class="thumbnail boxshodow">
-                                    &lt;%&ndash;打折符号&ndash;%&gt;
+                                &lt;%&ndash;打折符号&ndash;%&gt;
                                 <c:if test="${game.status==1}">
-                                    <img  src="${pageContext.request.contextPath}/statics/images/sale.png" id="discountPic" style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
+                                    <img src="${pageContext.request.contextPath}/statics/images/sale.png"
+                                         id="discountPic"
+                                         style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
                                 </c:if>
                                 <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${game.id}.jpg"
                                      alt="通用的占位符缩略图" style="width: 245px;height: 346px">
@@ -50,7 +52,8 @@
                                             $${game.game_price}</p>
                                     </div>
                                     <div class="button_shop center-block text-center">
-                                        <a class="btn btn-info" href="${pageContext.request.contextPath}/user/addshopcar">加入购物车</a>
+                                        <a class="btn btn-info"
+                                           href="${pageContext.request.contextPath}/user/addshopcar">加入购物车</a>
                                     </div>
                                 </div>
                             </div>
@@ -60,17 +63,19 @@
             </div>
         </c:if>
 
-        <%--如果gamelist为空,显示分页--%>
-<c:if test="${empty gamelist}">
+
+
         <c:if test="${!empty requestScope.gameinfo}">
-            <div class="row col-md-13 col-sm-13">
+            <div class="row col-md-13 col-sm-13" id="row_col">
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
                     <div class="col-sm-6 col-md-3 gamebox">
                         <a href="${pageContext.request.contextPath}/game_info?id=${gameinfo.id}" target="_blank">
                             <div class="thumbnail boxshodow">
                                     <%--打折符号--%>
                                 <c:if test="${gameinfo.status==1}">
-                                    <img  src="${pageContext.request.contextPath}/statics/images/sale.png" id="discountPic" style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
+                                    <img src="${pageContext.request.contextPath}/statics/images/sale.png"
+                                         id="discountPic"
+                                         style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
                                 </c:if>
                                 <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
                                      alt="通用的占位符缩略图" style="width: 245px;height: 346px">
@@ -82,7 +87,8 @@
                                     </div>
 
                                     <div class="button_shop center-block text-center">
-                                        <a class="btn btn-info" href="${pageContext.request.contextPath}/user/addshopcar">加入购物车</a>
+                                        <a class="btn btn-info"
+                                           href="${pageContext.request.contextPath}/user/addshopcar">加入购物车</a>
                                     </div>
 
                                 </div>
@@ -90,22 +96,21 @@
                         </a>
                     </div>
                 </c:forEach>
-
             </div>
-
         </c:if>
-</c:if>
 
         <%--搜索框--%>
         <div class="search col-md-12 col-sm-12" style="width: 100%;margin: 0 auto">
-            <form class="form-inline center-block" >
-                <input type="text" class="form-control" id="form_content" style="width: 400px;margin-left: 580px" value=""
-                      name="form_content" required placeholder="请输入想搜索的游戏"/>
+            <form class="form-inline center-block">
+                <input type="text" class="form-control" id="form_content" style="width: 400px;margin-left: 580px"
+                       value=""
+                       name="form_content" required placeholder="请输入想搜索的游戏"/>
 
-                <button class="btn btn-primary col-md-1 col-md-2" style="float: right" href="${pageContext.request.contextPath}/findgame">查询</button>
+                <input class="btn btn-primary col-md-1 col-md-2" type="button" id="game_search_btn" style="float: right"
+                       value="查询">
                 <%--<input type="button" value="查询" class="btn btn-primary col-md-1 col-md-2 form_submit" style="float: right">--%>
             </form>
-            <span id="msg" style="margin-left: 52%;color: red" >${msg}</span>
+            <span id="msg" style="margin-left: 52%;color: red"></span>
         </div>
 
         <div class="clearfix" style="padding: 2em"></div>
@@ -158,6 +163,6 @@
 
 <script src="${pageContext.request.contextPath}/statics/js/bootstrap.js"></script>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
-<%--<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/game_select.js"></script>--%>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/game_select.js"></script>
 </body>
 </html>
