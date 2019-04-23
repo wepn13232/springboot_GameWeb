@@ -43,9 +43,11 @@
                         <a href="${pageContext.request.contextPath}/admin/game_info?id=${gameinfo.id}"
                            target="_blank">
                             <div class="thumbnail boxshodow">
-                                <%--打折符号--%>
+                                    <%--打折符号--%>
                                 <c:if test="${gameinfo.status==1}">
-                                <img  src="${pageContext.request.contextPath}/statics/images/sale.png" id="discountPic" style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
+                                    <img src="${pageContext.request.contextPath}/statics/images/sale.png"
+                                         id="discountPic"
+                                         style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
                                 </c:if>
                                     <%--游戏图片--%>
                                 <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${gameinfo.id}.jpg"
@@ -91,6 +93,17 @@
             </div>
 
         </c:if>
+
+        <%--搜索框--%>
+        <div class="search col-md-12 col-sm-12" style="width: 100%;margin: 0 auto">
+            <form class="form-inline center-block">
+                <input type="text" class="form-control" style="width: 400px;margin-left: 580px"
+                       placeholder="请输入想搜索的游戏"/>
+                <input type="button" value="查询" class="btn btn-primary col-md-1 col-md-2" style="float: right">
+            </form>
+        </div>
+
+        <div class="clearfix" style="padding: 2em"></div>
 
     </div>
 

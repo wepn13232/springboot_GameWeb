@@ -30,6 +30,7 @@
         <div class="w3ls-title">
             <h3 class="agileits-title w3title1">游戏商城</h3>
         </div>
+
         <c:if test="${!empty requestScope.gameinfo}">
             <div class="row col-md-13 col-sm-13">
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
@@ -62,6 +63,18 @@
             </div>
 
         </c:if>
+
+
+        <%--搜索框--%>
+        <div class="search col-md-12 col-sm-12" style="width: 100%;margin: 0 auto">
+            <form class="form-inline center-block">
+                <input type="text" class="form-control" style="width: 400px;margin-left: 580px"
+                       placeholder="请输入想搜索的游戏"/>
+                <input type="button" value="查询" class="btn btn-primary col-md-1 col-md-2" style="float: right">
+            </form>
+        </div>
+
+        <div class="clearfix" style="padding: 2em"></div>
 
     </div>
 
