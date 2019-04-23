@@ -60,28 +60,6 @@
                                             $${gameinfo.game_price}</p>
                                         <input class="hidden" value="${gameinfo.status}" id="gameinfo_status"/>
                                     </div>
-                                        <%--加入购物车模块--%>
-                                    <input type="hidden" data-gamename="${gameinfo.id}" class="game_name"
-                                           name="game_name" value="${gameinfo.game_name}">
-                                    <input type="hidden" data-gameprice="${gameinfo.id}" class="game_price"
-                                           name="game_price" value="${gameinfo.game_price}">
-                                    <c:if test="${gameinfo.game_status==null}">
-                                        <a type="button" class="button_shop center-block text-center">
-                                            <input type="button" data-disable="${gameinfo.id}"
-                                                   class="btn btn-info shopcar_form " id="${gameinfo.id}"
-                                                   value="加入购物车"/>
-                                        </a>
-                                    </c:if>
-                                    <c:if test="${gameinfo.game_status==1}">
-                                        <a type="button" class="button_shop center-block text-center">
-                                            <input type="button" class="btn btn-success " value="已购买" disabled>
-                                        </a>
-                                    </c:if>
-                                    <c:if test="${gameinfo.game_status==0}">
-                                        <a type="button" class="button_shop center-block text-center">
-                                            <input type="button" class="btn btn-warning " value="已加入购物车" disabled/>
-                                        </a>
-                                    </c:if>
 
 
                                 </div>
@@ -118,20 +96,20 @@
                     <ul class="pager">
                         <c:if test="${requestScope.gameinfo.currPage != 1}">
                             <li>
-                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=1">首页</a>
+                                <a href="${pageContext.request.contextPath }/admin/profile?currentPage=1">首页</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage-1}">上一页</a>
+                                <a href="${pageContext.request.contextPath }/admin/profile?currentPage=${requestScope.gameinfo.currPage-1}">上一页</a>
                             </li>
                         </c:if>
 
                         <c:if test="${requestScope.gameinfo.currPage != requestScope.gameinfo.totalPage}">
 
                             <li>
-                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.currPage+1}">下一页</a>
+                                <a href="${pageContext.request.contextPath }/admin/profile?currentPage=${requestScope.gameinfo.currPage+1}">下一页</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath }/user/profile?currentPage=${requestScope.gameinfo.totalPage}">尾页</a>
+                                <a href="${pageContext.request.contextPath }/admin/profile?currentPage=${requestScope.gameinfo.totalPage}">尾页</a>
                             </li>
                         </c:if>
                     </ul>
