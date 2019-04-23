@@ -136,10 +136,10 @@ public class UserPageController {
 
 
     //    跳转至详细论坛
-    @RequestMapping("/community")
+    /*@RequestMapping("/community")
     public String community() {
         return "user/community";
-    }
+    }*/
 
     //    跳转至充值页面
     @RequestMapping("/charge")
@@ -156,7 +156,6 @@ public class UserPageController {
         List<ShopCar> shopCarList = shopCarServices.findShopCarByUserName(username);
         if (shopCarList != null) {
             model.addAttribute("shopCarList", shopCarList);
-
         }
         return "user/orderList";
     }

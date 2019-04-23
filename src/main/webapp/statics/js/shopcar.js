@@ -59,7 +59,7 @@ function checkBoxOK() {
      var items = document.getElementsByName("shopCharsId");
      for (var i = 0; i < items.length; i++) {
          if (items[i].checked) {
-             moregame_price += parseFloat($("input[data-gamesprice=" + items[i].value + "]").val());
+             moregame_price += parseFloat($("input[data-gameprice=" + items[i].value + "]").val());
          }
 X     }
      $("#totalPrice").html(moregame_price);*/
@@ -71,6 +71,7 @@ X     }
             var list_val = $(this).parent().parent("tr").children("td").eq(4).html();
             sum += parseInt(list_val);
         }
+
     });
     $("#totalPrice").html(sum);
 }
@@ -180,11 +181,13 @@ function buyMoreGame() {
     $("#payModal").modal("show");
     /*console.log(id);*/
     $("#qrmodalBtn").bind("click", confirmBuyGame);
+
 }
 
 //付款操作模态框（输入密码）
     function confirmBuyGame() {
         //输入密码，判断密码
+
         $.ajax({
             contentType: "application/json; charset=utf-8",
             type: "get",
@@ -221,6 +224,7 @@ function buyMoreGame() {
                             if (data.msg === "success") {
                                 alert("购买成功！");
                                 $("#payModal").modal("hide");
+                                //设置自动
                                 setTimeout(function () {
                                     window.location.reload();
                                 }, 500)

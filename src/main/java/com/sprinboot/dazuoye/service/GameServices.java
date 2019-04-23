@@ -2,6 +2,7 @@ package com.sprinboot.dazuoye.service;
 
 import com.sprinboot.dazuoye.pojo.Game;
 import com.sprinboot.dazuoye.pojo.PageBean;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,7 @@ public interface GameServices {
 
 //    查看指定id的游戏
     List<Game> selectGameById(int id) throws Exception;
+
+    //模糊查询游戏
+    List<Game> selectGameByFormContent(String form_content)throws Exception;
 }

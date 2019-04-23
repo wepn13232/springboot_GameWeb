@@ -1,5 +1,6 @@
 package com.sprinboot.dazuoye.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.sprinboot.dazuoye.dao.CommentDao;
 import com.sprinboot.dazuoye.pojo.Comment;
 import com.sprinboot.dazuoye.pojo.Game;
@@ -12,10 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class GameController {
@@ -31,7 +34,8 @@ public class GameController {
     public String profile(@RequestParam(value = "currentPage", defaultValue = "1", required = false) int currentPage, Model model, HttpServletRequest request) throws Exception {
         String username;
         if (request.getSession().getAttribute("usersession") == null) {
-            username = "zhaocaiqibilipalade";
+            String uuid = UUID.randomUUID().toString().replaceAll("-", "");
+            username = uuid;
         } else {
             username = ((User) request.getSession().getAttribute("usersession")).getUsername();
         }
@@ -53,6 +57,23 @@ public class GameController {
 
         return "game_info";
     }
+
+    //查询游戏
+    @RequestMapping(value = "/findgame")
+    public String findgame(@RequestParam String form_content,Model model, HttpServletRequest request) throws Exception{
+
+        List<Game> gamelist = gameServices.selectGameByFormContent(form_content);
+        if(!gamelist.isEmpty()) {
+            model.addAttribute("gamelist", gamelist);
+        }else{
+            model.addAttribute("msg","没有此游戏，请再次输入！");
+        }
+        return "profile";
+    }
+
+
+
+
 
 
 }
