@@ -1,5 +1,7 @@
 package com.sprinboot.dazuoye.pojo;
 
+import java.util.Date;
+
 public class Game {
     private Integer id;
     private String game_name;
@@ -12,6 +14,15 @@ public class Game {
     private Integer game_status;
     private Integer save_price;
     private int status;
+    private String closing_date;
+
+    public String getClosing_date() {
+        return closing_date;
+    }
+
+    public void setClosing_date(String closing_date) {
+        this.closing_date = closing_date;
+    }
 
     public int getStatus() {
         return status;

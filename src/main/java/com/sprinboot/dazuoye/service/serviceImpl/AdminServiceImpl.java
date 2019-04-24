@@ -8,7 +8,9 @@ import com.sprinboot.dazuoye.service.GameServices;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,18 +22,19 @@ public class AdminServiceImpl implements AdminServices {
     private GameMapper gameMapper;
 
 
+
     //修改游戏价格(打折)
     @Override
-    public Boolean modifyGamePrice(int game_price, int id) throws Exception {
+    public Boolean modifyGamePrice(int game_price, int id, Date closing_date) throws Exception {
         HashMap<String,Object> map =new HashMap<String, Object>();
         Game game = adminDao.selectGameInfo(id);
         int save_price =game.getGame_price()-game_price;
         map.put("save_price",save_price);
         map.put("game_price",game_price);
         map.put("id",id);
+        map.put("closing_date",closing_date);
         return adminDao.modifyGamePrice(map);
     }
-
 
     //恢复游戏价格
     @Override
@@ -40,8 +43,6 @@ public class AdminServiceImpl implements AdminServices {
         Game game = adminDao.selectGameInfo(id);
         int game_price = game.getGame_price();
         int save_price = game.getSave_price();
-
-        map.put("save_price",0);
         map.put("game_price",game_price+save_price);
         map.put("id",id);
         return adminDao.modifyGamePriceBack(map);

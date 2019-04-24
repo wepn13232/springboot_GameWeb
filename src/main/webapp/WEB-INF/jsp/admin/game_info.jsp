@@ -11,6 +11,9 @@
 <head>
     <title>游戏详情</title>
     <%@include file="common/head.jsp" %>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/jedate/jedate.css">
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/jedate/jeDate-test.css">
+    <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/jedate/jedate.js"></script>
 </head>
 <body>
 <%@include file="common/header.jsp" %>
@@ -62,6 +65,19 @@
                 <p class="col-md-2 col-md-2">最低系统要求：</p>
                 <p style="color: #00AFF0">${gameinfoByid.system}</p>
             </li>
+
+            <li class="list-group-item" style="height: 40px">
+                <p class="col-md-2 col-md-2">打折剩余时间：</p>
+                <p style="color: #00AFF0">
+                    <input type="text" class="form-control" id="hour" value="" disabled>时
+                </p>
+                <p style="color: #00AFF0">
+                    <input type="text" class="form-control" id="minute" value="" disabled>分
+                </p>
+                <p style="color: #00AFF0">
+                    <input type="text" class="form-control" id="second" value="" disabled>秒
+                </p>
+            </li>
         </ul>
     </div>
 
@@ -90,20 +106,33 @@
                     <input type="text" class="form-control" id="changePriceNum" placeholder="">
                 </div>
 
+                <%--//引入的jedate插件--%>
+                <div class="form-group" style="padding-left: 2em">
+                    <label for="changePriceNum">打折日期至</label>
+                    <%--<input type="text" class="jeinput" id="closing_date" placeholder="YYYY-MM-DD hh:mm:ss">--%>
+                    <input class="form-control jeinput" id="closing_date" type="text" placeholder="YYYY年MM月DD日 hh:mm:ss" readonly>
+                </div>
+
                 <label>
                     <input id="discount" class="btn btn-primary" value="确认修改" type="button" style="margin-left: 1em"/>
-                    <input id="cancelDiscount" class="btn btn-primary" value="恢复原价" type="button" style="margin-left: 1em"/>
+                    <input id="cancelDiscount" class="btn btn-primary" value="恢复原价" type="button"
+                           style="margin-left: 1em"/>
                 </label>
             </form>
-                <input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}"/>
+            <input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}"/>
+            <input type="text" style="display:none" id="end_time" value="${gameinfoByid.closing_date}"/>
         </div>
     </div>
 
-        <div class="clearfix" style="padding: 1em"></div>
+    <div class="clearfix" style="padding: 1em"></div>
 
 
     <%@include file="common/footer.jsp" %>
     <%--<script src="${pageContext.request.contextPath}/statics/js/game_info.js"></script>--%>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
+        <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
+        <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/jedate/demo.js"></script>
+        <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/set_time.js"></script>
+
+
 </body>
 </html>

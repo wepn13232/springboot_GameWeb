@@ -2,6 +2,7 @@ $(function () {
     $("#addComment").bind("click",checkComment);
     $("#discount").bind("click",discount);
     $("#cancelDiscount").bind("click",cacelDiscount);
+
 });
 
 
@@ -98,7 +99,8 @@ function discount() {
                     url: "/admin/modifyGamePrice",
                     data: {
                         save_price: $("#changePriceNum").val(),
-                        id: $("#game_id").val()
+                        id: $("#game_id").val(),
+                        closing_date:$("#closing_date").val()
                     },
                     async: true,
                     dataType: "json",
