@@ -13,6 +13,7 @@
     <title>游戏商城</title>
     <%@include file="common/head.jsp" %>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/shopcss.css">
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/naranja.min.css">
 
     <!-- //web-fonts -->
 </head>
@@ -147,6 +148,6 @@
 <!-- //footer -->
 <%@include file="common/footer.jsp" %>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
-
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/naranja.js"></script>
 </body>
 </html>

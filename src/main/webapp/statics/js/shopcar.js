@@ -92,6 +92,12 @@ function addShopCar() {
         dataType: "json",
         success: function (data) {
             if (data.msg === "success") {
+                naranja().success({
+                    title: '成功！', // <- required
+                    text: '成功加入购物车！', // <- required
+                    icon: true, // <- unrequired, default true,
+                    timeout: 3000 // <- unrequired, default 3000 miliseconds
+                });
                 $("[data-disable=" + id + "]").attr({
                     "disabled": "true",
                     "value": "已加入购物车"
