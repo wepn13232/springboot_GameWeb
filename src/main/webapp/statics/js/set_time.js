@@ -2,7 +2,7 @@
 $(function calculateDiffTime(){
     var highestTimeoutId = setTimeout(";"); for (var i = 0 ; i < highestTimeoutId ; i++) { clearTimeout(i); }
     var startTime = jQuery.now() , endTime = new Date($("#end_time").val()).getTime();
-    alert(startTime+"*********"+endTime);
+    // alert(startTime+"*********"+endTime);
     if (endTime-startTime>0){
         var timeDiff = (endTime - startTime)/1000   //转化为秒
         var hour = Math.floor(timeDiff / 3600); //转化为时
@@ -17,7 +17,7 @@ $(function calculateDiffTime(){
 
 
     }else{
-        alert("打折已结束！");
+        // alert("打折已结束！");
     }
 
 
@@ -38,6 +38,53 @@ $(function set_time() {
         if (s==0&&m==0&&h==0){
             window.clearTimeout(t1)
             alert("打折已结束!")
+
+            //页面等待恢复原价代码块
+            $.ajax({                                                //确认游戏打折状态
+                contentType: "application/json; charset=utf-8",
+                type: "get",
+                url: "/admin/checkStatu",
+                data: {
+                    id:$("#game_id").val()
+                },
+                async: true,
+                dataType: "json",
+                success: function (data){
+                    if (data.msg==="yes"){
+                        $.ajax({                                            //对游戏进行打折恢复操作
+                            contentType: "application/json; charset=utf-8",
+                            type: "get",
+                            url: "/admin/modifyGamePriceBack",
+                            data: {
+                                id:$("#game_id").val()
+                            },
+                            async: true,
+                            dataType: "json",
+                            success: function (data) {
+                                if(data.msg==="success") {
+                                    // alert("恢复成功")
+                                    // $("#save_box").load("http://localhost:8080/admin/game_info?id="+id+" #save_box" );   //修改后刷新div信息
+                                    // $("#game_info").load("http://localhost:8080/admin/game_info?id=" + id + " #game_info");
+                                    // window.location.reload();
+                                }   else if (data.msg==="error") {
+                                    alert("恢复失败")
+                                }
+                            },
+                            error:function () {
+
+                            },
+                            complete:function () {
+
+                            }
+                        })
+                    }   else if (data.msg==="no"){
+                        alert("该游戏未打折!不能恢复原价!")
+                    }
+                }
+            })
+            //页面等待恢复原价代码块
+
+
             window.location.reload();
         }
         if (s==0&&m==0&&h!=0){
