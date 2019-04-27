@@ -68,14 +68,14 @@
 
             <li class="list-group-item" style="height: 40px">
                 <p class="col-md-2 col-md-2">打折剩余时间：</p>
-                <p style="color: #00AFF0">
-                    <input type="text" class="form-control" id="hour" value="" disabled>时
+                <p style="color: #00AFF0" class="col-md-2 col-sm-2">
+                    <input type="text" class=" col-md-1 col-sm-1" id="hour" value="" disabled>时
                 </p>
-                <p style="color: #00AFF0">
-                    <input type="text" class="form-control" id="minute" value="" disabled>分
+                <p style="color: #00AFF0" class="col-md-2 col-sm-2">
+                    <input type="text" class="col-md-1 col-sm-1" id="minute" value="" disabled>分
                 </p>
-                <p style="color: #00AFF0">
-                    <input type="text" class="form-control" id="second" value="" disabled>秒
+                <p style="color: #00AFF0" class="col-md-2 col-sm-2">
+                    <input type="text" class="col-md-1 col-sm-1" id="second" value="" disabled>秒
                 </p>
             </li>
         </ul>
@@ -110,7 +110,8 @@
                 <div class="form-group" style="padding-left: 2em">
                     <label for="changePriceNum">打折日期至</label>
                     <%--<input type="text" class="jeinput" id="closing_date" placeholder="YYYY-MM-DD hh:mm:ss">--%>
-                    <input class="form-control jeinput" id="closing_date" type="text" placeholder="YYYY年MM月DD日 hh:mm:ss" readonly>
+                    <input class="form-control jeinput" id="closing_date" type="text" placeholder="YYYY年MM月DD日 hh:mm:ss"
+                           readonly>
                 </div>
 
                 <label>
@@ -129,9 +130,9 @@
 
     <%@include file="common/footer.jsp" %>
     <%--<script src="${pageContext.request.contextPath}/statics/js/game_info.js"></script>--%>
-        <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
-        <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/jedate/demo.js"></script>
-        <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/set_time.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/jedate/demo.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/set_time.js"></script>
 
 
 </body>
