@@ -69,13 +69,13 @@
             <li class="list-group-item" style="height: 40px">
                 <p class="col-md-2 col-md-2">打折剩余时间：</p>
                 <p style="color: #00AFF0" class="col-md-2 col-sm-2">
-                    <input type="text" class=" col-md-1 col-sm-1" id="hour" value="" disabled>时
+                    <input type="text"  id="hour" value="" disabled>时
                 </p>
-                <p style="color: #00AFF0" class="col-md-2 col-sm-2">
-                    <input type="text" class="col-md-1 col-sm-1" id="minute" value="" disabled>分
+                <p style="color: #00AFF0" class="col-md-2 ">
+                    <input type="text"  id="minute" value="" disabled>分
                 </p>
-                <p style="color: #00AFF0" class="col-md-2 col-sm-2">
-                    <input type="text" class="col-md-1 col-sm-1" id="second" value="" disabled>秒
+                <p style="color: #00AFF0" class="col-md-2 ">
+                    <input type="text"  id="second" value="" disabled>秒
                 </p>
             </li>
         </ul>

@@ -166,5 +166,6 @@
 <%@include file="common/footer.jsp" %>
 <%--<script src="${pageContext.request.contextPath}/statics/js/game_info.js"></script>--%>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/set_time.js"></script>
 </body>
 </html>

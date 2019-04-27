@@ -2,7 +2,7 @@
 $(function calculateDiffTime(){
     var highestTimeoutId = setTimeout(";"); for (var i = 0 ; i < highestTimeoutId ; i++) { clearTimeout(i); }
     var startTime = jQuery.now() , endTime = new Date($("#end_time").val()).getTime();
-    // alert(startTime+"*********"+endTime);
+    alert(startTime+"*********"+endTime);
     if (endTime-startTime>0){
         var timeDiff = (endTime - startTime)/1000   //转化为秒
         var hour = Math.floor(timeDiff / 3600); //转化为时
@@ -30,8 +30,9 @@ $(function set_time() {
     var m = $("#minute").val()
     var s = $("#second").val()
     var t1=""
-
-    if (h!=0&&m!=0&&s!=0){     //还有剩余时间时执行计时器方法
+    // alert("计时器开始")
+    if (h!=0||m!=0||s!=0){     //还有剩余时间时执行计时器方法
+        // alert("进入计时器")
         t1 = window.setTimeout(startLoadTime,1000)
         function startLoadTime() {
         if (s==0&&m==0&&h==0){

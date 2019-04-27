@@ -134,5 +134,6 @@
 
 <%@include file="common/footer.jsp" %>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/set_time.js"></script>
 </body>
 </html>
