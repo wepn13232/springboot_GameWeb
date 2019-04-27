@@ -115,9 +115,9 @@
                 </div>
 
 
-                    <input id="discount" class="btn btn-primary" value="确认修改" type="button" style="margin-left: 1em"/>
+                    <input id="discount" class="btn btn-primary" value="确认修改" type="button" style="margin-left: 65em;margin-top: 2em"/>
                     <input id="cancelDiscount" class="btn btn-primary" value="恢复原价" type="button"
-                           style="margin-left: 1em"/>
+                           style="margin-left: 1em;margin-top: 2em"/>
             </form>
             <input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}"/>
             <input type="text" style="display:none" id="end_time" value="${gameinfoByid.closing_date}"/>
