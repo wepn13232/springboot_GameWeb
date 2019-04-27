@@ -2,7 +2,7 @@
 $(function calculateDiffTime(){
     var highestTimeoutId = setTimeout(";"); for (var i = 0 ; i < highestTimeoutId ; i++) { clearTimeout(i); }
     var startTime = jQuery.now() , endTime = new Date($("#end_time").val()).getTime();
-    alert(startTime+"*********"+endTime);
+    // alert(startTime+"*********"+endTime);
     if (endTime-startTime>0){
         var timeDiff = (endTime - startTime)/1000   //转化为秒
         var hour = Math.floor(timeDiff / 3600); //转化为时
