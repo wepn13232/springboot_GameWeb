@@ -68,13 +68,13 @@
 
             <li class="list-group-item" style="height: 40px">
                 <p class="col-md-2 col-md-2">打折剩余时间：</p>
-                <p style="color: #00AFF0" class="col-md-2 col-sm-2">
+                <p style="color: #00AFF0" class="col-md-3 col-sm-3">
                     <input type="text"  id="hour" value="" disabled>时
                 </p>
-                <p style="color: #00AFF0" class="col-md-2 ">
+                <p style="color: #00AFF0" class="col-md-3 col-sm-3 ">
                     <input type="text"  id="minute" value="" disabled>分
                 </p>
-                <p style="color: #00AFF0" class="col-md-2 ">
+                <p style="color: #00AFF0" class="col-md-3 col-sm-3">
                     <input type="text"  id="second" value="" disabled>秒
                 </p>
             </li>
@@ -114,11 +114,10 @@
                            readonly>
                 </div>
 
-                <label>
+
                     <input id="discount" class="btn btn-primary" value="确认修改" type="button" style="margin-left: 1em"/>
                     <input id="cancelDiscount" class="btn btn-primary" value="恢复原价" type="button"
                            style="margin-left: 1em"/>
-                </label>
             </form>
             <input type="text" style="display:none" id="game_id" value="${gameinfoByid.id}"/>
             <input type="text" style="display:none" id="end_time" value="${gameinfoByid.closing_date}"/>
