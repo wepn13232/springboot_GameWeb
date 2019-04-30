@@ -63,6 +63,18 @@
                 <p style="color: #00AFF0">${gameinfoByid.system}</p>
             </li>
 
+            <li class="list-group-item" style="height: 40px">
+                <p class="col-md-2 col-md-2">打折剩余时间：</p>
+                <p style="color: #00AFF0" class="col-md-3 col-sm-3">
+                    <input type="text"  id="hour" value="" disabled>时
+                </p>
+                <p style="color: #00AFF0" class="col-md-3 col-sm-3 ">
+                    <input type="text"  id="minute" value="" disabled>分
+                </p>
+                <p style="color: #00AFF0" class="col-md-3 col-sm-3">
+                    <input type="text"  id="second" value="" disabled>秒
+                </p>
+            </li>
 
         </ul>
     </div>

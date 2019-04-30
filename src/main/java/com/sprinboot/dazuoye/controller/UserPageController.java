@@ -196,7 +196,11 @@ public class UserPageController {
 
 //    跳转至发表帖子页面
     @RequestMapping("/submitForum")
-    public String submitForum(@RequestParam int game_id,Model model){
+    public String submitForum(@RequestParam int game_id,Model model) throws Exception {
+        List<Game> games=gameServices.selectGameById(game_id);
+        for(Game game:games){
+            model.addAttribute("games",game);
+        }
         model.addAttribute("game_id",game_id);
         return "user/submitForum";
     }

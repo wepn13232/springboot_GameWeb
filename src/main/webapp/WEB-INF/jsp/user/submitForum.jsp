@@ -19,10 +19,12 @@
     <div class="clearfix" style="padding: 2em"></div>
     <div class="forum_title col-md-offset-2">
         <form class="form-inline" action="${pageContext.request.contextPath}/user/submit">
+            <h4 class="col-md-5 col-sm-5" style="width: 400px">游戏板块：${games.game_name}</h4>
+            <div class="clearfix" style="padding: 1em"></div>
             <h4 class="col-md-2 col-sm-2" style="width: 100px">标题：</h4>
             <label>
                 <input class="col-md-6 col-sm-6 form-control" id="forum_title" name="forum_title"
-                       style="width: 600px;height: 30px">
+                       style="width: 600px;height: 30px" required>
             </label>
             <div class="clearfix" style="padding: 1em"></div>
             <div class="forum_content">
