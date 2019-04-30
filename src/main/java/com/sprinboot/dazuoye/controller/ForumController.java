@@ -27,17 +27,18 @@ public class ForumController {
     //    论坛首页查询所有游戏
     @RequestMapping("/about")
     public String about(Model model) throws Exception {
-        Game game=new Game();
-        List<Game> games=gameServices.getAllGame(game);
-        model.addAttribute("gamesinfo",games);
+        Game game = new Game();
+        List<Game> games = gameServices.getAllGame(game);
+        model.addAttribute("gamesinfo", games);
         return "about";
     }
 
     //展示各游戏论坛帖子
     @RequestMapping("/showforum")
-    public String showForum(@RequestParam int game_id,Model model)throws Exception{
-        List<Forum> forumList= forumServices.findForumByGameId(game_id);
-        if(forumList!=null){
+    public String showForum(@RequestParam int game_id, Model model) throws Exception {
+        List<Forum> forumList = forumServices.findForumByGameId(game_id);
+        List<Game> gameList=gameServices.selectGameById(game_id);
+        if (forumList != null) {
             model.addAttribute("forumList", forumList);
         }
         return "community";
@@ -46,9 +47,9 @@ public class ForumController {
 
     //查看帖子具体内容
     @RequestMapping(value = "/findcontent")
-    public String findContent(@RequestParam int id,Model model)throws Exception{
+    public String findContent(@RequestParam int id, Model model) throws Exception {
         Forum forum = forumServices.findForumByForumId(id);
-        model.addAttribute("forum",forum);
+        model.addAttribute("forum", forum);
         return "forum_info";
     }
 

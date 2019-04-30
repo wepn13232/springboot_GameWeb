@@ -15,6 +15,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -181,6 +182,7 @@ public class UserPageController {
         if(forumList!=null){
             model.addAttribute("forumList", forumList);
         }
+        model.addAttribute("game_id",game_id);
         return "user/community";
     }
 
@@ -191,4 +193,22 @@ public class UserPageController {
         model.addAttribute("forum",forum);
         return "user/forum_info";
     }
+
+//    跳转至发表帖子页面
+    @RequestMapping("/submitForum")
+    public String submitForum(@RequestParam int game_id,Model model){
+        model.addAttribute("game_id",game_id);
+        return "user/submitForum";
+    }
+
+    //    插入帖子（发表帖子）
+    @RequestMapping("/submit")
+    public String submitForum(@RequestParam String forum_title, @RequestParam String forum_content, @RequestParam int game_id,@RequestParam String username) throws Exception {
+        int a = forumServices.submitForum(forum_title, forum_content, game_id,username);
+        if (a > 0) {
+            return "redirect:/user/about";
+        }
+        return "/user/submitForum";
+    }
+
 }

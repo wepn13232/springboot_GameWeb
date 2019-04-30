@@ -17,5 +17,7 @@ public interface ForumServices {
     //根据帖子id查询帖子具体内容
     Forum findForumByForumId (int id)throws Exception;
 
+//    发表帖子（插入帖子）
+    int submitForum(String forum_title,String forum_content,int game_id,String username) throws Exception;
 
 }

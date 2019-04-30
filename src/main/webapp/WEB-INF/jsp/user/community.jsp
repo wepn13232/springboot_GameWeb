@@ -19,6 +19,8 @@
 <%--帖子内容--%>
 <div class="container">
     <div class="clearfix" style="padding: 1em"></div>
+    <a type="button" class="btn btn-primary" href="${pageContext.request.contextPath}/user/submitForum?game_id=${game_id}">发表帖子</a>
+    <div class="clearfix" style="padding: 1em"></div>
     <%--列表组--%>
     <c:forEach var="forum" items="${forumList}">
     <div class="list-group" style="margin-bottom: 20px">
@@ -28,7 +30,8 @@
             <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;"
                class="list-group-item-text">${forum.forum_content}</p>
         </a>
-        <%--<div class="clearfix" style="padding-bottom: 10px"></div>--%>
+
+
     </div>
     </c:forEach>
     <div class="clearfix" style="padding-bottom: 10px"></div>
