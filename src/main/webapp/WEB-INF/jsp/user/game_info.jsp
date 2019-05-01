@@ -63,18 +63,20 @@
                 <p style="color: #00AFF0">${gameinfoByid.system}</p>
             </li>
 
-            <li class="list-group-item" style="height: 40px">
-                <p class="col-md-2 col-md-2">打折剩余时间：</p>
-                <p style="color: #00AFF0" class="col-md-3 col-sm-3">
-                    <input type="text"  id="hour" value="" disabled>时
-                </p>
-                <p style="color: #00AFF0" class="col-md-3 col-sm-3 ">
-                    <input type="text"  id="minute" value="" disabled>分
-                </p>
-                <p style="color: #00AFF0" class="col-md-3 col-sm-3">
-                    <input type="text"  id="second" value="" disabled>秒
-                </p>
-            </li>
+            <c:if test="${!empty gameinfoByid.closing_date}">
+                <li class="list-group-item" style="height: 40px">
+                    <p class="col-md-2 col-md-2">打折剩余时间：</p>
+                    <p style="color: #00AFF0" class="col-md-3 col-sm-3">
+                        <input type="text"  id="hour" value="" disabled>时
+                    </p>
+                    <p style="color: #00AFF0" class="col-md-3 col-sm-3 ">
+                        <input type="text"  id="minute" value="" disabled>分
+                    </p>
+                    <p style="color: #00AFF0" class="col-md-3 col-sm-3">
+                        <input type="text"  id="second" value="" disabled>秒
+                    </p>
+                </li>
+            </c:if>
 
         </ul>
     </div>
@@ -168,6 +170,7 @@
         </div>
     </div>
 </div>
+<input type="text" style="display:none" id="end_time" value="${gameinfoByid.closing_date}"/>
 
 
 <img src="${pageContext.request.contextPath}/statics/images/t1.jpg"
@@ -178,6 +181,6 @@
 <%@include file="common/footer.jsp" %>
 <%--<script src="${pageContext.request.contextPath}/statics/js/game_info.js"></script>--%>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/addComment.js"></script>
-<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/set_time.js"></script>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/select_time.js"></script>
 </body>
 </html>
