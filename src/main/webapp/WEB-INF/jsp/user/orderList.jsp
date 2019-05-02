@@ -27,7 +27,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th></th>
+                    <th></th>®
                     <th>购买的游戏</th>
                     <th>购买用户</th>
                     <th>下单日期</th>

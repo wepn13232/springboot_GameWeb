@@ -29,10 +29,8 @@
                 <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;"
                    class="list-group-item-text">${forum.forum_content}</p>
             </a>
-            <div class="clearfix" style="padding-bottom: 10px"></div>
         </div>
     </c:forEach>
-    <div class="clearfix" style="padding-bottom: 10px"></div>
 
 
 </div>
