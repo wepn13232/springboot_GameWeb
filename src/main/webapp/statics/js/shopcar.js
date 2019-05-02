@@ -20,12 +20,12 @@ $(function () {
         $(":checkbox").prop("checked", true);
         $("#duoxuanPay").attr("disabled", false);
         //计算总价值
-        var sum=0;
+        var sum = 0;
         $(".shopCharsId").each(function () {
             var isChecked = $(this).prop("checked");
             if (isChecked === true) {
                 var list_val = $(this).parent().parent("tr").children("td").eq(4).html();
-                sum+=parseInt(list_val);
+                sum += parseInt(list_val);
             }
         });
         $("#totalPrice").html(sum);
@@ -121,6 +121,7 @@ function buyGame() {
     $("#payModal").modal("show");
     /*console.log(id);*/
     $("#qrmodalBtn").bind("click", confirmBuyGame);
+
     //付款操作模态框（输入密码）
     function confirmBuyGame() {
         //输入密码，判断密码
@@ -191,98 +192,105 @@ function buyMoreGame() {
 }
 
 //付款操作模态框（输入密码）
-    function confirmBuyGame() {
-        //输入密码，判断密码
+function confirmBuyGame() {
+    //输入密码，判断密码
 
-        $.ajax({
-            contentType: "application/json; charset=utf-8",
-            type: "get",
-            url: "/user/payok",
-            data: {
-                "paypassword": $(".payPassword").val()
-            },
-            async: true,
-            dataType: "json",
-            success: function (data) {
-                //密码正确，付款购买响应函数
-                if (data.msg === "success") {
-                    var arrays = [];
-                    var moregame_price = 0;
-                    var items = document.getElementsByName("shopCharsId");
-                    for (var i = 0; i < items.length; i++) {
-                        if (items[i].checked) {
-                            arrays.push(parseInt(items[i].value));
-                            moregame_price += parseFloat($("input[data-gameprice=" + items[i].value + "]").val());
-                        }
+    $.ajax({
+        contentType: "application/json; charset=utf-8",
+        type: "get",
+        url: "/user/payok",
+        data: {
+            "paypassword": $(".payPassword").val()
+        },
+        async: true,
+        dataType: "json",
+        success: function (data) {
+            //密码正确，付款购买响应函数
+            if (data.msg === "success") {
+                var arrays = [];
+                var moregame_price = 0;
+                var items = document.getElementsByName("shopCharsId");
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].checked) {
+                        arrays.push(parseInt(items[i].value));
+                        moregame_price += parseFloat($("input[data-gameprice=" + items[i].value + "]").val());
                     }
-                    /*console.log(arrays);*/
-                    $.ajax({
-                        contentType: "application/json; charset=utf-8",
-                        type: "get",
-                        url: "/user/buymoregame",
-                        data: {
-                            "moreid": JSON.stringify(arrays),
-                            "moregame_price": moregame_price
-                        },
-                        async: true,
-                        dataType: "json",
-                        success: function (data) {
-                            if (data.msg === "success") {
-                                alert("购买成功！");
-                                $("#payModal").modal("hide");
-                                //设置自动
-                                setTimeout(function () {
-                                    window.location.reload();
-                                }, 500)
-                            } else if (data.msg === "error") {
-                                alert("付款失败");
-                            } else if (data.msg === "less") {
-                                //调用confirm确认框，确认是否充值
-                                var r = window.confirm("余额不足，是否现在充值？");
-                                if (r === true) {
-                                    window.location.href = "/user/charge?username=" + data.username;
-                                } else {
-                                }
+                }
+                /*console.log(arrays);*/
+                $.ajax({
+                    contentType: "application/json; charset=utf-8",
+                    type: "get",
+                    url: "/user/buymoregame",
+                    data: {
+                        "moreid": JSON.stringify(arrays),
+                        "moregame_price": moregame_price
+                    },
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.msg === "success") {
+                            alert("购买成功！");
+                            $("#payModal").modal("hide");
+                            //设置自动
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 500)
+                        } else if (data.msg === "error") {
+                            alert("付款失败");
+                        } else if (data.msg === "less") {
+                            //调用confirm确认框，确认是否充值
+                            var r = window.confirm("余额不足，是否现在充值？");
+                            if (r === true) {
+                                window.location.href = "/user/charge?username=" + data.username;
+                            } else {
                             }
-                        },
-                        error: function () {
                         }
-                    })
-                }
-                if (data.msg === "error") {
-                    $(".message").html("密码错误！请重新输入");
-                    $(".payPassword").val("");
-                }
-            },
-            error: function () {
+                    },
+                    error: function () {
+                    }
+                })
             }
-        })
-    }
+            if (data.msg === "error") {
+                $(".message").html("密码错误！请重新输入");
+                $(".payPassword").val("");
+            }
+        },
+        error: function () {
+        }
+    })
+}
+
+
 //删除订单
 function deleteGame() {
     var id = $(this).attr('id');
-    var r = window.confirm("确认删除？");
-    if (r === true) {
-        $.ajax({
-            contentType: "application/json; charset=utf-8",
-            type: "get",
-            url: "/user/deletegame",
-            data: {
-                "id": id
-            },
-            async: true,
-            dataType: "json",
-            success: function (data) {
-                if (data.msg === "success") {
-                    window.location.reload();
+    var popup = new Popup({
+        'type': 'submit',
+        'title': '删除订单',
+        'text': '确认要删除该订单吗？',
+        'cancelbutton': true,
+        'submitCallBack':function () {
+            $.ajax({
+                contentType: "application/json; charset=utf-8",
+                type: "get",
+                url: "/user/deletegame",
+                data: {
+                    "id": id
+                },
+                async: true,
+                dataType: "json",
+                success: function (data) {
+                    if (data.msg === "success") {
+                        window.location.reload();
+                    }
+                    if (data.msg === "error") {
+                        alert("删除失败");
+                    }
+                },
+                error: function () {
                 }
-                if (data.msg === "error") {
-                    alert("删除失败");
-                }
-            },
-            error: function () {
-            }
-        })
-    }
+            })
+        }
+    });
 }
 

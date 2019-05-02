@@ -51,10 +51,6 @@ public class UserServicesImpl implements UserServices {
     //    账户充值
     @Override
     public int chargeMoney(int cashCharge, String username) throws Exception {
-        User user = new User();
-//         username = user.getUsername();
-//        int cashLeft = user.getCashLeft();
-//        cashCharge = cashLeft + cashCharge;
         return userDao.charge(cashCharge, username);
     }
 

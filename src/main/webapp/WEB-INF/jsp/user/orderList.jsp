@@ -10,6 +10,7 @@
 <head>
     <title>我的购物车/订单</title>
     <%@include file="common/head.jsp" %>
+    <link href="${pageContext.request.contextPath}/statics/css/popup.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <%@include file="common/header.jsp" %>
@@ -133,5 +134,6 @@
 
 <%@include file="common/footer.jsp" %>
 <script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/shopcar.js"></script>
+<script type="application/javascript" src="${pageContext.request.contextPath}/statics/js/popup.js"></script>
 </body>
 </html>

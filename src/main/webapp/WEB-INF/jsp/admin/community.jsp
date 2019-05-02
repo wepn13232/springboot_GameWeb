@@ -11,6 +11,7 @@
 <head>
     <title>详细论坛</title>
     <%@include file="common/head.jsp"%>
+    <link href="${pageContext.request.contextPath}/statics/css/popup.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%@include file="common/header.jsp"%>
@@ -43,5 +44,6 @@
 
 <%@include file="common/footer.jsp"%>
 <script src="${pageContext.request.contextPath}/statics/js/admin_forum.js"></script>
+<script src="${pageContext.request.contextPath}/statics/js/popup.js"></script>
 </body>
 </html>

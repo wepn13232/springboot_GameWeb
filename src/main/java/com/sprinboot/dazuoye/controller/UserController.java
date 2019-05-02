@@ -25,6 +25,7 @@ public class UserController {
         return "login";
     }
 
+//    登录操作
     @RequestMapping("/dologin")
     @ResponseBody
     public String dologin(@RequestParam String username, @RequestParam String password, Model model, HttpServletRequest request) throws Exception {
