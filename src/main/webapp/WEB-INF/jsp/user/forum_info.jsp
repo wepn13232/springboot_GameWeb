@@ -32,7 +32,7 @@
                 <div class="clearfix" style="padding: 8px"></div>
                 <div class="info col-md-12 col-sm-12 text-center center-block">
                     <h4 class="col-md-3 col-sm-3 col-md-offset-3 col-sm-offset-3">发帖人:${forum.username}</h4>
-                    <h4 class="col-md-3 col-sm-3">发帖时间:${forum.date}</h4>
+                    <h4 class="col-md-4 col-sm-4">发帖时间:${forum.date}</h4>
                 </div>
 
             </div>
