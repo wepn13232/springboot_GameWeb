@@ -95,7 +95,7 @@ public class GameServicesImpl implements GameServices {
     public List<Game> selectGameById(int id) throws Exception {
         return gameMapper.selectGameById(id);
     }
-
+//查询游戏
     @Override
     public List<Game> selectGameByFormContent(String form_content) throws Exception {
         return gameMapper.selectGameByFormContent(form_content);

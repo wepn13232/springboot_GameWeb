@@ -68,7 +68,6 @@ public class GameController {
     public List<Game> search(@RequestParam String form_content, Model model) throws Exception {
         JSONObject jsonObject = new JSONObject();
         List<Game> gamelist = gameServices.selectGameByFormContent(form_content);
-        System.out.println(gamelist);
         if (!gamelist.isEmpty()) {
             model.addAttribute("gamelist", gamelist);
             jsonObject.put("msg", "success");

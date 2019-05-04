@@ -30,41 +30,6 @@
         <div class="w3ls-title">
             <h3 class="agileits-title w3title1">游戏商城</h3>
         </div>
-        <%--如果gamelist不为空,显示查询的游戏，gamelist是方法c层findgame用model传过来的值--%>
-        <c:if test="${!empty gamelist}">
-            <div class="row col-md-13 col-sm-13">
-                <c:forEach var="game" items="${gamelist}">
-                    <div class="col-sm-6 col-md-3 gamebox">
-                        <a href="${pageContext.request.contextPath}/game_info?id=${game.id}" target="_blank">
-                            <div class="thumbnail boxshodow">
-                                &lt;%&ndash;打折符号&ndash;%&gt;
-                                <c:if test="${game.status==1}">
-                                    <img src="${pageContext.request.contextPath}/statics/images/sale.png"
-                                         id="discountPic"
-                                         style="width: 100px;height: 100px;position:absolute;margin-left: 135px" alt="">
-                                </c:if>
-                                <img src="${pageContext.request.contextPath}/statics/images/gamepic/pic${game.id}.jpg"
-                                     alt="通用的占位符缩略图" style="width: 245px;height: 346px">
-                                <div class="caption">
-                                    <p class="game_info">${game.game_info}</p>
-                                    <div class="text-center">
-                                        <p style="color: red;font-size: 2em">
-                                            $${game.game_price}</p>
-                                    </div>
-                                    <div class="button_shop center-block text-center">
-                                        <a class="btn btn-info"
-                                           href="${pageContext.request.contextPath}/user/addshopcar">加入购物车</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </c:forEach>
-            </div>
-        </c:if>
-
-
-
         <c:if test="${!empty requestScope.gameinfo}">
             <div class="row col-md-13 col-sm-13" id="row_col">
                 <c:forEach var="gameinfo" items="${requestScope.gameinfo.lists}">
@@ -105,10 +70,8 @@
                 <input type="text" class="form-control" id="form_content" style="width: 400px;margin-left: 580px"
                        value=""
                        name="form_content" required placeholder="请输入想搜索的游戏"/>
-
                 <input class="btn btn-primary col-md-1 col-md-2" type="button" id="game_search_btn" style="float: right"
                        value="查询">
-                <%--<input type="button" value="查询" class="btn btn-primary col-md-1 col-md-2 form_submit" style="float: right">--%>
             </form>
             <span id="msg" style="margin-left: 52%;color: red"></span>
         </div>
