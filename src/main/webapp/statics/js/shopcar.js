@@ -81,7 +81,7 @@ X     }
 function addShopCar() {
     var id = $(this).attr('id');
     $.ajax({
-        contentType: "application/json; charset=utf-8",
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
         type: "post",
         url: "/user/addshopcar",
         data: {
@@ -125,19 +125,18 @@ function buyGame() {
     function confirmBuyGame() {
         //输入密码，判断密码
         $.ajax({
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
             type: "post",
             url: "/user/payok",
             data: {
                 "paypassword": $(".payPassword").val()
             },
-            async: true,
             dataType: "json",
             success: function (data) {
                 //密码正确，付款购买响应函数
                 if (data.msg === "success") {
                     $.ajax({
-                        contentType: "application/json; charset=utf-8",
+                        contentType: "application/x-www-form-urlencoded; charset=utf-8",
                         type: "post",
                         url: "/user/buygame",
                         data: {
@@ -161,8 +160,7 @@ function buyGame() {
                                 if (r === true) {
                                     window.location.href = "/user/charge?username=" + data.username;
                                 } else {
-                                    // $("#payModal").modal("hide");
-                                    // $(".payPassword").val("");
+                                    return false;
                                 }
                             }
                         },
@@ -195,7 +193,7 @@ function buyMoreGame() {
         //输入密码，判断密码
 
         $.ajax({
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
             type: "post",
             url: "/user/payok",
             data: {
@@ -217,7 +215,7 @@ function buyMoreGame() {
                     }
                     /*console.log(arrays);*/
                     $.ajax({
-                        contentType: "application/json; charset=utf-8",
+                        contentType: "application/x-www-form-urlencoded; charset=utf-8",
                         type: "post",
                         url: "/user/buymoregame",
                         data: {
@@ -242,6 +240,7 @@ function buyMoreGame() {
                                 if (r === true) {
                                     window.location.href = "/user/charge?username=" + data.username;
                                 } else {
+                                    return false;
                                 }
                             }
                         },
@@ -264,8 +263,8 @@ function deleteGame() {
     var r = window.confirm("确认删除？");
     if (r === true) {
         $.ajax({
-            contentType: "application/json; charset=utf-8",
-            type: "post",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            type:"post",
             url: "/user/deletegame",
             data: {
                 "id": id
@@ -283,6 +282,9 @@ function deleteGame() {
             error: function () {
             }
         })
+    }
+    else{
+        return false;
     }
 }
 

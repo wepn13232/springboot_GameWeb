@@ -69,6 +69,7 @@ public class ShopCarController {
         if(cashLeft>=game_price){
             if (shopCarServices.modifyShopCar(id,new Date())){
                 int latercash=cashLeft-game_price;
+                System.out.println("---------"+latercash);
                 //更新余额
                 shopCarServices.modifyCashLeft(username,latercash);
                 json.put("msg","success");
