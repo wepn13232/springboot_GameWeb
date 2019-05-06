@@ -30,7 +30,7 @@
             <p style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;"
                class="list-group-item-text">${forum.forum_content}</p>
         </a>
-        <input type="hidden" data-id="${forum.id}" class="id" name="id" value="${forum.id}"/>
+        <input type="hidden"  data-id="${forum.id}" class="id" name="id" value="${forum.id}"/>
         <button class="btn btn-danger deleteTZ" id="${forum.id}" style="float: right">删除</button>
         <%--<div class="clearfix" style="padding-bottom: 2px"></div>--%>
     </div>

@@ -260,31 +260,33 @@ function buyMoreGame() {
 //删除订单
 function deleteGame() {
     var id = $(this).attr('id');
-    var r = window.confirm("确认删除？");
-    if (r === true) {
-        $.ajax({
-            contentType: "application/x-www-form-urlencoded; charset=utf-8",
-            type:"post",
-            url: "/user/deletegame",
-            data: {
-                "id": id
-            },
-            async: true,
-            dataType: "json",
-            success: function (data) {
-                if (data.msg === "success") {
-                    window.location.reload();
+    var popup=new Popup({
+        'type': 'submit',
+        'title': '删除订单',
+        'text': '确认删除该订单吗？',
+        'cancelbutton': true,
+        'submitCallBack': function(){
+            $.ajax({
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                type:"post",
+                url: "/user/deletegame",
+                data: {
+                    "id": id
+                },
+                async: true,
+                dataType: "json",
+                success: function (data) {
+                    if (data.msg === "success") {
+                        window.location.reload();
+                    }
+                    if (data.msg === "error") {
+                        alert("删除失败");
+                    }
+                },
+                error: function () {
                 }
-                if (data.msg === "error") {
-                    alert("删除失败");
-                }
-            },
-            error: function () {
-            }
-        })
-    }
-    else{
-        return false;
-    }
+            })
+        }
+    });
 }
 

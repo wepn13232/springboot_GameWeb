@@ -50,8 +50,8 @@ function checkComment() {
                             //     +"</div>"
                             //
                             //     $("#box").prepend(html);//添加至选定标签前
-                                $("#box").load("http://localhost:8080/user/game_info?id="+id+" #box");  //重新加载评论的div
-                                $("#page").load("http://localhost:8080/user/game_info?id="+id+" #page");  //重新加载分页的div
+                                $("#box").load("http://www.you3dm.xyz/user/game_info?id="+id+" #box");  //重新加载评论的div
+                                $("#page").load("http://www.you3dm.xyz/user/game_info?id="+id+" #page");  //重新加载分页的div
                             alert("评论成功!");
                                 $("#addTxt").val('');
 
