@@ -21,7 +21,7 @@ public interface UserDao {
     int addUser(User user) throws Exception;
 
 //    充值
-    @Update("update User set cashLeft=cashLeft+#{cashCharge} where username=#{username}")
+    @Update("update user set cashLeft=cashLeft+#{cashCharge} where username=#{username}")
     int charge(@Param("cashCharge") int cashCharge,@Param("username") String username);
 
 //

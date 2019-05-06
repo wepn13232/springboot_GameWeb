@@ -26,10 +26,10 @@ public interface CommentDao {
     Integer selectGameStatus(String username,int game_id) throws Exception;
 
     //查询当前游戏的评论数量
-    @Select("select count(*) from Comment where game_id = #{id}")
+    @Select("select count(*) from comment where game_id = #{id}")
     int getCommentCount(int id) throws Exception;
 
     //    分页操作
-    @Select("select * from Comment where game_id = #{id} order by id desc limit #{start},#{size}")
+    @Select("select * from comment where game_id = #{id} order by id desc limit #{start},#{size}")
     List<Comment> findByPage( HashMap<String, Object> map) throws Exception;
 }

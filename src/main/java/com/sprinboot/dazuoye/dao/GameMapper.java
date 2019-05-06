@@ -15,23 +15,23 @@ import java.util.List;
 public interface GameMapper {
 
     //查询游戏总数
-    @Select("select count(*) from Game")
+    @Select("select count(*) from game")
     int getCount() throws Exception;
 
     //    分页操作
-    @Select("select * from Game limit #{start},#{size}")
+    @Select("select * from game limit #{start},#{size}")
      List<Game> findByPage(HashMap<String, Object> map) throws Exception;
 
     //查询所有游戏
-    @Select("select * from Game")
+    @Select("select * from game")
      List<Game> getAllGame(Game game) throws Exception;
 
 //    查看指定游戏信息
-    @Select("select * from Game where id=#{id}")
+    @Select("select * from game where id=#{id}")
     List<Game> selectGameById(@Param("id") Integer id) throws Exception;
 
     //模糊查询游戏
-    @Select("select * from Game where game_name like '%${form_content}%'")
+    @Select("select * from game where game_name like '%${form_content}%'")
     List<Game> selectGameByFormContent(@Param("form_content") String form_content)throws Exception;
 
 }
